@@ -197,6 +197,20 @@
     .prio-Medium { border-color: var(--warn); color: var(--warn); }
     .prio-Low { border-color: var(--accent2); color: var(--accent2); }
 
+    .market-new {
+      border-color: #1f6d3b;
+      color: #1f6d3b;
+      background: rgba(31, 109, 59, 0.08);
+      margin-right: 4px;
+    }
+
+    .market-used {
+      border-color: #8a5a00;
+      color: #8a5a00;
+      background: rgba(138, 90, 0, 0.1);
+      margin-right: 4px;
+    }
+
     .checkcell {
       text-align: center;
       width: 54px;
@@ -318,6 +332,72 @@
       padding: 0 2px;
     }
 
+    .knowledge {
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .knowledge h2 {
+      margin-bottom: 6px;
+    }
+
+    .knowledge p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .knowledge-grid {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .knowledge details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px 10px;
+    }
+
+    .knowledge summary {
+      font-weight: 700;
+      cursor: pointer;
+      color: #2b241d;
+    }
+
+    .knowledge ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: #2f2922;
+      font-size: 0.9rem;
+    }
+
+    .knowledge li {
+      margin: 4px 0;
+    }
+
+    .inline-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.88rem;
+    }
+
+    .inline-table th,
+    .inline-table td {
+      border: 1px solid var(--line);
+      padding: 6px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .inline-table th {
+      background: rgba(154, 63, 34, 0.08);
+      color: #3a3026;
+    }
+
     @media (max-width: 1100px) {
       .layout { grid-template-columns: 1fr; }
       .side {
@@ -327,6 +407,7 @@
       .top-grid { grid-template-columns: 1fr; }
       .filters { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .knowledge-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -361,6 +442,99 @@
           <div class="stat"><span>Ordered</span><b id="statOrdered">0</b></div>
           <div class="stat"><span>Installed</span><b id="statInstalled">0</b></div>
         </div>
+      </div>
+    </section>
+
+    <section class="card knowledge">
+      <h2>Knowledge Base</h2>
+      <p>Core project rules restored from the markdown pack so you can decide and execute without opening separate docs.</p>
+      <div class="knowledge-grid">
+        <details>
+          <summary>Compatibility Rules (59X vs XT Donors)</summary>
+          <ul>
+            <li>Safe XT-family searches: speedo drive, levers, cables, carb rebuild items, rear shock family (43F, 1VJ, 3AJ).</li>
+            <li>59X-sensitive items: CDI curve, original 6V capacitor logic, battery packaging constraints, cylinder strategy.</li>
+            <li>Big-bore warning: original 59X Nikasil cylinder cannot be over-bored. Big bore needs XT steel-sleeve conversion first.</li>
+            <li>12V conversion rule: stator + flywheel + CDI + regulator/rectifier must be treated as one matched 3TB system.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Best Buy Order and Budget Logic</summary>
+          <ul>
+            <li>Order 1: KEDO service basket first to establish a mechanical baseline and avoid fragmented shipping.</li>
+            <li>Order 2: OEM-only one-off items such as tank silent-bloc when needed.</li>
+            <li>Order 3: full loom materials in one order (wire, fuses, connectors, shrink, bulbs, battery).</li>
+            <li>Order 4: donor electrics last, but only as coherent 3TB set or proven matched pieces.</li>
+            <li>Avoid buying CDI first in isolation just because a listing appears.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>CDI Decision: Used Matched Donor vs New Aftermarket</summary>
+          <table class="inline-table">
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>Used 3TB Donor CDI</th>
+                <th>Aftermarket CDI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cost</td>
+                <td>Lower typical price, higher condition uncertainty</td>
+                <td>Higher price, cleaner purchase path</td>
+              </tr>
+              <tr>
+                <td>System match</td>
+                <td>Best when from same donor bike</td>
+                <td>Acceptable only inside full 3TB architecture</td>
+              </tr>
+              <tr>
+                <td>Risk</td>
+                <td>Low if coherent donor set, high if isolated part</td>
+                <td>Lower provenance risk, may need install adaptation</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>Primary recommendation: hunt complete donor set first.</li>
+            <li>Fallback: use aftermarket CDI only when donor CDI provenance is weak.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>12V Architecture and Commissioning Rules</summary>
+          <ul>
+            <li>Fuse map baseline: 20A main, 5A ignition, 10A headlight, 5A tail/brake, 5A instruments.</li>
+            <li>Routing rule: keep CDI trigger wire at least 50 mm from HT lead path.</li>
+            <li>Grounding rule: single clean earth point for all return paths.</li>
+            <li>Test rule: confirm spark path before full charging-side integration.</li>
+            <li>Charging acceptance: target about 13.8V to 14.5V at around 3000 rpm.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Seller Validation and Rejection Rules</summary>
+          <ul>
+            <li>Always request donor model code, year, part markings, connector photos, and running/charging history.</li>
+            <li>For stator/pickup, request resistance values where possible.</li>
+            <li>Reject listings with vague "fits many XT/TT" claims and no source bike evidence.</li>
+            <li>Reject isolated 3TB parts with unclear provenance when they affect conversion architecture.</li>
+            <li>Message flow: short intro, then part-specific follow-up, then full matched-system request if seller has multiple parts.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Project Stop Rules (Do Not Ignore)</summary>
+          <ul>
+            <li>Stop if you are about to buy fragmented 3TB electrical parts without compatibility proof.</li>
+            <li>Stop if seller cannot show model, connector style, or part marking evidence.</li>
+            <li>Stop if charging test exceeds 15V.</li>
+            <li>Stop if any 6V bulb remains before first 12V full power-up.</li>
+          </ul>
+        </details>
       </div>
     </section>
 
@@ -399,7 +573,7 @@
       </aside>
     </section>
 
-    <p class="footer-note">Status checkboxes are saved in this browser with localStorage. CSV source files: tt600_59x_parts_tracker.csv and tt600_59x_shopping_map_2026-09-04.csv.</p>
+    <p class="footer-note">Status checkboxes are saved in this browser with localStorage. CSV source files: tt600_59x_parts_tracker.csv, tt600_59x_shopping_map_2026-09-04.csv, and tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv.</p>
   </div>
 
   <script>
@@ -458,6 +632,17 @@
     function money(value, currency) {
       if (value == null || Number.isNaN(value)) return "-";
       return `${currency || "EUR"} ${value.toFixed(2)}`;
+    }
+
+    function moneyRange(low, high, currency) {
+      const hasLow = low != null && !Number.isNaN(low);
+      const hasHigh = high != null && !Number.isNaN(high);
+      if (!hasLow && !hasHigh) return "-";
+      if (hasLow && hasHigh) {
+        if (Math.abs(low - high) < 0.0001) return money(low, currency);
+        return `${money(low, currency)} - ${money(high, currency)}`;
+      }
+      return money(hasLow ? low : high, currency);
     }
 
     function parseCSV(text) {
@@ -540,6 +725,57 @@
       return n;
     }
 
+    function detectCurrencyFromText(text, fallback = "EUR") {
+      const t = String(text || "").toUpperCase();
+      if (t.includes("USD") || t.includes("$")) return "USD";
+      if (t.includes("EUR") || t.includes("€")) return "EUR";
+      return fallback;
+    }
+
+    function toTokens(value) {
+      return norm(value)
+        .split(" ")
+        .filter(t => t.length > 1 && !["and", "the", "set", "kit", "for", "with", "new", "used"].includes(t));
+    }
+
+    function overlapScore(aTokens, bTokens) {
+      if (!aTokens.length || !bTokens.length) return 0;
+      const b = new Set(bTokens);
+      let hits = 0;
+      for (const t of aTokens) if (b.has(t)) hits += 1;
+      const ratio = hits / Math.max(aTokens.length, bTokens.length);
+      return hits * 10 + ratio * 20;
+    }
+
+    function findBestVendorRange(partName, searchTerms, oemRef, vendorExactMap, vendorEntries) {
+      const keys = [partName, searchTerms, oemRef].filter(Boolean).map(v => norm(v));
+      for (const key of keys) {
+        if (vendorExactMap.has(key)) return vendorExactMap.get(key);
+      }
+
+      const partTokens = toTokens(`${partName || ""} ${searchTerms || ""} ${oemRef || ""}`);
+      let best = null;
+      let bestScore = 0;
+
+      for (const entry of vendorEntries) {
+        let score = overlapScore(partTokens, entry.tokens);
+        const eKey = entry.key;
+
+        for (const key of keys) {
+          if (!key) continue;
+          if (eKey === key) score += 100;
+          else if (eKey.includes(key) || key.includes(eKey)) score += 60;
+        }
+
+        if (score > bestScore) {
+          bestScore = score;
+          best = entry;
+        }
+      }
+
+      return bestScore >= 22 ? best : null;
+    }
+
     function loadState(key, fallback = false) {
       const raw = localStorage.getItem(STORAGE_PREFIX + key);
       if (raw == null) return fallback;
@@ -565,8 +801,146 @@
       return `https://duckduckgo.com/?q=${encodeURIComponent(terms)}`;
     }
 
-    function mergeData(trackerRows, shoppingRows) {
+    function canonicalPhysicalKey(item) {
+      const text = norm(`${item.system || ""} ${item.part || ""} ${item.searchTerms || ""} ${item.oem || ""}`);
+
+      if (text.includes("cdi") || text.includes("ignitor")) return "electrical cdi 3tb";
+      if (text.includes("stator")) return "electrical stator 3tb";
+      if (text.includes("flywheel") || text.includes("rotor")) return "electrical flywheel 3tb";
+      if (text.includes("regulator") || text.includes("rectifier")) return "electrical regulator rectifier 3tb";
+      if (text.includes("ignition coil") || text.includes("bobine")) return "electrical ignition coil 12v";
+
+      if (text.includes("oil filter") || text.includes("hf145") || text.includes("91628")) return "engine oil filter service";
+      if (text.includes("spark plug") || text.includes("dpr8ea9") || text.includes("dpr8ea 9") || text.includes("40008")) return "engine spark plug dpr8ea9";
+      if ((text.includes("intake") || text.includes("manifold")) && (text.includes("set") || text.includes("left") || text.includes("right") || text.includes("o ring"))) {
+        return "intake manifold set";
+      }
+      if (text.includes("intake manifold")) return "intake manifold set";
+      if ((text.includes("crankcase") && text.includes("screw")) || text.includes("10236") || text.includes("allen screw set")) {
+        return "engine crankcase cover screw set";
+      }
+      if (text.includes("tank silent") || text.includes("1w1241820100") || text.includes("silent bloc") || text.includes("silent block")) {
+        return "chassis tank silent block";
+      }
+      if ((text.includes("drain washer") && text.includes("14")) || text.includes("94026") || text.includes("copper washer 14x20x1 5")) {
+        return "engine drain washer 14mm";
+      }
+      if (text.includes("fuse block") || text.includes("blade fuse block") || text.includes("ato") || text.includes("atc")) {
+        return "electrical fuse block";
+      }
+      if (text.includes("inline fuse holder")) return "electrical inline fuse holder";
+      if (text.includes("fuse assortment") || text.includes("fuse kit")) return "electrical fuse kit";
+      if (text.includes("txl") || text.includes("gxl wire")) return "electrical wire set";
+      if (text.includes("weatherproof connector") || text.includes("superseal") || text.includes("deutsch")) {
+        return "electrical connector kit";
+      }
+      if (text.includes("heat shrink")) return "electrical adhesive heat shrink";
+      if (text.includes("loom wrap") || text.includes("tesa 51036")) return "electrical loom wrap tape";
+      if (text.includes("split loom") || text.includes("split conduit")) return "electrical split conduit";
+      if (text.includes("12v bulb")) return "electrical 12v bulb conversion set";
+
+      return text
+        .replace(/\b(donor|replacement|option|complete|used|new|aftermarket|set|kit|core)\b/g, " ")
+        .replace(/\b(left|right|incl|including|with|and|pair|family|oem|reference)\b/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function classifyMarket(item) {
+      const hay = norm(`${item.part || ""} ${item.needType || ""} ${item.condition || ""} ${item.notes || ""} ${item.section || ""}`);
+      const hasUsed = /\bused\b|donor|market|ebay|leboncoin|breaker/.test(hay);
+      const hasNew = /\bnew\b|aftermarket|oem|kedo|dafy|pieces yam/.test(hay);
+      return { hasUsed, hasNew };
+    }
+
+    function inferLinkLabel(url, fallback) {
+      const u = String(url || "").toLowerCase();
+      if (u.includes("ebay.")) return "eBay";
+      if (u.includes("leboncoin.")) return "Leboncoin";
+      if (u.includes("kedo.")) return "KEDO";
+      if (u.includes("pieces-yam.")) return "Pieces-Yam";
+      if (u.includes("regulatorrectifier.")) return "RegulatorRectifier";
+      return fallback || "Listing";
+    }
+
+    function addMarketplaceLinks(baseLinks, searchSeed) {
+      const links = [...baseLinks];
+      const seed = searchSeed || "";
+      if (!seed) return links;
+      const key = encodeURIComponent(seed);
+      links.push({ label: "eBay", url: `https://www.ebay.fr/sch/i.html?_nkw=${key}` });
+      links.push({ label: "Leboncoin", url: `https://www.leboncoin.fr/recherche?text=${key}` });
+      return links;
+    }
+
+    function consolidateItems(items) {
+      const grouped = new Map();
+
+      for (const item of items) {
+        const key = canonicalPhysicalKey(item);
+        if (!key) continue;
+
+        if (!grouped.has(key)) {
+          grouped.set(key, {
+            ...item,
+            physicalKey: key,
+            allLinks: [...(item.links || [])],
+            allSources: item.source ? [item.source] : [],
+            low: item.low ?? null,
+            high: item.high ?? null,
+            hasUsed: classifyMarket(item).hasUsed,
+            hasNew: classifyMarket(item).hasNew
+          });
+          continue;
+        }
+
+        const target = grouped.get(key);
+        const market = classifyMarket(item);
+
+        target.hasUsed = target.hasUsed || market.hasUsed;
+        target.hasNew = target.hasNew || market.hasNew;
+
+        if (item.low != null) target.low = target.low == null ? item.low : Math.min(target.low, item.low);
+        if (item.high != null) target.high = target.high == null ? item.high : Math.max(target.high, item.high);
+
+        if (!target.oem && item.oem) target.oem = item.oem;
+        if (!target.needType && item.needType) target.needType = item.needType;
+        if (!target.searchTerms && item.searchTerms) target.searchTerms = item.searchTerms;
+        if (!target.section && item.section) target.section = item.section;
+
+        if (item.priority === "Critical") target.priority = "Critical";
+        else if (item.priority === "High" && target.priority !== "Critical") target.priority = "High";
+
+        if (item.source) target.allSources.push(item.source);
+        target.allLinks.push(...(item.links || []));
+      }
+
+      const deduped = [];
+      for (const merged of grouped.values()) {
+        const sourceSet = [...new Set(merged.allSources.filter(Boolean))];
+        merged.source = sourceSet.join(" | ");
+
+        const uniqueLinks = new Map();
+        for (const link of addMarketplaceLinks(merged.allLinks, merged.searchTerms || merged.part || "")) {
+          if (!link || !link.url) continue;
+          if (!uniqueLinks.has(link.url)) {
+            uniqueLinks.set(link.url, {
+              label: inferLinkLabel(link.url, link.label),
+              url: link.url
+            });
+          }
+        }
+        merged.links = [...uniqueLinks.values()];
+        deduped.push(merged);
+      }
+
+      return deduped;
+    }
+
+    function mergeData(trackerRows, shoppingRows, vendorRows) {
       const shoppingByPart = new Map();
+      const vendorRangeByPart = new Map();
+      const vendorEntries = [];
 
       for (const row of shoppingRows) {
         const key = norm(row["Part"]);
@@ -585,6 +959,29 @@
           notes: row["Notes"] || "",
           ref: row["Part Number or Reference"] || ""
         });
+      }
+
+      for (const row of vendorRows) {
+        const part = row["Part"] || "";
+        const key = norm(part);
+        if (!key) continue;
+        if (/^summary$/i.test(row["Order Group"] || "")) continue;
+
+        const low = toPrice(row["Low-End Price Value"]);
+        const high = toPrice(row["High-End Price Value"]);
+        const currency = row["Currency"] || "EUR";
+        if (low == null && high == null) continue;
+
+        const entry = {
+          key,
+          low,
+          high,
+          currency,
+          tokens: toTokens(`${part} ${row["Vendor"] || ""} ${row["Priority"] || ""}`)
+        };
+
+        vendorRangeByPart.set(key, entry);
+        vendorEntries.push(entry);
       }
 
       const merged = [];
@@ -611,8 +1008,17 @@
           });
         }
 
-        const low = first.price;
-        const high = first.price;
+        const range = findBestVendorRange(
+          part,
+          row["Preferred Search Terms"] || "",
+          row["OEM Part Number"] || "",
+          vendorRangeByPart,
+          vendorEntries
+        );
+        const trackerPrice = toPrice(row["Price"]);
+        const trackerCurrency = detectCurrencyFromText(row["Price"], "EUR");
+        const low = range ? range.low : (first.price != null ? first.price : trackerPrice);
+        const high = range ? range.high : (first.price != null ? first.price : trackerPrice);
 
         merged.push({
           id: `part-${partKey}`,
@@ -634,7 +1040,7 @@
           }),
           low,
           high,
-          currency: first.currency || "EUR",
+          currency: (range && range.currency) || first.currency || trackerCurrency || "EUR",
           links,
           priceStatus: first.priceStatus || "",
           stock: first.stock || ""
@@ -665,9 +1071,9 @@
             priority: row["Priority"] || "",
             decision: ""
           }),
-          low: toPrice(row["Price Value"]),
-          high: toPrice(row["Price Value"]),
-          currency: row["Price Currency"] || "EUR",
+          low: (vendorRangeByPart.get(key) && vendorRangeByPart.get(key).low) || toPrice(row["Price Value"]),
+          high: (vendorRangeByPart.get(key) && vendorRangeByPart.get(key).high) || toPrice(row["Price Value"]),
+          currency: (vendorRangeByPart.get(key) && vendorRangeByPart.get(key).currency) || row["Price Currency"] || "EUR",
           links: row["Listing URL"] ? [{ label: row["Supplier"] || "Listing", url: row["Listing URL"] }] : [],
           priceStatus: row["Price Status"] || "",
           stock: row["Stock Status"] || ""
@@ -705,6 +1111,11 @@
       const ordered = loadState(item.id + "-ordered", false);
       const installed = loadState(item.id + "-installed", false);
 
+      const marketPills = [
+        item.hasNew ? '<span class="pill market-new">New</span>' : '',
+        item.hasUsed ? '<span class="pill market-used">Used</span>' : ''
+      ].join('');
+
       const linksHtml = item.links.length
         ? `<div class="links">${item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join("")}</div>`
         : "-";
@@ -717,7 +1128,8 @@
         <td>${item.oem || "-"}</td>
         <td>${item.needType || "-"}</td>
         <td>${item.source || "-"}</td>
-        <td>${money(item.low, item.currency)}</td>
+        <td>${marketPills || "-"}</td>
+        <td>${moneyRange(item.low, item.high, item.currency)}</td>
         <td>${item.priority !== "-" ? `<span class="pill prio-${item.priority}">${item.priority}</span>` : "-"}</td>
         <td>${linksHtml}</td>
         <td class="checkcell"><input type="checkbox" data-role="ordered" ${ordered ? "checked" : ""}></td>
@@ -780,7 +1192,8 @@
               <th>OEM / Ref</th>
               <th>Need Type</th>
               <th>Supplier</th>
-              <th>Price</th>
+              <th>Market</th>
+              <th>Price Range</th>
               <th>Priority</th>
               <th>Links</th>
               <th>Ordered</th>
@@ -906,23 +1319,130 @@
     }
 
     async function loadCsvFile(fileName) {
-      const response = await fetch(fileName, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Cannot load ${fileName}`);
-      return response.text();
+      const fallbackByFile = {
+        "tt600_59x_parts_tracker.csv": `System,Part Name,Need Type,59X Specific or Donor Family,OEM Part Number,Preferred Search Terms,Preferred Source,Condition,Price,Shipping,Verification Status,Decision,Notes
+Front suspension,Fork seal set,New,Verify fork size,,TT600 59X fork seals; XT600 43mm fork seals,Dafy Moto,, , ,Need dimensions,,
+Front suspension,Fork dust seals,New,Verify fork size,,TT600 59X dust seals; XT600 43mm dust seals,eBay / KEDO,, , ,Need dimensions,,
+Front suspension,Fork springs,New,XT600 family Verify 43 mm,,TT600 59X fork springs; XT600 43mm Hyperpro,KEDO / suspension suppliers,, , ,Verify length and diameter,,
+Brakes,Front brake pads,New,TT600 or compatible caliper,,TT600 front brake pads; XT600 front brake pads,Dafy Moto,, , ,Match caliper shape,,
+Brakes,Front braided hose,New,Custom line using stock banjos,,TT600 braided brake line custom length,HEL / Goodridge / Venhill,, , ,Measure exact length,,
+Engine,Oil filter,New,TT600 and XT600 family,91628 or HF145,HF145 TT600 XT600; KEDO 91628,KEDO / Dafy Moto,New,EUR 8.43 on KEDO,Plus shipping,Live confirmed 2026-09-04,Buy now,KEDO 91628 in stock
+Engine,Drain washer 12 mm,New,Generic service part,,12 mm oil drain washer,Dafy Moto,, , ,Service item,,
+Engine,Drain washer 14 mm,New,Generic service part,,14 mm oil drain washer,Dafy Moto,, , ,Service item,,
+Engine,Spark plug,New,Service item,DPR8EA9,DPR8EA9 NGK TT600,Dafy Moto,, , ,Check final ignition setup,,
+Intake,Intake manifolds,New,XT/TT 600 listing verify fit,,TT600 XT600 intake manifolds,ecomotospieces / KEDO,, , ,Compare shape and bolt spacing,,
+Intake,Carb rebuild kit,New,XT600 listing family,,TT600 YDIS carb kit; XT600 carb rebuild kit,KEDO / eBay,, , ,Confirm YDIS-specific contents,,
+Intake,Air filter,New,TT600 to 1992 and TT600E+S 1993+,33112 or 34K-14451-01,TT600 air filter; XT600 air filter,KEDO,New,EUR 18.50 on KEDO,Plus shipping,Live confirmed 2026-09-04,Buy now,KEDO item 33112 in stock
+Transmission,Chain kit,New,TT600 14x50 setup verify final gearing,,TT600 chain kit 14x50 AFAM,kitchaine.fr / Tonnycat,, , ,Check current sprocket plan,,
+Transmission,Master link,New,Chain-size specific,,AFAM master link 520,AccessBK,, , ,Match chain model exactly,,
+Controls,Brake lever,New,XT600 family likely,,TT600 brake lever; XT600 brake lever,Dafy Moto,, , ,Compare pivot and adjuster,,
+Controls,Clutch lever,New,XT600 family likely,,TT600 clutch lever; XT600 clutch lever,Dafy Moto,, , ,Compare pivot and cable seat,,
+Controls,Speedometer drive,Used or New,XT600 43F / 2KF, ,XT600 43F speedo drive; XT600 2KF speedo drive,eBay / breakers,, , ,Explicit workspace interchange,,
+Controls,Speedometer cable,Used or New,XT600 43F / 2KF listings, ,TT600 speedo cable; XT600 speedo cable,eBay / KEDO,, , ,Compare end fittings and length,,
+Controls,Choke cable,Used or New,XT600 43F / 2KF listings, ,TT600 choke cable; XT600 choke cable,eBay / KEDO,, , ,Compare carb end and length,,
+Electrical,Original 6V capacitor,New or tested used,59X specific, ,TT600 59X 6V capacitor,breakers / specialists,, , ,Not applicable for this project,Skip,Project decision is full 12V conversion
+Electrical,CDI,New or proven used,59X-specific curve, ,TT600 59X CDI; Transmic 2JT0,Transmic / tested breaker part,, , ,Do not buy unverified curve,,
+Electrical,12V donor stator,Used,XT600 3TB matched set, ,XT600 3TB stator,eBay / breakers,, , ,Must stay with 3TB flywheel/CDI/RR,Hunt now,Prefer complete donor set from one seller
+Electrical,12V donor flywheel,Used,XT600 3TB matched set, ,XT600 3TB flywheel,eBay / breakers,, , ,Must stay with 3TB stator/CDI/RR,Hunt now,Prefer complete donor set from one seller
+Electrical,12V donor CDI,Used or New,XT600 3TB matched set,3TB-82305-00 or 3TB-82305-10,XT600 3TB CDI; 3TB-82305-00,eBay / breakers / RegulatorRectifier,Used or New,USD 299.99 aftermarket option,Varies by seller,Live aftermarket page confirmed 2026-09-04,Hunt now,Prefer set purchase; aftermarket only if needed
+Electrical,12V donor regulator rectifier,Used or New,XT600 3TB matched set,3TJ-81960-01,XT600 3TB regulator rectifier 3TJ-81960-01,eBay / breakers / Electrex / Shindengen,, , ,Match complete donor set,Hunt now,Mount with airflow on right side near airbox
+Electrical,Ignition coil,Used or New,XT600 3TB or 2KF, ,XT600 ignition coil 12V,eBay / breakers,, , ,Measure primary resistance 3-5 ohm,Hunt now,Keep with conversion set if possible
+Suspension,Rear shock,Used or New,43F / 1VJ / 3AJ family, ,TT600 rear shock; XT600 43F 1VJ 3AJ shock,YSS / Wilbers / breakers,, , ,Verify eye-to-eye and mounts,,
+Bodywork,Headlight plate,New,TT600 style aftermarket, ,TT600 headlight plate white,Enduro Vintage,, , ,Cosmetic fit check,,
+Bodywork,Decal set,New,TT600 style aftermarket, ,TT600 decals,KEDO / eBay,, , ,Cosmetic only,,
+Bodywork,Front fender,New,Universal vintage off-road, ,TT600 vintage front fender,UFO / La Becanerie / Bihr,, , ,Universal drilling may be needed,,
+Bodywork,Side number plates,New,TT600 1984-1992 aftermarket, ,TT600 side panels 84 92,KEDO / Enduro Vintage,, , ,Check hole pattern,,
+Chassis,Tank silent block,New,OEM Yamaha,1W1241820100,1W1241820100,pieces-yam.com,New,EUR 7.70,Plus shipping,Live confirmed 2026-09-04,Buy now,Fitment table includes TT600W 1989 fuel tank
+Engine,Crankcase cover screw set,New,TT600 and XT600 family,10236,KEDO 10236 crankcase cover screw set,KEDO,New,EUR 8.95,Plus shipping,Live confirmed 2026-09-04,Buy now,Good preventive refresh if old screw heads are tired
+Electrical,12V battery AGM,New,59X conversion packaging,YTX5L-BS,YTX5L-BS 12V 4-5Ah,Dafy Moto / equivalent,New,, ,Needs physical sizing check,Plan now,Decide mount under right panel or rear subframe
+Electrical,Fuse block ATO or ATC,New,Universal, ,ATO ATC 6 way fuse box motorcycle,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Target 4 to 6 circuits
+Electrical,Main inline fuse holder,New,Universal, ,ATC inline fuse holder waterproof,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Install close to battery positive
+Electrical,Fuse kit,New,Universal, ,ATO ATC fuse kit 5A 10A 20A,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Initial map 20A main 10A headlight 5A others
+Electrical,TXL or GXL wire set,New,Universal, ,TXL GXL automotive wire 12AWG 14AWG 16AWG 18AWG 20AWG,Vehicle Wiring Products / RS / Farnell,New,, ,Spec defined in loom guide,Buy now,Buy 5 m each main colors
+Electrical,Weatherproof connector kit,New,Universal, ,Superseal 1.5 kit; Deutsch DT kit,RS Components / Farnell / Mouser,New,, ,Spec defined in loom guide,Buy now,Use for stator CDI regulator and branch points
+Electrical,Adhesive heat shrink assortment,New,Universal, ,dual wall heat shrink assortment,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Seal all joints and connector entries
+Electrical,Loom wrap tape,New,Universal,51036,Tesa 51036 fleece tape,Auto electrical supplier,New,, ,Spec defined in loom guide,Buy now,Use instead of generic PVC tape
+Electrical,Split loom conduit,New,Universal, ,split conduit 10mm 13mm,Auto electrical supplier,New,, ,Spec defined in loom guide,Buy now,Protect exposed frame runs
+Electrical,12V bulb conversion set,New,59X conversion, ,12V 35/35W headlight bulb; 12V tail brake bulb; 12V speedo bulbs,Dafy Moto / local supplier,New,, ,Must replace all at once,Buy now,Any remaining 6V bulb can fail on power-up`,
+        "tt600_59x_shopping_map_2026-09-04.csv": `Section,Priority,Part,Supplier,Listing URL,Part Number or Reference,Price Value,Price Currency,Price Status,Stock Status,Notes
+Buy-now,High,Oil filter service kit,KEDO,https://www.kedo.com/kedo-oil-filter-kit-7-pieces-complete.html,91628,8.43,EUR,Fixed,In stock,"TT600 and XT600 family applications listed"
+Buy-now,High,Air filter,KEDO,https://www.kedo.com/air-filter-oem-reference-34k-14451-01.html,33112 / 34K-14451-01,18.50,EUR,Fixed,In stock,"TT600-'92 and TT600E+S listed"
+Buy-now,High,Spark plug DPR8EA-9,KEDO,https://www.kedo.com/ngk-spark-plug-dpr8ea-9-interference-suppressed.html,40008 / DPR8EA-9,4.20,EUR,Fixed,In stock,"Interference-suppressed NGK plug"
+Buy-now,High,Carburettor repair kit,KEDO,https://www.kedo.com/carburettor-repair-kit-tt600r-re-needs-in-addition-gasket-22305.html,94012,21.50,EUR,Fixed,In stock,"TEIKEI carb kit, TT/XT family listed"
+Buy-now,High,Intake manifold set left and right with O-rings,KEDO,https://www.kedo.com/intake-manifold-set-left-right-incl-o-rings-unrestricted-version-2.html,,39.90,EUR,Fixed,Unknown,"Captured from related items on KEDO carb kit page"
+Buy-now,Medium,Crankcase cover Allen screw set,KEDO,https://www.kedo.com/allen-screw-set-for-crankcase-cover-8-8-zinc-coated-10236.html,10236,8.95,EUR,Fixed,In stock,"Useful if original JIS heads are damaged"
+Buy-now,Medium,Magnetic oil drain plug M14x1.5,KEDO,https://www.kedo.com/oil-drain-plug-magnetic-m14x1-5-a-f19mm-gasket-see-94026.html,40535,12.50,EUR,Fixed,In stock,"Magnetic capture of metallic residue"
+Buy-now,Medium,Copper washer 14x20x1.5,KEDO,https://www.kedo.com/cu-washer-14x20x1-5mm.html,94026,0.29,EUR,Fixed,Unknown,"Drain plug sealing washer"
+Buy-now,Medium,Tank silent-bloc,Yamaha OEM via Pieces-Yam,https://www.pieces-yam.com/yamaha-moto/affectation_pieces_detachees/1W1241820100,1W1241820100,7.70,EUR,Fixed,Live page,"OEM part page with TT600W fitment row shown"
+12V core,Critical,CDI replacement option new aftermarket,RegulatorRectifier,https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit,3TB-82305-00-00 / 3TB-82305-10-00,299.99,USD,Fixed,Live page,"Use only in full 3TB conversion strategy"
+12V core,Critical,XT600 3TB stator used,eBay FR,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator,,0,EUR,Market,Blocked,"Price unreadable due to cookie wall; source as matched donor set"
+12V core,Critical,XT600 3TB flywheel used,eBay FR,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel,,0,EUR,Market,Blocked,"Must match stator and CDI generation"
+12V core,Critical,XT600 3TB CDI used,eBay FR,https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00,3TB-82305-00,0,EUR,Market,Blocked,"Verify markings and connector count"
+12V core,Critical,XT600 3TB regulator rectifier used or new,eBay FR,https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01,3TJ-81960-01,0,EUR,Market,Blocked,"Verify donor model and charging behavior"
+12V core,High,XT600 3TB complete electrical set,Leboncoin,https://www.leboncoin.fr/recherche?text=XT600%203TB%20allumage%20complet,,0,EUR,Market,Blocked,"Best way to reduce mismatch risk"
+12V core,High,XT600 3TB loom and pigtails,Leboncoin,https://www.leboncoin.fr/recherche?text=XT600%203TB%20faisceau,,0,EUR,Market,Blocked,"Useful for correct connectors and wire colors"
+Optional,Optional,Oil sump gasket,KEDO,https://www.kedo.com/gasket-for-oil-sump-oem-reference-583-13414-00.html,21030 / 583-13414-00,3.50,EUR,Fixed,In stock,"Optional add-on while ordering service items"
+Optional,Optional,Oil change set complete,KEDO,https://www.kedo.com/oil-change-set-500cc-w-3l-oil-20w50-mineral-motorcycle-oil-oil-sump-gasket-oil-filter-gaskets-o-rings.html,91090,50.70,EUR,Fixed,Unknown,"Alternative bundle instead of separate oil service lines"`,
+  "tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv": `Order Group,Vendor,Priority,Part,Listing URL,Low-End Price Value,High-End Price Value,Currency,Price Status,Stock Status,Order Low Subtotal Formula,Order High Subtotal Formula,Notes
+Order 1,KEDO,High,Oil filter service kit,https://www.kedo.com/kedo-oil-filter-kit-7-pieces-complete.html,8.43,8.43,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 91628
+Order 1,KEDO,High,Air filter,https://www.kedo.com/air-filter-oem-reference-34k-14451-01.html,18.50,18.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 33112
+Order 1,KEDO,High,Spark plug DPR8EA-9,https://www.kedo.com/ngk-spark-plug-dpr8ea-9-interference-suppressed.html,4.20,4.20,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 40008
+Order 1,KEDO,High,Carburettor repair kit,https://www.kedo.com/carburettor-repair-kit-tt600r-re-needs-in-addition-gasket-22305.html,21.50,21.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 94012
+Order 1,KEDO,High,Intake manifold set left and right with O-rings,https://www.kedo.com/intake-manifold-set-left-right-incl-o-rings-unrestricted-version-2.html,39.90,39.90,EUR,Fixed,Unknown,=SUM(F2:F10),=SUM(G2:G10),Price captured from related-items block
+Order 1,KEDO,Medium,Crankcase cover Allen screw set,https://www.kedo.com/allen-screw-set-for-crankcase-cover-8-8-zinc-coated-10236.html,8.95,8.95,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 10236
+Order 1,KEDO,Medium,Magnetic oil drain plug M14x1.5,https://www.kedo.com/oil-drain-plug-magnetic-m14x1-5-a-f19mm-gasket-see-94026.html,12.50,12.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 40535
+Order 1,KEDO,Medium,Copper washer 14x20x1.5,https://www.kedo.com/cu-washer-14x20x1-5mm.html,0.29,0.29,EUR,Fixed,Unknown,=SUM(F2:F10),=SUM(G2:G10),Drain plug washer
+Order 1,KEDO,Low,Oil sump gasket optional,https://www.kedo.com/gasket-for-oil-sump-oem-reference-583-13414-00.html,3.50,3.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),Optional add-on
+Order 2,Yamaha OEM via Pieces-Yam,Medium,Tank silent-bloc,https://www.pieces-yam.com/yamaha-moto/affectation_pieces_detachees/1W1241820100,7.70,7.70,EUR,Fixed,Live page,=SUM(F11:F11),=SUM(G11:G11),OEM ref 1W1241820100
+Order 3,Electrical supplier,High,AGM battery YTX5L-BS class,,25,55,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Fill with chosen supplier
+Order 3,Electrical supplier,High,Blade fuse block 4 to 6 way,,10,25,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),ATO or ATC type
+Order 3,Electrical supplier,High,Weatherproof inline fuse holder,,5,12,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Battery-side main fuse
+Order 3,Electrical supplier,High,Fuse assortment 5A 10A 20A,,5,10,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Initial circuit protection
+Order 3,Electrical supplier,High,TXL or GXL wire set,,35,80,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),5m each main gauge/color set
+Order 3,Electrical supplier,High,Superseal and/or Deutsch connector kit,,25,70,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Engine-side robust connectors preferred
+Order 3,Electrical supplier,Medium,Adhesive heat shrink kit,,8,20,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Dual-wall type
+Order 3,Electrical supplier,Medium,Tesa 51036 loom tape,,8,15,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Final loom wrap
+Order 3,Electrical supplier,Medium,Split conduit 10 and 13 mm,,10,25,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Frame-run protection
+Order 3,Electrical supplier,High,12V bulb conversion set,,15,40,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),All bulbs together
+Order 4,Used donor market,Critical,XT600 3TB stator,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator,60,140,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Prefer full matched donor set
+Order 4,Used donor market,Critical,XT600 3TB flywheel,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel,40,100,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Must match stator generation
+Order 4,Used donor market,Critical,XT600 3TB CDI used,https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00,80,180,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Use only if provenance is credible
+Order 4,Used donor market,Critical,XT600 3TB regulator rectifier,https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01,40,120,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Verify donor year and charging condition
+Order 4,Used donor market,High,XT600 12V ignition coil,https://www.leboncoin.fr/recherche?text=XT600%203TB%20bobine%2012V,20,60,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Target 3 to 5 ohm primary
+Fallback,RegulatorRectifier,Critical,Aftermarket 3TB CDI,https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit,299.99,299.99,USD,Fixed,Live page,=SUM(F26:F26),=SUM(G26:G26),Fallback if donor CDI is the weak link`
+      };
+
+      try {
+        const response = await fetch(fileName, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Cannot load ${fileName}`);
+        return await response.text();
+      } catch (_err) {
+        if (fallbackByFile[fileName]) {
+          const note = document.querySelector(".footer-note");
+          if (note) {
+            note.textContent = "Fallback mode active: CSV fetch failed, using embedded dashboard data. Status checkboxes are still saved in this browser with localStorage.";
+          }
+          return fallbackByFile[fileName];
+        }
+        throw new Error(`Cannot load ${fileName}`);
+      }
     }
 
     async function boot() {
       try {
-        const [trackerCsv, shoppingCsv] = await Promise.all([
+        const [trackerCsv, shoppingCsv, vendorCsv] = await Promise.all([
           loadCsvFile("tt600_59x_parts_tracker.csv"),
-          loadCsvFile("tt600_59x_shopping_map_2026-09-04.csv")
+          loadCsvFile("tt600_59x_shopping_map_2026-09-04.csv"),
+          loadCsvFile("tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv")
         ]);
 
         const trackerRows = parseCSV(trackerCsv);
         const shoppingRows = parseCSV(shoppingCsv);
+        const vendorRows = parseCSV(vendorCsv);
 
-        const merged = mergeData(trackerRows, shoppingRows);
-        renderSystems(merged);
+        const merged = mergeData(trackerRows, shoppingRows, vendorRows);
+        const consolidated = consolidateItems(merged);
+        renderSystems(consolidated);
         renderChecklists();
 
         document.getElementById("search").addEventListener("input", filterRows);
@@ -931,7 +1451,7 @@
 
         filterRows();
       } catch (err) {
-        document.getElementById("systems").innerHTML = `<section class="card empty">${err.message}. Ensure CSV files are in the same folder as this page.</section>`;
+        document.getElementById("systems").innerHTML = `<section class="card empty">${err.message}. If you are opening this as a local file, use a local web server or push to GitHub Pages.</section>`;
       }
     }
 
