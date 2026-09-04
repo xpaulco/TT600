@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT600 59X Project Documents</title>
+  <meta name="description" content="Readable web version of the TT600 59X restoration planning documents, sourcing notes, and 12V conversion guidance.">
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --ink: #201a15;
+      --muted: #675a4d;
+      --panel: rgba(255, 251, 245, 0.88);
+      --line: rgba(64, 46, 23, 0.14);
+      --accent: #8f3d24;
+      --accent-2: #29463a;
+      --gold: #c68d2c;
+      --shadow: 0 18px 42px rgba(49, 31, 15, 0.11);
+      --radius: 22px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Avenir Next", "Segoe UI Variable Text", "Trebuchet MS", sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(198, 141, 44, 0.18), transparent 30%),
+        radial-gradient(circle at 78% 5%, rgba(143, 61, 36, 0.16), transparent 24%),
+        linear-gradient(180deg, #f8f3eb 0%, #f4efe6 50%, #eadfcc 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 25;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      background: rgba(244, 239, 230, 0.74);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      padding: 12px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .eyebrow {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .brand strong {
+      font-size: 1.02rem;
+      letter-spacing: 0.03em;
+    }
+
+    .toplinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .toplinks a,
+    .toc a,
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 8px 13px;
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .toplinks a:hover,
+    .toc a:hover,
+    .toplinks a:focus-visible,
+    .toc a:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(143, 61, 36, 0.38);
+      background: rgba(255, 255, 255, 0.82);
+      outline: none;
+    }
+
+    .hero {
+      padding: 48px 0 22px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+    }
+
+    .hero-card,
+    .toc,
+    .doc,
+    .note,
+    .stat,
+    .decision {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -10%;
+      bottom: -26%;
+      width: 280px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(198, 141, 44, 0.28), transparent 68%);
+      pointer-events: none;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+      margin-top: 8px;
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), #b55232);
+      color: #fff8f2;
+      box-shadow: 0 12px 24px rgba(143, 61, 36, 0.25);
+    }
+
+    .button.secondary {
+      border: 1px solid rgba(41, 70, 58, 0.18);
+      background: rgba(41, 70, 58, 0.08);
+      color: var(--accent-2);
+    }
+
+    .toc {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(36, 57, 47, 0.94), rgba(24, 23, 20, 0.96));
+      color: #f7f1e9;
+    }
+
+    .toc p,
+    .toc li {
+      color: rgba(247, 241, 233, 0.8);
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .toc a {
+      color: #f7f1e9;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 36px;
+    }
+
+    .stat {
+      padding: 18px;
+      min-height: 136px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat .kicker {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .stat strong {
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+      padding-bottom: 56px;
+    }
+
+    .doc {
+      padding: 26px;
+      scroll-margin-top: 86px;
+    }
+
+    .doc-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .doc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      color: var(--accent-2);
+      font-weight: 700;
+      background: rgba(41, 70, 58, 0.06);
+    }
+
+    .subgrid-2,
+    .subgrid-3,
+    .decision-grid,
+    .card-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .subgrid-2,
+    .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .subgrid-3,
+    .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mt-14 {
+      margin-top: 14px;
+    }
+
+    .mt-12 {
+      margin-top: 12px;
+    }
+
+    .note,
+    .decision {
+      padding: 18px;
+    }
+
+    .decision.good {
+      background: linear-gradient(180deg, rgba(244, 250, 246, 0.96), rgba(231, 241, 235, 0.88));
+      border-color: rgba(41, 70, 58, 0.18);
+    }
+
+    .decision.warn {
+      background: linear-gradient(180deg, rgba(255, 248, 242, 0.96), rgba(244, 231, 220, 0.88));
+      border-color: rgba(143, 61, 36, 0.2);
+    }
+
+    ul,
+    ol {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li { margin-top: 6px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      background: rgba(255, 255, 255, 0.38);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+      font-size: 0.96rem;
+    }
+
+    th {
+      background: rgba(41, 70, 58, 0.08);
+      font-weight: 800;
+      color: var(--accent-2);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .callout {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(143, 61, 36, 0.08);
+      border: 1px solid rgba(143, 61, 36, 0.16);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .checklist li::before {
+      content: "□";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    code.inline {
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(41, 70, 58, 0.08);
+      border: 1px solid rgba(41, 70, 58, 0.12);
+      font-family: Consolas, monospace;
+      font-size: 0.93em;
+      color: var(--accent-2);
+    }
+
+    .foot {
+      padding: 6px 0 54px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .subgrid-3,
+      .card-grid,
+      .decision-grid,
+      .subgrid-2,
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .stats,
+      .subgrid-3,
+      .card-grid,
+      .decision-grid,
+      .subgrid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .toc,
+      .doc,
+      .note,
+      .stat,
+      .decision {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="eyebrow">Web Docs</span>
+        <strong>TT600 59X Project Documents</strong>
+      </div>
+      <nav class="toplinks" aria-label="Project links">
+        <a href="index.html">Hub</a>
+        <a href="#buy-order">Buy Order</a>
+        <a href="#conversion-basket">12V Basket</a>
+        <a href="#cdi-decision">CDI Decision</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Readable document set</span>
+        <h1>All the important Markdown guidance, rebuilt as web pages.</h1>
+        <p>
+          This page replaces the raw Markdown browsing experience. It collects the planning,
+          sourcing, compatibility, decision, and execution documents into one cleaner HTML reference.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="tt600_59x_parts_index.html">Open parts catalog</a>
+          <a class="button secondary" href="index.html">Back to main hub</a>
+        </div>
+      </div>
+      <aside class="toc">
+        <h2>Sections</h2>
+        <p>Use this as the readable companion for the existing CSV and HTML files.</p>
+        <div class="toc-links">
+          <a href="tt600_59x_parts_index.html">Parts Catalog</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#buy-order">Buy Order</a>
+          <a href="#shopping-map">Shopping Map</a>
+          <a href="#compatibility">Compatibility</a>
+          <a href="#conversion-basket">12V Basket</a>
+          <a href="#cdi-decision">CDI Decision</a>
+          <a href="#execution-checklist">Checklist</a>
+          <a href="#seller-templates">Seller Templates</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats" aria-label="Project stats">
+      <article class="stat"><div class="kicker">Known Buy-Now Basket</div><strong>€121.97</strong><p>Verified fixed-price items without shipping.</p></article>
+      <article class="stat"><div class="kicker">KEDO First Order</div><strong>€114.97</strong><p>€118.47 with the optional sump gasket.</p></article>
+      <article class="stat"><div class="kicker">Used 3TB Core</div><strong>€240-600</strong><p>Estimated stator, flywheel, CDI, regulator, and coil path.</p></article>
+      <article class="stat"><div class="kicker">Aftermarket CDI</div><strong>$299.99</strong><p>Fallback option if the donor CDI becomes the weak link.</p></article>
+    </section>
+
+    <section class="content">
+      <article id="dashboard" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Project Dashboard</span>
+            <h2>Use the files like tools, not bookmarks.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="index.html">Main hub</a>
+          </div>
+        </div>
+        <div class="subgrid-2">
+          <div class="note">
+            <h3>What this dashboard is for</h3>
+            <ul>
+              <li>Identify which file answers which question.</li>
+              <li>Know what to buy now versus later.</li>
+              <li>Keep the 12V conversion coherent.</li>
+              <li>Avoid duplicate work and duplicate shipping.</li>
+            </ul>
+          </div>
+          <div class="note">
+            <h3>Current practical recommendation</h3>
+            <ul>
+              <li>Buy the service and intake parts now.</li>
+              <li>Delay the electrical install until the 3TB donor system is coherent.</li>
+              <li>Treat the conversion as a matched system problem, not a single-part problem.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-grid mt-14">
+          <div class="note"><h3>Compatibility</h3><p>Use the compatibility matrix when you need to know whether a part can safely be searched under XT600 donor families.</p></div>
+          <div class="note"><h3>Buying</h3><p>Use the shopping map and vendor-grouped purchase CSV when you are actually placing orders.</p></div>
+          <div class="note"><h3>Conversion</h3><p>Use the 12V basket and wiring guide when a wrong decision could damage electrical parts or waste donor money.</p></div>
+        </div>
+      </article>
+
+      <article id="buy-order" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Best Buy Order</span>
+            <h2>Shipping- and risk-optimized purchase sequence.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_index.html">Parts catalog</a>
+            <a class="pill" href="tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv">Vendor CSV</a>
+          </div>
+        </div>
+        <table>
+          <tr><th>Order</th><th>What it covers</th><th>Why it comes now</th><th>Cost signal</th></tr>
+          <tr><td>Order 1</td><td>KEDO service basket</td><td>Gets the bike to a mechanically honest baseline with one clean shipment.</td><td>€114.97 core or €118.47 with optional sump gasket</td></tr>
+          <tr><td>Order 2</td><td>OEM Yamaha one-off parts</td><td>Use only for small genuine parts that do not justify aftermarket substitution.</td><td>€7.70 known current example</td></tr>
+          <tr><td>Order 3</td><td>Loom materials and battery</td><td>These are independent of donor-specific provenance and can be bought while hunting 3TB electrics.</td><td>€146-352 planning range</td></tr>
+          <tr><td>Order 4</td><td>Matched XT600 3TB donor electrics</td><td>Highest-risk purchase group. Buy the system, not isolated cheap parts.</td><td>€240-600 planning range</td></tr>
+        </table>
+        <div class="callout">Avoid buying the CDI first just because it is available. The financially correct unit here is the donor system.</div>
+      </article>
+
+      <article id="shopping-map" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Shopping Map</span>
+            <h2>Direct part-to-listing mapping with fixed prices where confirmed.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_index.html">Parts catalog</a>
+            <a class="pill" href="tt600_59x_shopping_map_2026-09-04.csv">Shopping CSV</a>
+          </div>
+        </div>
+        <table>
+          <tr><th>Part</th><th>Supplier</th><th>Price</th><th>Status</th></tr>
+          <tr><td>Oil filter service kit</td><td>KEDO</td><td>€8.43</td><td>Fixed</td></tr>
+          <tr><td>Air filter</td><td>KEDO</td><td>€18.50</td><td>Fixed</td></tr>
+          <tr><td>Spark plug DPR8EA-9</td><td>KEDO</td><td>€4.20</td><td>Fixed</td></tr>
+          <tr><td>Carburettor repair kit</td><td>KEDO</td><td>€21.50</td><td>Fixed</td></tr>
+          <tr><td>Intake manifold set left and right</td><td>KEDO</td><td>€39.90</td><td>Fixed</td></tr>
+          <tr><td>Tank silent-bloc</td><td>Pieces-Yam</td><td>€7.70</td><td>Fixed</td></tr>
+          <tr><td>Aftermarket 3TB CDI fallback</td><td>RegulatorRectifier</td><td>$299.99</td><td>Fixed</td></tr>
+        </table>
+        <div class="callout">Used 3TB donor parts remain market-priced because marketplace cookie walls blocked exact automated price extraction. The site still includes the search and validation workflow.</div>
+      </article>
+
+      <article id="compatibility" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Compatibility Matrix</span>
+            <h2>What is safe to search under XT600, and what still needs 59X caution.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_index.html">Parts catalog</a>
+          </div>
+        </div>
+        <table>
+          <tr><th>System</th><th>Donor family</th><th>Confidence</th><th>Important note</th></tr>
+          <tr><td>Full 12V conversion</td><td>XT600 3TB stator + flywheel + CDI + regulator</td><td>Explicit</td><td>Use as one matched set, do not mix with 2KF or original 6V pieces.</td></tr>
+          <tr><td>Ignition coil</td><td>XT600 3TB or 2KF</td><td>Explicit</td><td>12V coil type is acceptable in the conversion.</td></tr>
+          <tr><td>Speedometer drive</td><td>XT600 43F / 2KF</td><td>Explicit</td><td>Existing notes treat the front hub drive as the same part.</td></tr>
+          <tr><td>Rear shock</td><td>43F / 1VJ / 3AJ family</td><td>Explicit</td><td>YSS and Wilbers replacements were noted under this family.</td></tr>
+          <tr><td>Intake manifolds</td><td>XT/TT 600 1986-2003 style listings</td><td>Explicit</td><td>Fit still deserves part-number confirmation.</td></tr>
+        </table>
+        <div class="subgrid-2 mt-14">
+          <div class="note">
+            <h3>Safe XT600 search territory</h3>
+            <ul>
+              <li>Speedometer drive gearbox</li>
+              <li>Brake and clutch levers</li>
+              <li>Carb rebuild kit parts</li>
+              <li>Choke and speedometer cables</li>
+              <li>Rear shock family references 43F, 1VJ, 3AJ</li>
+            </ul>
+          </div>
+          <div class="note">
+            <h3>Keep 59X caution</h3>
+            <ul>
+              <li>CDI advance curve and ignition substitution</li>
+              <li>Original 6V architecture and capacitor</li>
+              <li>Battery packaging around the frame oil tank</li>
+              <li>Nikasil cylinder decisions</li>
+              <li>Centre-stand and frame-mounted accessory fitment</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article id="conversion-basket" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">12V Conversion Basket</span>
+            <h2>Mandatory parts, fuse logic, and build constraints.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_electrical.html">Electrical parts</a>
+            <a class="pill" href="tt600_59x_wiring_loom_guide.html">Wiring guide</a>
+          </div>
+        </div>
+        <div class="subgrid-2">
+          <div class="note">
+            <h3>Mandatory donor electronics</h3>
+            <ul>
+              <li>XT600 3TB stator</li>
+              <li>XT600 3TB flywheel rotor</li>
+              <li>Regulator/rectifier 3TJ-81960-01</li>
+              <li>CDI 3TB-82305-00 or 3TB-82305-10 family</li>
+              <li>12V ignition coil</li>
+              <li>YTX5L-BS class AGM battery</li>
+            </ul>
+          </div>
+          <div class="note">
+            <h3>Mandatory loom materials</h3>
+            <ul>
+              <li>4 to 6 way ATO/ATC fuse block</li>
+              <li>Main inline fuse holder</li>
+              <li>5A, 10A, 20A fuse assortment</li>
+              <li>TXL or GXL wire set</li>
+              <li>Superseal or Deutsch connectors</li>
+              <li>Heat shrink, loom tape, and split conduit</li>
+            </ul>
+          </div>
+        </div>
+        <table>
+          <tr><th>Circuit</th><th>Initial fuse</th></tr>
+          <tr><td>Main feed battery to fuse block</td><td>20A</td></tr>
+          <tr><td>Ignition CDI coil feed</td><td>5A</td></tr>
+          <tr><td>Headlight</td><td>10A</td></tr>
+          <tr><td>Tail and brake</td><td>5A</td></tr>
+          <tr><td>Instruments</td><td>5A</td></tr>
+          <tr><td>Spare accessory line</td><td>5A to 10A</td></tr>
+        </table>
+        <div class="callout">Non-negotiable rule: stator, flywheel, CDI, and regulator/rectifier must be electrically compatible as one system.</div>
+      </article>
+
+      <article id="cdi-decision" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">CDI Path Decision</span>
+            <h2>Used matched donor first. Aftermarket fallback second.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_electrical.html">Electrical parts</a>
+          </div>
+        </div>
+        <div class="decision-grid">
+          <div class="decision good">
+            <h3>Path A: used 3TB donor CDI</h3>
+            <ul>
+              <li>Target references: 3TB-82305-00 or 3TB-82305-10 family.</li>
+              <li>Best when acquired inside a complete donor electrical set.</li>
+              <li>Planning range for CDI alone: €80-180.</li>
+              <li>Best-value path if provenance is strong.</li>
+            </ul>
+          </div>
+          <div class="decision warn">
+            <h3>Path B: aftermarket CDI</h3>
+            <ul>
+              <li>Current live price: $299.99.</li>
+              <li>Replaces 3TB-82305-00-00 and 3TB-82305-10-00.</li>
+              <li>Useful when donor CDI provenance is weak.</li>
+              <li>Still only sensible inside a full 3TB conversion.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">Bottom line: the real engineering choice is matched donor system versus fragmented parts, not used CDI versus aftermarket CDI in isolation.</div>
+      </article>
+
+      <article id="execution-checklist" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Execution Checklist</span>
+            <h2>Do the restoration and 12V conversion in dependency order.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_index.html">Parts catalog</a>
+          </div>
+        </div>
+        <div class="subgrid-3">
+          <div class="note">
+            <h3>Phase 1-3</h3>
+            <ul class="checklist">
+              <li>Order KEDO service basket.</li>
+              <li>Refresh intake, carb, air filter, plug, oil, brakes, and fork basics.</li>
+              <li>Confirm full XT600 3TB matched-system path.</li>
+              <li>Lock battery, regulator, and fuse block locations.</li>
+            </ul>
+          </div>
+          <div class="note">
+            <h3>Phase 4-6</h3>
+            <ul class="checklist">
+              <li>Buy loom materials and all 12V bulbs together.</li>
+              <li>Hunt complete 3TB donor electrics first.</li>
+              <li>Bench test minimum ignition circuit before full loom build.</li>
+              <li>Keep CDI trigger path away from the HT lead.</li>
+            </ul>
+          </div>
+          <div class="note">
+            <h3>Phase 7-9</h3>
+            <ul class="checklist">
+              <li>Build fused circuits in the planned order.</li>
+              <li>Verify charging at 13.8V to 14.5V DC around 3000 rpm.</li>
+              <li>Verify earth continuity below 0.2 ohm.</li>
+              <li>Update budget and donor sheets with real outcomes.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article id="seller-templates" class="doc">
+        <div class="doc-header">
+          <div>
+            <span class="eyebrow">Seller Templates</span>
+            <h2>Short, full, and part-specific messages for 3TB donor parts.</h2>
+          </div>
+          <div class="doc-links">
+            <a class="pill" href="tt600_59x_parts_electrical.html">Electrical parts</a>
+            <a class="pill" href="tt600_59x_3tb_donor_leads.csv">Donor leads CSV</a>
+          </div>
+        </div>
+        <div class="subgrid-2">
+          <div class="note">
+            <h3>Short outreach</h3>
+            <p>Use the short French or English message first to confirm donor model, year, visible part number, testing status, and connector photos.</p>
+            <div class="callout mt-12">Best first question: is it really from an XT600 3TB, and can the seller prove it with markings and connectors?</div>
+          </div>
+          <div class="note">
+            <h3>Fast rejection rules</h3>
+            <ul>
+              <li>Walk away if the seller cannot name the donor model.</li>
+              <li>Walk away if they cannot provide part-number photos.</li>
+              <li>Walk away if they claim many XT/TT fits but no source bike.</li>
+              <li>Walk away from isolated random parts with no provenance.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell foot">
+    <p>Static companion page for GitHub Pages. Raw Markdown files remain in the folder for editing, but the site can now stay on HTML pages.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+System,Part Name,Need Type,59X Specific or Donor Family,OEM Part Number,Preferred Search Terms,Preferred Source,Condition,Price,Shipping,Verification Status,Decision,Notes
+Front suspension,Fork seal set,New,Verify fork size,,TT600 59X fork seals; XT600 43mm fork seals,Dafy Moto,, , ,Need dimensions,,
+Front suspension,Fork dust seals,New,Verify fork size,,TT600 59X dust seals; XT600 43mm dust seals,eBay / KEDO,, , ,Need dimensions,,
+Front suspension,Fork springs,New,XT600 family Verify 43 mm,,TT600 59X fork springs; XT600 43mm Hyperpro,KEDO / suspension suppliers,, , ,Verify length and diameter,,
+Brakes,Front brake pads,New,TT600 or compatible caliper,,TT600 front brake pads; XT600 front brake pads,Dafy Moto,, , ,Match caliper shape,,
+Brakes,Front braided hose,New,Custom line using stock banjos,,TT600 braided brake line custom length,HEL / Goodridge / Venhill,, , ,Measure exact length,,
+Engine,Oil filter,New,TT600 and XT600 family,91628 or HF145,HF145 TT600 XT600; KEDO 91628,KEDO / Dafy Moto,New,EUR 8.43 on KEDO,Plus shipping,Live confirmed 2026-09-04,Buy now,KEDO 91628 in stock
+Engine,Drain washer 12 mm,New,Generic service part,,12 mm oil drain washer,Dafy Moto,, , ,Service item,,
+Engine,Drain washer 14 mm,New,Generic service part,,14 mm oil drain washer,Dafy Moto,, , ,Service item,,
+Engine,Spark plug,New,Service item,DPR8EA9,DPR8EA9 NGK TT600,Dafy Moto,, , ,Check final ignition setup,,
+Intake,Intake manifolds,New,XT/TT 600 listing verify fit,,TT600 XT600 intake manifolds,ecomotospieces / KEDO,, , ,Compare shape and bolt spacing,,
+Intake,Carb rebuild kit,New,XT600 listing family,,TT600 YDIS carb kit; XT600 carb rebuild kit,KEDO / eBay,, , ,Confirm YDIS-specific contents,,
+Intake,Air filter,New,TT600 to 1992 and TT600E+S 1993+,33112 or 34K-14451-01,TT600 air filter; XT600 air filter,KEDO,New,EUR 18.50 on KEDO,Plus shipping,Live confirmed 2026-09-04,Buy now,KEDO item 33112 in stock
+Transmission,Chain kit,New,TT600 14x50 setup verify final gearing,,TT600 chain kit 14x50 AFAM,kitchaine.fr / Tonnycat,, , ,Check current sprocket plan,,
+Transmission,Master link,New,Chain-size specific,,AFAM master link 520,AccessBK,, , ,Match chain model exactly,,
+Controls,Brake lever,New,XT600 family likely,,TT600 brake lever; XT600 brake lever,Dafy Moto,, , ,Compare pivot and adjuster,,
+Controls,Clutch lever,New,XT600 family likely,,TT600 clutch lever; XT600 clutch lever,Dafy Moto,, , ,Compare pivot and cable seat,,
+Controls,Speedometer drive,Used or New,XT600 43F / 2KF, ,XT600 43F speedo drive; XT600 2KF speedo drive,eBay / breakers,, , ,Explicit workspace interchange,,
+Controls,Speedometer cable,Used or New,XT600 43F / 2KF listings, ,TT600 speedo cable; XT600 speedo cable,eBay / KEDO,, , ,Compare end fittings and length,,
+Controls,Choke cable,Used or New,XT600 43F / 2KF listings, ,TT600 choke cable; XT600 choke cable,eBay / KEDO,, , ,Compare carb end and length,,
+Electrical,Original 6V capacitor,New or tested used,59X specific, ,TT600 59X 6V capacitor,breakers / specialists,, , ,Not applicable for this project,Skip,Project decision is full 12V conversion
+Electrical,CDI,New or proven used,59X-specific curve, ,TT600 59X CDI; Transmic 2JT0,Transmic / tested breaker part,, , ,Do not buy unverified curve,,
+Electrical,12V donor stator,Used,XT600 3TB matched set, ,XT600 3TB stator,eBay / breakers,, , ,Must stay with 3TB flywheel/CDI/RR,Hunt now,Prefer complete donor set from one seller
+Electrical,12V donor flywheel,Used,XT600 3TB matched set, ,XT600 3TB flywheel,eBay / breakers,, , ,Must stay with 3TB stator/CDI/RR,Hunt now,Prefer complete donor set from one seller
+Electrical,12V donor CDI,Used or New,XT600 3TB matched set,3TB-82305-00 or 3TB-82305-10,XT600 3TB CDI; 3TB-82305-00,eBay / breakers / RegulatorRectifier,Used or New,USD 299.99 aftermarket option,Varies by seller,Live aftermarket page confirmed 2026-09-04,Hunt now,Prefer set purchase; aftermarket only if needed
+Electrical,12V donor regulator rectifier,Used or New,XT600 3TB matched set,3TJ-81960-01,XT600 3TB regulator rectifier 3TJ-81960-01,eBay / breakers / Electrex / Shindengen,, , ,Match complete donor set,Hunt now,Mount with airflow on right side near airbox
+Electrical,Ignition coil,Used or New,XT600 3TB or 2KF, ,XT600 ignition coil 12V,eBay / breakers,, , ,Measure primary resistance 3-5 ohm,Hunt now,Keep with conversion set if possible
+Suspension,Rear shock,Used or New,43F / 1VJ / 3AJ family, ,TT600 rear shock; XT600 43F 1VJ 3AJ shock,YSS / Wilbers / breakers,, , ,Verify eye-to-eye and mounts,,
+Bodywork,Headlight plate,New,TT600 style aftermarket, ,TT600 headlight plate white,Enduro Vintage,, , ,Cosmetic fit check,,
+Bodywork,Decal set,New,TT600 style aftermarket, ,TT600 decals,KEDO / eBay,, , ,Cosmetic only,,
+Bodywork,Front fender,New,Universal vintage off-road, ,TT600 vintage front fender,UFO / La Becanerie / Bihr,, , ,Universal drilling may be needed,,
+Bodywork,Side number plates,New,TT600 1984-1992 aftermarket, ,TT600 side panels 84 92,KEDO / Enduro Vintage,, , ,Check hole pattern,,
+Chassis,Tank silent block,New,OEM Yamaha,1W1241820100,1W1241820100,pieces-yam.com,New,EUR 7.70,Plus shipping,Live confirmed 2026-09-04,Buy now,Fitment table includes TT600W 1989 fuel tank
+Engine,Crankcase cover screw set,New,TT600 and XT600 family,10236,KEDO 10236 crankcase cover screw set,KEDO,New,EUR 8.95,Plus shipping,Live confirmed 2026-09-04,Buy now,Good preventive refresh if old screw heads are tired
+Electrical,12V battery AGM,New,59X conversion packaging,YTX5L-BS,YTX5L-BS 12V 4-5Ah,Dafy Moto / equivalent,New,, ,Needs physical sizing check,Plan now,Decide mount under right panel or rear subframe
+Electrical,Fuse block ATO or ATC,New,Universal, ,ATO ATC 6 way fuse box motorcycle,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Target 4 to 6 circuits
+Electrical,Main inline fuse holder,New,Universal, ,ATC inline fuse holder waterproof,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Install close to battery positive
+Electrical,Fuse kit,New,Universal, ,ATO ATC fuse kit 5A 10A 20A,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Initial map 20A main 10A headlight 5A others
+Electrical,TXL or GXL wire set,New,Universal, ,TXL GXL automotive wire 12AWG 14AWG 16AWG 18AWG 20AWG,Vehicle Wiring Products / RS / Farnell,New,, ,Spec defined in loom guide,Buy now,Buy 5 m each main colors
+Electrical,Weatherproof connector kit,New,Universal, ,Superseal 1.5 kit; Deutsch DT kit,RS Components / Farnell / Mouser,New,, ,Spec defined in loom guide,Buy now,Use for stator CDI regulator and branch points
+Electrical,Adhesive heat shrink assortment,New,Universal, ,dual wall heat shrink assortment,RS Components / auto electric supplier,New,, ,Spec defined in loom guide,Buy now,Seal all joints and connector entries
+Electrical,Loom wrap tape,New,Universal,51036,Tesa 51036 fleece tape,Auto electrical supplier,New,, ,Spec defined in loom guide,Buy now,Use instead of generic PVC tape
+Electrical,Split loom conduit,New,Universal, ,split conduit 10mm 13mm,Auto electrical supplier,New,, ,Spec defined in loom guide,Buy now,Protect exposed frame runs
+Electrical,12V bulb conversion set,New,59X conversion, ,12V 35/35W headlight bulb; 12V tail brake bulb; 12V speedo bulbs,Dafy Moto / local supplier,New,, ,Must replace all at once,Buy now,Any remaining 6V bulb can fail on power-up

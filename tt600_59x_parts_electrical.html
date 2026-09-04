@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT600 59X Electrical & 12V Parts</title>
+  <style>
+    :root { --bg:#f4efe6; --ink:#201a15; --muted:#675a4d; --panel:rgba(255,251,245,.92); --line:rgba(64,46,23,.14); --accent:#8f3d24; --forest:#29463a; --shadow:0 18px 42px rgba(49,31,15,.11); --radius:22px; --max:1180px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Avenir Next","Segoe UI Variable Text","Trebuchet MS",sans-serif; line-height:1.6; color:var(--ink); background:linear-gradient(180deg,#f8f3eb 0%,#f4efe6 55%,#eadfcc 100%); }
+    a { text-decoration:none; color:inherit; }
+    .shell { width:min(calc(100% - 32px),var(--max)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); background:rgba(244,239,230,.74); border-bottom:1px solid var(--line); }
+    .topbar-inner { width:min(calc(100% - 32px),var(--max)); margin:0 auto; padding:12px 0; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+    .brand { display:flex; flex-direction:column; gap:2px; }
+    .eyebrow { font-size:.76rem; text-transform:uppercase; letter-spacing:.18em; color:var(--accent); font-weight:800; }
+    .brand strong { font-size:1.02rem; }
+    .toplinks { display:flex; flex-wrap:wrap; gap:10px; }
+    .toplinks a, .button { border-radius:999px; padding:10px 14px; border:1px solid var(--line); background:rgba(255,255,255,.52); color:var(--muted); font-size:.92rem; font-weight:700; }
+    .hero, .panel, .part-card, .check-card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:28px; margin:42px 0 18px; }
+    h1, h2, h3 { margin:0; font-family:Georgia,"Times New Roman",serif; line-height:1.08; }
+    .hero h1 { font-size:clamp(2.3rem,5vw,4rem); letter-spacing:-.04em; max-width:12ch; margin-top:8px; }
+    .hero p, .panel p, .part-card p, .check-card p { color:var(--muted); margin:0; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+    .button.primary { background:linear-gradient(135deg,var(--accent),#b55232); color:#fff8f2; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+    .panel, .check-card { padding:20px; }
+    .check-card ul { margin:12px 0 0; padding-left:0; list-style:none; color:var(--muted); }
+    .check-card li { position:relative; padding-left:28px; margin-top:8px; }
+    .check-card li::before { content:"□"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700; }
+    .parts { display:grid; gap:16px; padding-bottom:52px; }
+    .part-card { padding:22px; }
+    .part-top { display:flex; justify-content:space-between; gap:12px; align-items:start; }
+    .part-top label { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--forest); }
+    input[type=checkbox] { width:20px; height:20px; accent-color:var(--accent); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .tag { display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(41,70,58,.08); border:1px solid rgba(41,70,58,.12); font-size:.84rem; font-weight:700; color:var(--forest); }
+    .tag.warning { background:rgba(143,61,36,.08); border-color:rgba(143,61,36,.14); color:var(--accent); }
+    .seller-list { display:grid; gap:10px; margin-top:16px; }
+    .seller { display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.45); }
+    .seller strong { color:var(--accent); }
+    .link { font-weight:700; color:var(--forest); }
+    .price { font-weight:800; color:var(--accent); }
+    .status { font-size:.9rem; color:var(--muted); }
+    @media (max-width:760px) { .two-col { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="eyebrow">Grouped Parts</span><strong>Electrical & 12V</strong></div><nav class="toplinks"><a href="tt600_59x_parts_index.html">Catalog</a><a href="index.html">Hub</a></nav></div></header>
+  <main class="shell">
+    <section class="hero"><span class="eyebrow">Highest-risk category</span><h1>Electrical parts grouped as one coherent 12V system.</h1><p>This page exists to stop the most expensive mistake in the project: buying fragmented or mismatched XT600 3TB electrical parts. Treat this page as the canonical conversion shopping list.</p><div class="hero-actions"><a class="button primary" href="tt600_59x_documents.html#cdi-decision">Open CDI decision</a><a class="button" href="tt600_59x_documents.html#seller-templates">Seller templates</a></div></section>
+    <section class="two-col">
+      <article class="panel"><h2>Primary rule</h2><p>Stator, flywheel, CDI, and regulator/rectifier must be electrically compatible as one system. The best buy is a matched 3TB donor set, not isolated cheap parts.</p></article>
+      <article class="check-card"><h2>Electrical & 12V Checklist</h2><ul><li>Confirm the project stays on the full XT600 3TB matched-system path.</li><li>Decide battery, regulator, and fuse block locations before making the loom.</li><li>Buy loom materials and all 12V bulbs together.</li><li>Hunt a complete 3TB donor set before buying isolated parts.</li><li>Bench-test spark before final loom wrapping.</li><li>Confirm charging voltage stays in the 13.8V to 14.5V range.</li></ul></article>
+    </section>
+    <section class="parts">
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">3TB Donor Core</span><h3>XT600 3TB stator</h3></div><label><input type="checkbox" data-part="electrical-stator"> Installed</label></div><p>Used donor part. Must stay paired with the correct 3TB flywheel and CDI generation.</p><div class="tags"><span class="tag warning">Matched system required</span><span class="tag">€60-140 estimate</span></div><div class="seller-list"><div class="seller"><strong>eBay FR</strong><span class="status">Market-priced</span><a class="link" href="https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator">Search page</a></div><div class="seller"><strong>Leboncoin</strong><span class="status">Bundle search recommended</span><a class="link" href="https://www.leboncoin.fr/recherche?text=XT600%203TB%20stator">Search page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">3TB Donor Core</span><h3>XT600 3TB flywheel rotor</h3></div><label><input type="checkbox" data-part="electrical-flywheel"> Installed</label></div><p>Used donor part. Best acquired from the same bike as the stator.</p><div class="tags"><span class="tag warning">Matched system required</span><span class="tag">€40-100 estimate</span></div><div class="seller-list"><div class="seller"><strong>eBay FR</strong><span class="status">Market-priced</span><a class="link" href="https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel">Search page</a></div><div class="seller"><strong>eBay DE</strong><span class="status">Alternative search region</span><a class="link" href="https://www.ebay.de/sch/i.html?_nkw=XT600+3TB+Polrad">Search page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">3TB Donor Core</span><h3>XT600 3TB CDI</h3></div><label><input type="checkbox" data-part="electrical-donor-cdi"> Installed</label></div><p>Preferred as part of a complete donor set. If provenance is weak, this is the first candidate for aftermarket fallback.</p><div class="tags"><span class="tag">3TB-82305-00 / 3TB-82305-10</span><span class="tag">€80-180 used estimate</span></div><div class="seller-list"><div class="seller"><strong>eBay FR</strong><span class="status">Used search</span><a class="link" href="https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00">Search page</a></div><div class="seller"><strong>RegulatorRectifier</strong><span class="price">$299.99</span><span class="status">Fallback new aftermarket</span><a class="link" href="https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit">Seller page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">3TB Donor Core</span><h3>XT600 3TB regulator / rectifier</h3></div><label><input type="checkbox" data-part="electrical-reg-rec"> Installed</label></div><p>Mount with airflow. Used or equivalent new source is acceptable if compatibility is proven.</p><div class="tags"><span class="tag">3TJ-81960-01</span><span class="tag">€40-120 estimate</span></div><div class="seller-list"><div class="seller"><strong>eBay FR</strong><span class="status">Used/new search</span><a class="link" href="https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01">Search page</a></div><div class="seller"><strong>Electrex / Shindengen path</strong><span class="status">Equivalent route noted in wiring guide</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Ignition</span><h3>12V ignition coil</h3></div><label><input type="checkbox" data-part="electrical-coil"> Installed</label></div><p>XT600 3TB or 2KF 12V coil path. Verify primary resistance before trusting it.</p><div class="tags"><span class="tag">€20-60 estimate</span><span class="tag">3-5 ohm primary</span></div><div class="seller-list"><div class="seller"><strong>Leboncoin</strong><span class="status">Used search</span><a class="link" href="https://www.leboncoin.fr/recherche?text=XT600%203TB%20bobine%2012V">Search page</a></div><div class="seller"><strong>eBay FR</strong><span class="status">Alternative search path</span><a class="link" href="https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+bobine+allumage+12V">Search page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Storage</span><h3>AGM battery YTX5L-BS class</h3></div><label><input type="checkbox" data-part="electrical-battery"> Installed</label></div><p>New battery only. Fitment depends on the final location you choose under the right side panel or rear subframe area.</p><div class="tags"><span class="tag">€25-55 estimate</span><span class="tag">Buy new</span></div><div class="seller-list"><div class="seller"><strong>Dafy Moto</strong><span class="status">Likely easiest local source path</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Fuse Protection</span><h3>Fuse block, inline holder, and fuse kit</h3></div><label><input type="checkbox" data-part="electrical-fuse-system"> Installed</label></div><p>Buy these together. This is not exciting shopping, but it prevents fragile improvised wiring later.</p><div class="tags"><span class="tag">€20-47 estimate</span><span class="tag">Buy now</span></div><div class="seller-list"><div class="seller"><strong>RS Components</strong><span class="status">Primary supplier path</span></div><div class="seller"><strong>Auto electrical supplier</strong><span class="status">Equivalent alternative</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Loom Materials</span><h3>Wire, connector kit, heat shrink, tape, conduit</h3></div><label><input type="checkbox" data-part="electrical-loom-materials"> Installed</label></div><p>Buy as one electrical supplies order. These are category-level materials rather than one single component.</p><div class="tags"><span class="tag">€86-210 estimate</span><span class="tag">Superseal / Deutsch</span></div><div class="seller-list"><div class="seller"><strong>RS / Farnell / Mouser</strong><span class="status">Connectors and electrical consumables</span></div><div class="seller"><strong>Vehicle Wiring Products</strong><span class="status">Wire supply path</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Lighting</span><h3>12V bulb conversion set</h3></div><label><input type="checkbox" data-part="electrical-bulb-set"> Installed</label></div><p>All bulbs must change together. Do not leave any 6V bulb in the bike during first 12V power-up.</p><div class="tags"><span class="tag">€15-40 estimate</span><span class="tag warning">All bulbs together</span></div><div class="seller-list"><div class="seller"><strong>Dafy Moto / local supplier</strong><span class="status">Final bulb type depends on your headlight holder and speedo bulbs</span></div></div></article>
+    </section>
+  </main>
+  <script>const k='tt60059x-installed-';document.querySelectorAll('input[type="checkbox"][data-part]').forEach(cb=>{cb.checked=localStorage.getItem(k+cb.dataset.part)==='1';cb.addEventListener('change',()=>localStorage.setItem(k+cb.dataset.part,cb.checked?'1':'0'));});</script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT600 59X — Custom 12V Loom Build Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;padding:16px;background:#fafaf8;max-width:800px;margin:0 auto;line-height:1.6}
+h1{font-size:17px;font-weight:600;margin-bottom:4px}
+.sub{font-size:12px;color:#777;margin-bottom:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tab{padding:6px 14px;border-radius:20px;border:1px solid #ddd;font-size:12px;cursor:pointer;background:#f5f5f3;color:#555;user-select:none;transition:all .15s}
+.tab.active{background:#3C3489;border-color:#3C3489;color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+h3{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin:18px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee}
+h3:first-child{margin-top:0}
+
+/* tip rows */
+.tip-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0eeea}
+.tip-row:last-child{border-bottom:none}
+.tip-icon{flex-shrink:0;width:24px;text-align:center;font-size:15px;line-height:1.5}
+.tip-body{flex:1}
+.tip-body strong{display:block;font-size:13px;font-weight:500;margin-bottom:2px;color:#111}
+.tip-body span{color:#666;font-size:12px}
+
+/* component cards */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
+.comp-card{border:1px solid #e8e6e0;border-radius:8px;padding:10px 12px;background:#fff}
+.comp-card .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#888;margin-bottom:4px}
+.comp-card .name{font-size:13px;font-weight:500;color:#111;margin-bottom:3px}
+.comp-card .detail{font-size:12px;color:#555}
+.comp-card .warn{font-size:11px;color:#712B13;margin-top:4px;background:#FAECE7;padding:3px 7px;border-radius:4px}
+
+/* wire table */
+table{width:100%;border-collapse:collapse;margin-bottom:12px}
+th{text-align:left;padding:6px 8px;font-size:11px;font-weight:600;background:#f0eeea;border-bottom:1px solid #ddd}
+td{padding:6px 8px;font-size:12px;border-bottom:1px solid #f0eeea;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.swatch{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:middle;border:0.5px solid rgba(0,0,0,.15)}
+
+/* step cards */
+.step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#3C3489;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;margin-top:2px}
+.step-body strong{display:block;font-size:13px;font-weight:500;margin-bottom:3px;color:#111}
+.step-body span{font-size:12px;color:#555}
+
+/* tags */
+.tag{font-size:10px;padding:2px 7px;border-radius:20px;white-space:nowrap;font-weight:600;margin-left:6px}
+.tag-warn{background:#FCEBEB;color:#791F1F}
+.tag-59x{background:#FAECE7;color:#712B13}
+.tag-tip{background:#E1F5EE;color:#085041}
+
+/* fuse block */
+.fuse-table td:first-child{font-weight:500}
+.fuse-table td:nth-child(2){color:#085041;font-weight:600}
+
+/* connector note */
+.note-box{background:#EEEDFE;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#3C3489;line-height:1.6}
+.warn-box{background:#FAECE7;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#712B13;line-height:1.6}
+</style>
+</head>
+<body>
+
+<h1>TT600 59X — Custom 12V Loom Build Guide</h1>
+<p class="sub">1987–88 · Full scratch build · XT600 3TB donor electrics</p>
+
+<div class="tabs">
+  <div class="tab active" onclick="show('comp',this)">🔌 Components</div>
+  <div class="tab" onclick="show('wire',this)">🔵 Wire spec</div>
+  <div class="tab" onclick="show('fuse',this)">⚡ Fuse layout</div>
+  <div class="tab" onclick="show('connectors',this)">🔗 Connectors</div>
+  <div class="tab" onclick="show('build',this)">🔧 Build sequence</div>
+  <div class="tab" onclick="show('gotchas',this)">⚠️ 59X gotchas</div>
+</div>
+
+<!-- COMPONENTS -->
+<div id="comp" class="panel active">
+  <h3>What you need — donor components from XT600 3TB</h3>
+
+  <div class="note-box">
+    Take the entire 3TB electrical system as a unit from a donor bike or breaker — stator, flywheel, CDI, and regulator/rectifier must all be matched to each other. Don't mix 3TB and 2KF electrical parts.
+  </div>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="label">Charging</div>
+      <div class="name">3TB Stator</div>
+      <div class="detail">3-phase AC output. Has a dedicated CDI trigger coil (separate wire) and an AC lighting coil. Both are used in the 12V conversion.</div>
+      <div class="warn">⚠ Must be paired with the 3TB flywheel — not interchangeable with 6V stator/flywheel</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Charging</div>
+      <div class="name">3TB Flywheel rotor</div>
+      <div class="detail">Carries the trigger magnet matched to the 3TB CDI pickup. Swap as a set with the stator.</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Charging</div>
+      <div class="name">Regulator / Rectifier</div>
+      <div class="detail">XT600 3TB unit (OE: 3TJ-81960-01). Converts AC to DC and regulates to ~14.4V. Aftermarket: Electrex RR07 or Shindengen SH532. Mount with airflow — these run hot.</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Ignition</div>
+      <div class="name">3TB CDI unit</div>
+      <div class="detail">OE: 3TB-82305-00. Takes trigger signal from stator pickup, fires the coil. Aftermarket digital replacements available from regulatorrectifier.com (ships to France).</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Ignition</div>
+      <div class="name">12V Ignition coil</div>
+      <div class="detail">From any XT600 3TB/2KF. Standard 12V coil, 3–5Ω primary. Also where your tachometer signal wire connects (coil negative).</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Storage</div>
+      <div class="name">12V battery</div>
+      <div class="detail">Small AGM unit — YTX5L-BS or similar (12V 4–5Ah). The 59X oil tank occupies the usual frame-triangle battery space — mount under seat or fabricate a bracket on the right side panel area.</div>
+      <div class="warn">⚠ Battery location is a key 59X-specific planning decision — decide before routing wires</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Lighting</div>
+      <div class="name">All bulbs → 12V</div>
+      <div class="detail">Headlight (35/35W H4 or BA20d), taillight, speedo illumination. Replace every single bulb at the same time — one 6V bulb left in a 12V system blows immediately.</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Instruments</div>
+      <div class="name">Tachometer</div>
+      <div class="detail">Koso RX-2N or Daytona Velona — wired to coil negative. Single-cylinder 4-stroke = 1 pulse/rev, no calibration needed. €40–70.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WIRE SPEC -->
+<div id="wire" class="panel">
+  <h3>Wire specification and colour coding</h3>
+
+  <div class="note-box">
+    Use TXL or GXL automotive wire — thin-wall, 125°C rated, far better than standard PVC wire in the heat near the engine. Source from Vehicle Wiring Products or similar. Buy 5m of each colour minimum.
+  </div>
+
+  <table>
+    <tr>
+      <th>Circuit</th>
+      <th>Gauge (mm²)</th>
+      <th>AWG equiv.</th>
+      <th>Colour (Yamaha convention)</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Main battery feed</td>
+      <td>4.0 mm²</td>
+      <td>12 AWG</td>
+      <td><span class="swatch" style="background:#e00"></span>Red</td>
+      <td>From battery + to fuse block. Short run, heavy duty.</td>
+    </tr>
+    <tr>
+      <td>Main earth / frame</td>
+      <td>4.0 mm²</td>
+      <td>12 AWG</td>
+      <td><span class="swatch" style="background:#111"></span>Black</td>
+      <td>Battery − to single central earth point on frame.</td>
+    </tr>
+    <tr>
+      <td>Charging (stator AC output)</td>
+      <td>2.5 mm²</td>
+      <td>14 AWG</td>
+      <td><span class="swatch" style="background:#fff;border:1px solid #ccc"></span>White (×3)</td>
+      <td>Three-phase AC from stator to regulator/rectifier. Keep equal length.</td>
+    </tr>
+    <tr>
+      <td>Regulator DC output</td>
+      <td>2.5 mm²</td>
+      <td>14 AWG</td>
+      <td><span class="swatch" style="background:#e00"></span>Red</td>
+      <td>Regulated 12V DC from rectifier to fuse block / battery.</td>
+    </tr>
+    <tr>
+      <td>Ignition (switched 12V)</td>
+      <td>1.5 mm²</td>
+      <td>16 AWG</td>
+      <td><span class="swatch" style="background:#e00"></span>Red/White</td>
+      <td>From ignition switch to CDI, coil +, instruments.</td>
+    </tr>
+    <tr>
+      <td>CDI trigger wire</td>
+      <td>0.5 mm²</td>
+      <td>20 AWG</td>
+      <td><span class="swatch" style="background:#fff;border:1px solid #aaa"></span>White/Red</td>
+      <td>Stator pickup to CDI. Route AWAY from HT lead — keep at least 50mm separation. Do not run alongside ignition coil wire.</td>
+    </tr>
+    <tr>
+      <td>Coil primary (−)</td>
+      <td>1.0 mm²</td>
+      <td>18 AWG</td>
+      <td><span class="swatch" style="background:#111"></span>Black/Yellow</td>
+      <td>CDI output to coil negative. Also tachometer signal pickup point.</td>
+    </tr>
+    <tr>
+      <td>HT (spark plug) lead</td>
+      <td>—</td>
+      <td>—</td>
+      <td><span class="swatch" style="background:#111"></span>Black</td>
+      <td>Suppressed HT lead only — NGK or similar. Never route parallel to CDI trigger wire.</td>
+    </tr>
+    <tr>
+      <td>Headlight</td>
+      <td>1.5 mm²</td>
+      <td>16 AWG</td>
+      <td><span class="swatch" style="background:#ff0;border:1px solid #ccc"></span>Yellow</td>
+      <td>Direct from fuse block. 35W bulb = ~3A at 12V.</td>
+    </tr>
+    <tr>
+      <td>Taillight / brake light</td>
+      <td>1.0 mm²</td>
+      <td>18 AWG</td>
+      <td><span class="swatch" style="background:#007700"></span>Green</td>
+      <td>Taillight from lighting circuit, brake light from front brake switch.</td>
+    </tr>
+    <tr>
+      <td>Kill switch</td>
+      <td>0.75 mm²</td>
+      <td>18–20 AWG</td>
+      <td><span class="swatch" style="background:#111"></span>Black/White</td>
+      <td>Grounds the CDI when closed (engine stop). Short circuit to frame = engine off.</td>
+    </tr>
+    <tr>
+      <td>All earth returns</td>
+      <td>1.0–1.5 mm²</td>
+      <td>16–18 AWG</td>
+      <td><span class="swatch" style="background:#111"></span>Black</td>
+      <td>All return to single earth point — never rely on chassis connections through paintwork.</td>
+    </tr>
+  </table>
+
+  <div class="warn-box">
+    <strong>The single earth point rule:</strong> Run a dedicated black earth wire from every component back to one single bolt on the frame (a good spot is the engine earth bolt near the battery mount). Never daisy-chain earths or rely on chassis continuity through painted joints. A bad earth is responsible for 80% of mysterious electrical faults on rebuilt bikes.
+  </div>
+</div>
+
+<!-- FUSE LAYOUT -->
+<div id="fuse" class="panel">
+  <h3>Fuse block layout</h3>
+
+  <div class="note-box">
+    Use a blade-fuse block (ATO/ATC type, 4–6 way). Mount it somewhere accessible but protected — inside a side panel or under the headstock is ideal on the 59X. Include a main fuse on the battery feed before anything else.
+  </div>
+
+  <table class="fuse-table">
+    <tr>
+      <th>Circuit</th>
+      <th>Fuse rating</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Main feed (battery to fuse block)</td>
+      <td>20A</td>
+      <td>Inline fuse as close to battery + as possible. This protects the entire loom from a dead short.</td>
+    </tr>
+    <tr>
+      <td>Ignition / CDI / coil</td>
+      <td>5A</td>
+      <td>Switched via ignition switch. Feeds CDI, coil primary +, kill switch circuit.</td>
+    </tr>
+    <tr>
+      <td>Headlight</td>
+      <td>10A</td>
+      <td>35/35W H4 = ~6A. 10A gives headroom. Switched with ignition.</td>
+    </tr>
+    <tr>
+      <td>Tail / brake light</td>
+      <td>5A</td>
+      <td>Tail 5W + brake 21W = ~2.5A. 5A fuse adequate.</td>
+    </tr>
+    <tr>
+      <td>Instruments (speedo, tacho)</td>
+      <td>5A</td>
+      <td>Low draw — keep separate from ignition circuit to avoid noise on tach signal.</td>
+    </tr>
+    <tr>
+      <td>Spare / accessories</td>
+      <td>5–10A</td>
+      <td>USB charger, phone mount, GPS etc. Wire in now even if unused — much easier than adding later.</td>
+    </tr>
+  </table>
+</div>
+
+<!-- CONNECTORS -->
+<div id="connectors" class="panel">
+  <h3>Connector choice</h3>
+
+  <div class="note-box">
+    The right connector choice makes the difference between a loom that lasts 20 years and one that corrodes in 2. The 59X lives in a harsh environment — mud, water, vibration. Use weatherproof connectors throughout.
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">✅</div>
+    <div class="tip-body">
+      <strong>Superseal 1.5 (TE Connectivity) — primary recommendation</strong>
+      <span>The gold standard for motorcycle loom builds. Fully weatherproof, vibration resistant, positive locking, available in 1–6 pin configurations. Each wire gets a rubber seal at entry. Used by Yamaha itself on later models. Available in France from RS Components, Farnell, or Mouser. Buy the extraction tool at the same time — you will need it.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">✅</div>
+    <div class="tip-body">
+      <strong>Deutsch DT series — for high-vibration runs</strong>
+      <span>Slightly bulkier than Superseal but even more robust. Good choice for the engine-side connectors (stator, CDI) where heat and vibration are highest. DT04-2P / DT06-2S are the most common sizes for this application.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">✅</div>
+    <div class="tip-body">
+      <strong>Japanese bullet connectors (Sumitomo/Yazaki style) — for non-critical points</strong>
+      <span>Acceptable for low-current, protected connections (speedo illumination, instrument feeds) where Superseal is overkill. Always use dialectric grease inside the connector at assembly.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">❌</div>
+    <div class="tip-body">
+      <strong>Scotchlok / Posi-Tap / insulation displacement connectors — never use these</strong>
+      <span>The blue, red and yellow crimp connectors from hardware stores. They work initially and fail slowly — corroding from inside, increasing resistance over months. This is exactly what the previous owner used on your 59X. Never use them on a build you want to last.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔧</div>
+    <div class="tip-body">
+      <strong>Termination method: solder + heat shrink or ratchet crimp — not both</strong>
+      <span>Choose one method and stick to it. Solder + adhesive-lined heat shrink is the most durable for a loom that won't be frequently disassembled. A ratchet crimp tool (not plier crimps) with the correct die for Superseal 1.5 pins gives professional-grade mechanical connections. Never solder inside a connector body — the flux traps moisture.</span>
+    </div>
+  </div>
+
+  <h3>Loom protection materials</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">🎁</div>
+    <div class="tip-body">
+      <strong>Tesa 51036 PET fleece tape — for wrapping the loom</strong>
+      <span>The professional standard for motorcycle loom wrapping. Rated to 150°C, abrasion resistant, doesn't go sticky with age or heat unlike PVC electrical tape. Wrap in overlapping 50% passes. Available from auto electrical suppliers in France.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🎁</div>
+    <div class="tip-body">
+      <strong>Split polyethylene conduit — for frame-routed sections</strong>
+      <span>Anywhere the loom runs inside the frame tubes or along exposed sections. Provides abrasion protection and makes the loom look factory-clean. Available in 10mm and 13mm diameter.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🎁</div>
+    <div class="tip-body">
+      <strong>Adhesive-lined heat shrink — at all junctions and connector entries</strong>
+      <span>The dual-wall type (glue-lined inside) creates a fully waterproof seal at every wire entry point. Use at any point where a wire enters a connector, passes through a frame grommet, or is soldered.</span>
+    </div>
+  </div>
+</div>
+
+<!-- BUILD SEQUENCE -->
+<div id="build" class="panel">
+  <h3>Recommended build sequence</h3>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Study both diagrams before cutting a single wire</strong>
+      <span>Have your original 59X factory diagram and the XT600 3TB diagram open side by side. Mark in red every circuit that changes in the conversion (charging, CDI, coil) and in green every circuit that stays the same (kill switch, headlight, brake light). This gives you your complete circuit list before you start.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Dry-fit the bike completely and decide connector locations</strong>
+      <span>Mount everything on the bare frame — battery position, fuse block, CDI, regulator/rectifier — before any wiring starts. The 59X oil tank in the frame triangle means battery placement is non-standard. Decide this now, not halfway through wiring. Mark connector split-points with tape.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Build the ignition circuit first — test it standalone</strong>
+      <span>Wire: stator trigger → CDI → coil → spark plug. This is the minimum needed to confirm the engine fires. Use temporary clip leads, not permanent connections yet. Confirm spark before committing to the full loom. This saves hours of debugging later.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Build the charging circuit second</strong>
+      <span>Stator AC output (3 white wires) → regulator/rectifier → fuse block → battery. Test output voltage with a multimeter at ~3000 rpm: should read 13.8–14.5V DC. If it reads over 15V the regulator is faulty — replace before connecting anything else.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <strong>Add the earth network</strong>
+      <span>Run individual earth wires from every component to the single earth point. Do not connect any accessories yet. Test continuity from each component earth to battery negative — should read under 0.2Ω. Any higher = bad connection, find and fix it now.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <strong>Wire the ignition switch and kill switch</strong>
+      <span>The kill switch on the 59X works by grounding the CDI (not by cutting power) — replicate this exactly. Test that the engine stops cleanly with the kill switch before proceeding. Wire the ignition switch to feed the ignition circuit and lighting circuit as separate switched outputs.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">7</div>
+    <div class="step-body">
+      <strong>Lighting circuits</strong>
+      <span>Headlight, taillight, brake light switch (front). Run each through its own fuse. Confirm all 12V bulbs are fitted before first power-on. Test brake light activation from the front lever.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">8</div>
+    <div class="step-body">
+      <strong>Instruments — speedo and tachometer</strong>
+      <span>Tachometer: power from ignition-switched +12V, earth to central earth point, signal wire to coil negative. Speedo: mechanical cable drive from front wheel — no wiring needed. Test tach reading at idle (should show ~800–1000 rpm on a warm 59X).</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">9</div>
+    <div class="step-body">
+      <strong>Dress, label and protect the loom</strong>
+      <span>Once all circuits are tested and working: bundle wires into logical groups, wrap with Tesa fleece tape, run through split conduit where needed, secure with cable ties every 150–200mm. Label every connector with a permanent marker or print labels and cover with clear heat shrink. Draw a final wiring diagram that reflects what was actually built — not what was planned.</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">10</div>
+    <div class="step-body">
+      <strong>Cold soak and full functional test</strong>
+      <span>Leave the bike overnight. Start cold and check: charging voltage at idle and at 3000 rpm, headlight brightness, brake light operation, tach reading, kill switch. Then run for 20 minutes and recheck. Any voltage sag on the headlight at idle = charging issue to investigate before riding.</span>
+    </div>
+  </div>
+</div>
+
+<!-- GOTCHAS -->
+<div id="gotchas" class="panel">
+  <h3>59X-specific wiring traps</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">⚠️</div>
+    <div class="tip-body">
+      <strong>CDI trigger wire must be isolated from the HT lead <span class="tag tag-59x">59X specific</span></strong>
+      <span>The CDI pickup trigger wire (from the stator to the CDI) carries a very weak signal — millivolts. The HT lead carries 10,000+ volts at each firing. If these two wires run parallel for any distance, the HT lead induces false pulses in the trigger wire and the CDI misfires or refuses to fire. Keep them separated by at least 50mm and cross them at 90° if they must cross at all. On the 59X the CDI sits at the headstock — the trigger wire runs down the left side of the frame and the HT lead runs down the right. Keep it that way.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">⚠️</div>
+    <div class="tip-body">
+      <strong>Battery location planning <span class="tag tag-59x">59X specific</span></strong>
+      <span>The original 59X had no battery — just a capacitor. The frame triangle where most bikes put a battery is occupied by the oil tank. Common solutions: a small AGM battery (YTX5L-BS) mounted under the right side panel on a fabricated bracket, or inside the rear subframe area. Decide before routing wires — the main feed length from battery to fuse block depends entirely on where you mount it.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">⚠️</div>
+    <div class="tip-body">
+      <strong>The 3TB stator has two separate coil outputs — don't confuse them</strong>
+      <span>The 3TB stator produces: (a) three-phase AC from the main charging coils — three white wires to the regulator/rectifier; and (b) a separate AC lighting coil — one or two wires, sometimes yellow, that can power the headlight directly from AC if you prefer. On a full 12V DC conversion, run everything through the rectifier and ignore the separate lighting coil tap, or use it for headlight-only if your rectifier doesn't have enough capacity. The third output is the CDI trigger pickup — a very thin wire, often white/red. Never connect this to the main coil circuit.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">⚠️</div>
+    <div class="tip-body">
+      <strong>Do the full conversion in one go — no half-measures</strong>
+      <span>The most common failure mode seen on forum builds is a "partial" 12V conversion — new stator and rectifier but some 6V components left in place, or 12V and 6V circuits sharing earths. These create voltage conflicts that are almost impossible to diagnose without an oscilloscope. Commit fully: every bulb, every component, one voltage, one earth point.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">⚠️</div>
+    <div class="tip-body">
+      <strong>The regulator/rectifier needs airflow — mount it carefully</strong>
+      <span>The 3TB regulator/rectifier runs warm under normal use and hot under load. Mount it somewhere with airflow — not tucked inside a closed side panel. The right side of the frame near the airbox is ideal on the 59X. If it overheats it fails silently and you boil the battery without knowing why.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">💡</div>
+    <div class="tip-body">
+      <strong>Draw the final diagram as-built — not as-planned <span class="tag tag-tip">Pro tip</span></strong>
+      <span>Your wiring plan will change during the build — routes will move, connector positions will shift, you'll add a circuit or remove one. The diagram you started with will be wrong by the end. Before closing everything up, trace every wire as it actually sits on the bike and draw the final as-built diagram. Laminate it and store it with the bike's documents. Future-you (or a mechanic) will be very grateful.</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

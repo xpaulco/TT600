@@ -1,0 +1,32 @@
+Order Group,Vendor,Priority,Part,Listing URL,Low-End Price Value,High-End Price Value,Currency,Price Status,Stock Status,Order Low Subtotal Formula,Order High Subtotal Formula,Notes
+Order 1,KEDO,High,Oil filter service kit,https://www.kedo.com/kedo-oil-filter-kit-7-pieces-complete.html,8.43,8.43,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 91628
+Order 1,KEDO,High,Air filter,https://www.kedo.com/air-filter-oem-reference-34k-14451-01.html,18.50,18.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 33112
+Order 1,KEDO,High,Spark plug DPR8EA-9,https://www.kedo.com/ngk-spark-plug-dpr8ea-9-interference-suppressed.html,4.20,4.20,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 40008
+Order 1,KEDO,High,Carburettor repair kit,https://www.kedo.com/carburettor-repair-kit-tt600r-re-needs-in-addition-gasket-22305.html,21.50,21.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 94012
+Order 1,KEDO,High,Intake manifold set left and right with O-rings,https://www.kedo.com/intake-manifold-set-left-right-incl-o-rings-unrestricted-version-2.html,39.90,39.90,EUR,Fixed,Unknown,=SUM(F2:F10),=SUM(G2:G10),Price captured from related-items block
+Order 1,KEDO,Medium,Crankcase cover Allen screw set,https://www.kedo.com/allen-screw-set-for-crankcase-cover-8-8-zinc-coated-10236.html,8.95,8.95,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 10236
+Order 1,KEDO,Medium,Magnetic oil drain plug M14x1.5,https://www.kedo.com/oil-drain-plug-magnetic-m14x1-5-a-f19mm-gasket-see-94026.html,12.50,12.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),KEDO 40535
+Order 1,KEDO,Medium,Copper washer 14x20x1.5,https://www.kedo.com/cu-washer-14x20x1-5mm.html,0.29,0.29,EUR,Fixed,Unknown,=SUM(F2:F10),=SUM(G2:G10),Drain plug washer
+Order 1,KEDO,Low,Oil sump gasket optional,https://www.kedo.com/gasket-for-oil-sump-oem-reference-583-13414-00.html,3.50,3.50,EUR,Fixed,In stock,=SUM(F2:F10),=SUM(G2:G10),Optional add-on
+Order 2,Yamaha OEM via Pieces-Yam,Medium,Tank silent-bloc,https://www.pieces-yam.com/yamaha-moto/affectation_pieces_detachees/1W1241820100,7.70,7.70,EUR,Fixed,Live page,=SUM(F11:F11),=SUM(G11:G11),OEM ref 1W1241820100
+Order 3,Electrical supplier,High,AGM battery YTX5L-BS class,,25,55,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Fill with chosen supplier
+Order 3,Electrical supplier,High,Blade fuse block 4 to 6 way,,10,25,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),ATO or ATC type
+Order 3,Electrical supplier,High,Weatherproof inline fuse holder,,5,12,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Battery-side main fuse
+Order 3,Electrical supplier,High,Fuse assortment 5A 10A 20A,,5,10,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Initial circuit protection
+Order 3,Electrical supplier,High,TXL or GXL wire set,,35,80,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),5m each main gauge/color set
+Order 3,Electrical supplier,High,Superseal and/or Deutsch connector kit,,25,70,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Engine-side robust connectors preferred
+Order 3,Electrical supplier,Medium,Adhesive heat shrink kit,,8,20,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Dual-wall type
+Order 3,Electrical supplier,Medium,Tesa 51036 loom tape,,8,15,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Final loom wrap
+Order 3,Electrical supplier,Medium,Split conduit 10 and 13 mm,,10,25,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),Frame-run protection
+Order 3,Electrical supplier,High,12V bulb conversion set,,15,40,EUR,Estimate,Planning range,=SUM(F12:F20),=SUM(G12:G20),All bulbs together
+Order 4,Used donor market,Critical,XT600 3TB stator,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator,60,140,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Prefer full matched donor set
+Order 4,Used donor market,Critical,XT600 3TB flywheel,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel,40,100,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Must match stator generation
+Order 4,Used donor market,Critical,XT600 3TB CDI used,https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00,80,180,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Use only if provenance is credible
+Order 4,Used donor market,Critical,XT600 3TB regulator rectifier,https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01,40,120,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Verify donor year and charging condition
+Order 4,Used donor market,High,XT600 12V ignition coil,https://www.leboncoin.fr/recherche?text=XT600%203TB%20bobine%2012V,20,60,EUR,Estimate,Planning range,=SUM(F21:F25),=SUM(G21:G25),Target 3 to 5 ohm primary
+Fallback,RegulatorRectifier,Critical,Aftermarket 3TB CDI,https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit,299.99,299.99,USD,Fixed,Live page,=SUM(F26:F26),=SUM(G26:G26),Fallback if donor CDI is the weak link
+Summary,All vendors,,Order 1 KEDO subtotal,,=SUM(F2:F10),=SUM(G2:G10),EUR,Computed,,=SUM(F2:F10),=SUM(G2:G10),Includes optional sump gasket
+Summary,All vendors,,Order 2 OEM subtotal,,=SUM(F11:F11),=SUM(G11:G11),EUR,Computed,,=SUM(F11:F11),=SUM(G11:G11),Single-item OEM order currently
+Summary,All vendors,,Order 3 electrical-supplies subtotal,,=SUM(F12:F20),=SUM(G12:G20),EUR,Computed,,=SUM(F12:F20),=SUM(G12:G20),Low and high planning values
+Summary,All vendors,,Order 4 donor-market subtotal,,=SUM(F21:F25),=SUM(G21:G25),EUR,Computed,,=SUM(F21:F25),=SUM(G21:G25),Low and high planning values
+Summary,All vendors,,Fallback CDI subtotal,,=SUM(F26:F26),=SUM(G26:G26),USD,Computed,,=SUM(F26:F26),=SUM(G26:G26),Separate because it is a path choice

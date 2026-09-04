@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT600 59X Body & Plastics Parts</title>
+  <style>
+    :root { --bg:#f4efe6; --ink:#201a15; --muted:#675a4d; --panel:rgba(255,251,245,.92); --line:rgba(64,46,23,.14); --accent:#8f3d24; --forest:#29463a; --shadow:0 18px 42px rgba(49,31,15,.11); --radius:22px; --max:1180px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Avenir Next","Segoe UI Variable Text","Trebuchet MS",sans-serif; line-height:1.6; color:var(--ink); background:linear-gradient(180deg,#f8f3eb 0%,#f4efe6 55%,#eadfcc 100%); }
+    a { text-decoration:none; color:inherit; }
+    .shell { width:min(calc(100% - 32px),var(--max)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); background:rgba(244,239,230,.74); border-bottom:1px solid var(--line); }
+    .topbar-inner { width:min(calc(100% - 32px),var(--max)); margin:0 auto; padding:12px 0; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+    .brand { display:flex; flex-direction:column; gap:2px; }
+    .eyebrow { font-size:.76rem; text-transform:uppercase; letter-spacing:.18em; color:var(--accent); font-weight:800; }
+    .brand strong { font-size:1.02rem; }
+    .toplinks { display:flex; flex-wrap:wrap; gap:10px; }
+    .toplinks a { border-radius:999px; padding:10px 14px; border:1px solid var(--line); background:rgba(255,255,255,.52); color:var(--muted); font-size:.92rem; font-weight:700; }
+    .hero, .part-card, .panel, .check-card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:28px; margin:42px 0 18px; }
+    h1, h2, h3 { margin:0; font-family:Georgia,"Times New Roman",serif; line-height:1.08; }
+    .hero h1 { font-size:clamp(2.3rem,5vw,4rem); letter-spacing:-.04em; max-width:13ch; margin-top:8px; }
+    .hero p, .panel p, .part-card p, .check-card p { color:var(--muted); margin:0; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+    .panel, .check-card { padding:20px; }
+    .check-card ul { margin:12px 0 0; padding-left:0; list-style:none; color:var(--muted); }
+    .check-card li { position:relative; padding-left:28px; margin-top:8px; }
+    .check-card li::before { content:"□"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700; }
+    .parts { display:grid; gap:16px; padding-bottom:52px; }
+    .part-card { padding:22px; }
+    .part-top { display:flex; justify-content:space-between; gap:12px; align-items:start; }
+    .part-top label { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--forest); }
+    input[type=checkbox] { width:20px; height:20px; accent-color:var(--accent); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .tag { display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(41,70,58,.08); border:1px solid rgba(41,70,58,.12); font-size:.84rem; font-weight:700; color:var(--forest); }
+    .seller-list { display:grid; gap:10px; margin-top:16px; }
+    .seller { display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.45); }
+    .seller strong { color:var(--accent); }
+    .link { font-weight:700; color:var(--forest); }
+    .status { font-size:.9rem; color:var(--muted); }
+    @media (max-width:760px) { .two-col { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="eyebrow">Grouped Parts</span><strong>Body & Plastics</strong></div><nav class="toplinks"><a href="tt600_59x_parts_index.html">Catalog</a><a href="index.html">Hub</a></nav></div></header>
+  <main class="shell">
+    <section class="hero"><span class="eyebrow">Lower urgency visual parts</span><h1>Plastics and bodywork grouped away from the mechanical essentials.</h1><p>This page exists so cosmetic parts stop distracting the core restoration and 12V conversion work.</p></section>
+    <section class="two-col">
+      <article class="panel"><h2>What belongs here</h2><p>Headlight plate, decals, front fender, side plates, and body-mount details.</p></article>
+      <article class="check-card"><h2>Body & Plastics Checklist</h2><ul><li>Inspect tank and body mounting rubbers before reassembly.</li><li>Defer most cosmetic spending until the bike is mechanically and electrically sorted.</li><li>Check hole patterns and mounting details before buying side plastics.</li><li>Use this page late in the project unless missing parts block assembly.</li></ul></article>
+    </section>
+    <section class="parts">
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Front End</span><h3>Headlight plate</h3></div><label><input type="checkbox" data-part="body-headlight-plate"> Installed</label></div><p>Cosmetic and fitment-sensitive. Useful once the front of the bike is mechanically sorted.</p><div class="tags"><span class="tag">TT600 style aftermarket</span></div><div class="seller-list"><div class="seller"><strong>Enduro Vintage</strong><span class="status">Workbook/source path</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Graphics</span><h3>Decal set</h3></div><label><input type="checkbox" data-part="body-decals"> Installed</label></div><p>Purely cosmetic. Keep this late in the project so the bike earns its graphics.</p><div class="tags"><span class="tag">Lower urgency</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="status">Source path from workbook and notes</span></div><div class="seller"><strong>eBay</strong><span class="status">Alternative path</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Front Fender</span><h3>Front fender</h3></div><label><input type="checkbox" data-part="body-front-fender"> Installed</label></div><p>Universal vintage off-road path. Expect drilling or minor adaptation depending on the exact part chosen.</p><div class="tags"><span class="tag">Universal fit</span></div><div class="seller-list"><div class="seller"><strong>UFO / La Becanerie</strong><span class="status">Workbook/source path</span></div><div class="seller"><strong>Bihr</strong><span class="status">Alternative supplier</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Side Plastics</span><h3>Side number plates</h3></div><label><input type="checkbox" data-part="body-side-plates"> Installed</label></div><p>Check hole pattern and exact style. Current notes point to TT600 1984-1992 aftermarket paths.</p><div class="tags"><span class="tag">Hole pattern check</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><a class="link" href="https://www.kedo.com/tt600-replica-side-cover-white-1-pair.html">Seller page</a></div><div class="seller"><strong>Enduro Vintage</strong><span class="status">Alternative source path</span></div></div></article>
+    </section>
+  </main>
+  <script>const k='tt60059x-installed-';document.querySelectorAll('input[type="checkbox"][data-part]').forEach(cb=>{cb.checked=localStorage.getItem(k+cb.dataset.part)==='1';cb.addEventListener('change',()=>localStorage.setItem(k+cb.dataset.part,cb.checked?'1':'0'));});</script>
+</body>
+</html>

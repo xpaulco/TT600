@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT600 59X Engine Parts</title>
+  <style>
+    :root { --bg:#f4efe6; --ink:#201a15; --muted:#675a4d; --panel:rgba(255,251,245,.92); --line:rgba(64,46,23,.14); --accent:#8f3d24; --forest:#29463a; --shadow:0 18px 42px rgba(49,31,15,.11); --radius:22px; --max:1180px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Avenir Next","Segoe UI Variable Text","Trebuchet MS",sans-serif; line-height:1.6; color:var(--ink); background:linear-gradient(180deg,#f8f3eb 0%,#f4efe6 55%,#eadfcc 100%); }
+    a { text-decoration:none; color:inherit; }
+    .shell { width:min(calc(100% - 32px),var(--max)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); background:rgba(244,239,230,.74); border-bottom:1px solid var(--line); }
+    .topbar-inner { width:min(calc(100% - 32px),var(--max)); margin:0 auto; padding:12px 0; display:flex; justify-content:space-between; align-items:center; gap:18px; }
+    .brand { display:flex; flex-direction:column; gap:2px; }
+    .eyebrow { font-size:.76rem; text-transform:uppercase; letter-spacing:.18em; color:var(--accent); font-weight:800; }
+    .brand strong { font-size:1.02rem; }
+    .toplinks { display:flex; flex-wrap:wrap; gap:10px; }
+    .toplinks a, .button { border-radius:999px; padding:10px 14px; border:1px solid var(--line); background:rgba(255,255,255,.52); color:var(--muted); font-size:.92rem; font-weight:700; }
+    .hero, .panel, .part-card, .check-card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+    .hero { padding:28px; margin:42px 0 18px; }
+    h1, h2, h3 { margin:0; font-family:Georgia,"Times New Roman",serif; line-height:1.08; }
+    .hero h1 { font-size:clamp(2.3rem,5vw,4rem); letter-spacing:-.04em; max-width:12ch; margin-top:8px; }
+    .hero p, .panel p, .part-card p, .check-card p { color:var(--muted); margin:0; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+    .button.primary { background:linear-gradient(135deg,var(--accent),#b55232); color:#fff8f2; }
+    .panel { padding:20px; margin:0 0 18px; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+    .check-card { padding:20px; }
+    .check-card ul { margin:12px 0 0; padding-left:0; list-style:none; color:var(--muted); }
+    .check-card li { position:relative; padding-left:28px; margin-top:8px; }
+    .check-card li::before { content:"□"; position:absolute; left:0; top:0; color:var(--accent); font-weight:700; }
+    .parts { display:grid; gap:16px; padding-bottom:52px; }
+    .part-card { padding:22px; }
+    .part-top { display:flex; justify-content:space-between; gap:12px; align-items:start; }
+    .part-top label { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--forest); }
+    input[type=checkbox] { width:20px; height:20px; accent-color:var(--accent); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .tag { display:inline-flex; padding:6px 10px; border-radius:999px; background:rgba(41,70,58,.08); border:1px solid rgba(41,70,58,.12); font-size:.84rem; font-weight:700; color:var(--forest); }
+    .seller-list { display:grid; gap:10px; margin-top:16px; }
+    .seller { display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:12px 14px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.45); }
+    .seller strong { color:var(--accent); }
+    .link { font-weight:700; color:var(--forest); }
+    .price { font-weight:800; color:var(--accent); }
+    .status { font-size:.9rem; color:var(--muted); }
+    @media (max-width:760px) { .two-col { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="eyebrow">Grouped Parts</span><strong>Engine</strong></div><nav class="toplinks"><a href="tt600_59x_parts_index.html">Catalog</a><a href="index.html">Hub</a></nav></div></header>
+  <main class="shell">
+    <section class="hero">
+      <span class="eyebrow">Canonical engine list</span>
+      <h1>Engine service and hardware in one deduplicated page.</h1>
+      <p>Use this page for oil service items, spark plug, drain hardware, and engine-side refresh parts. Tick the checkbox only after the part is installed on the bike.</p>
+      <div class="hero-actions"><a class="button primary" href="tt600_59x_shopping_map_2026-09-04.csv">Open shopping CSV</a></div>
+    </section>
+    <section class="two-col">
+      <article class="panel"><h2>What belongs here</h2><p>Items that affect engine service, sealing, ignition service, and engine cover hardware.</p></article>
+      <article class="check-card"><h2>Engine Workflow Checklist</h2><ul><li>Change engine oil and filter before judging engine behavior.</li><li>Replace the spark plug as part of the baseline service.</li><li>Replace the drain washer whenever the oil service is done.</li><li>Decide whether to fit the magnetic drain plug during the first service cycle.</li><li>Refresh tired cover screws if the original JIS heads are damaged.</li></ul></article>
+    </section>
+    <section class="parts">
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Engine Service</span><h3>Oil filter service kit</h3></div><label><input type="checkbox" data-part="engine-oil-filter"> Installed</label></div><p>KEDO service kit is the clearest current buy. This is one of the safest first orders.</p><div class="tags"><span class="tag">KEDO 91628</span><span class="tag">Buy now</span><span class="tag">TT600 and XT600 family</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€8.43</span><span class="status">Fixed, in stock</span><a class="link" href="https://www.kedo.com/kedo-oil-filter-kit-7-pieces-complete.html">Seller page</a></div><div class="seller"><strong>Dafy Moto</strong><span class="status">Alternative source path from older workbook</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Ignition Service</span><h3>Spark plug DPR8EA-9</h3></div><label><input type="checkbox" data-part="engine-spark-plug"> Installed</label></div><p>Baseline service plug. Keep this simple and fresh before judging starting or running behavior.</p><div class="tags"><span class="tag">KEDO 40008</span><span class="tag">DPR8EA-9</span><span class="tag">Buy now</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€4.20</span><span class="status">Fixed, in stock</span><a class="link" href="https://www.kedo.com/ngk-spark-plug-dpr8ea-9-interference-suppressed.html">Seller page</a></div><div class="seller"><strong>Dafy Moto</strong><span class="status">Workbook already had a plug source path</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Drain Hardware</span><h3>Drain washer 14 mm</h3></div><label><input type="checkbox" data-part="engine-drain-washer-14"> Installed</label></div><p>Service item for the oil drain plug path. Do not let small washers trigger their own separate order.</p><div class="tags"><span class="tag">Generic service part</span><span class="tag">Bundle with oil order</span></div><div class="seller-list"><div class="seller"><strong>KEDO copper washer 14x20x1.5</strong><span class="price">€0.29</span><span class="status">Fixed</span><a class="link" href="https://www.kedo.com/cu-washer-14x20x1-5mm.html">Seller page</a></div><div class="seller"><strong>Dafy Moto</strong><span class="status">Generic alternative</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Drain Hardware</span><h3>Drain washer 12 mm</h3></div><label><input type="checkbox" data-part="engine-drain-washer-12"> Installed</label></div><p>Generic service washer. Keep on the engine service checklist even if the source changes later.</p><div class="tags"><span class="tag">Generic</span><span class="tag">No fixed live price</span></div><div class="seller-list"><div class="seller"><strong>Dafy Moto</strong><span class="status">Workbook/source path only</span></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Engine Protection</span><h3>Magnetic oil drain plug M14x1.5</h3></div><label><input type="checkbox" data-part="engine-magnetic-drain-plug"> Installed</label></div><p>Optional but sensible during early oil changes if you want extra visibility on metallic debris.</p><div class="tags"><span class="tag">KEDO 40535</span><span class="tag">Optional</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€12.50</span><span class="status">Fixed, in stock</span><a class="link" href="https://www.kedo.com/oil-drain-plug-magnetic-m14x1-5-a-f19mm-gasket-see-94026.html">Seller page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Engine Hardware</span><h3>Crankcase cover screw set</h3></div><label><input type="checkbox" data-part="engine-screw-set"> Installed</label></div><p>Useful if the original JIS cover screws are damaged or ugly. Good candidate for the first KEDO basket.</p><div class="tags"><span class="tag">KEDO 10236</span><span class="tag">Buy now</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€8.95</span><span class="status">Fixed, in stock</span><a class="link" href="https://www.kedo.com/allen-screw-set-for-crankcase-cover-8-8-zinc-coated-10236.html">Seller page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Optional Sealing</span><h3>Oil sump gasket</h3></div><label><input type="checkbox" data-part="engine-oil-sump-gasket"> Installed</label></div><p>Optional add-on. Buy it only if you expect to open that cover, but if you do, it should ride in the same KEDO order.</p><div class="tags"><span class="tag">KEDO 21030</span><span class="tag">Optional</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€3.50</span><span class="status">Fixed, in stock</span><a class="link" href="https://www.kedo.com/gasket-for-oil-sump-oem-reference-583-13414-00.html">Seller page</a></div></div></article>
+      <article class="part-card"><div class="part-top"><div><span class="eyebrow">Alternative Bundle</span><h3>Oil change set complete</h3></div><label><input type="checkbox" data-part="engine-oil-change-set"> Installed</label></div><p>Alternative bundled route if you prefer a packaged oil-change basket instead of individual lines.</p><div class="tags"><span class="tag">KEDO 91090</span><span class="tag">Alternative</span></div><div class="seller-list"><div class="seller"><strong>KEDO</strong><span class="price">€50.70</span><span class="status">Fixed</span><a class="link" href="https://www.kedo.com/oil-change-set-500cc-w-3l-oil-20w50-mineral-motorcycle-oil-oil-sump-gasket-oil-filter-gaskets-o-rings.html">Seller page</a></div></div></article>
+    </section>
+  </main>
+  <script>const k='tt60059x-installed-';document.querySelectorAll('input[type="checkbox"][data-part]').forEach(cb=>{cb.checked=localStorage.getItem(k+cb.dataset.part)==='1';cb.addEventListener('change',()=>localStorage.setItem(k+cb.dataset.part,cb.checked?'1':'0'));});</script>
+</body>
+</html>

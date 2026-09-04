@@ -1,0 +1,23 @@
+Lead ID,Site,Type,Search or Listing URL,Part Focus,Claimed Part Number,Claimed Donor Model,Price,Shipping,Seller Confidence,Validation Checklist,Status,Notes
+L-001,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator,3TB stator,,XT600 3TB,,,Medium,Need photos and resistance values,Open,Initial search lead
+L-002,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel,3TB flywheel,,XT600 3TB,,,Medium,Need matching stator claim,Open,Initial search lead
+L-003,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00,3TB CDI,3TB-82305-00,XT600 3TB,,,Medium,Need connector and marking photos,Open,Initial search lead
+L-004,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01,Regulator rectifier,3TJ-81960-01,XT600 3TB,,,Medium,Need charging test claim,Open,Initial search lead
+L-005,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20allumage%20complet,Complete set,,XT600 3TB,,,Medium,Prefer complete set from one bike,Open,Initial search lead
+L-006,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20faisceau,Complete set with loom,,XT600 3TB,,,Medium,Look for pigtails and connectors included,Open,Initial search lead
+L-007,RegulatorRectifier,Listing,https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit,Aftermarket CDI,3TB-82305-00-00 or 3TB-82305-10-00,XT600E 3TB,USD 299.99,,High,Verify terminal count and mounting needs,Open,Live page confirmed 2026-09-04
+L-008,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+allumage+complet,Complete electrical ignition set,,XT600 3TB,,,High,Prefer one seller with full matched set,Open,Best-case donor lot search
+L-009,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600E+3TB+stator+flywheel,Stator plus flywheel pair,,XT600E 3TB,,,High,Must confirm both came from same bike,Open,Pair-focused search
+L-010,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+regulateur+3TJ-81960-01,Regulator rectifier,3TJ-81960-01,XT600 3TB,,,Medium,Ask for charging proof before removal,Open,French keyword variant
+L-011,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+boitier+CDI+3TB-82305-10,CDI,3TB-82305-10,XT600 3TB,,,Medium,Check connector count and markings,Open,Second CDI reference variant
+L-012,eBay FR,Search,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+bobine+allumage+12V,Ignition coil 12V,,XT600 3TB or 2KF,,,Medium,Require resistance reading 3 to 5 ohm primary,Open,Coil-specific search
+L-013,eBay DE,Search,https://www.ebay.de/sch/i.html?_nkw=XT600+3TB+Lichtmaschine,Stator,,XT600 3TB,,,Medium,Ask for pickup continuity and photos,Open,German stator keyword
+L-014,eBay DE,Search,https://www.ebay.de/sch/i.html?_nkw=XT600+3TB+Polrad,Flywheel rotor,,XT600 3TB,,,Medium,Verify rotor and stator compatibility,Open,German flywheel keyword
+L-015,eBay DE,Search,https://www.ebay.de/sch/i.html?_nkw=3TJ-81960-01+Regler+XT600,Regulator rectifier,3TJ-81960-01,XT600 3TB,,,Medium,Confirm donor year and charging behavior,Open,German regulator keyword
+L-016,eBay DE,Search,https://www.ebay.de/sch/i.html?_nkw=3TB-82305-00+CDI+XT600E,CDI,3TB-82305-00,XT600E 3TB,,,Medium,Need clear photos of part stamp,Open,German CDI keyword
+L-017,eBay DE,Search,https://www.ebay.de/sch/i.html?_nkw=XT600+3TB+Kabelbaum,Main loom or pigtails,,XT600 3TB,,,Medium,Useful for correct connector families,Open,German loom keyword
+L-018,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20stator%20volant%20magn%C3%A9tique,Stator plus flywheel pair,,XT600 3TB,,,High,Prefer bundle from same dismantled bike,Open,French bundle search
+L-019,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%203TJ-81960-01,Regulator rectifier,3TJ-81960-01,XT600 3TB,,,Medium,Need tested charging evidence,Open,Part-number direct search
+L-020,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20CDI%203TB-82305-00,CDI,3TB-82305-00,XT600 3TB,,,Medium,Need plug photos and working claim,Open,Part-number CDI search
+L-021,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20bobine%2012V,Ignition coil,,XT600 3TB or 2KF,,,Medium,Ask primary resistance and cracks,Open,Coil backup source
+L-022,Leboncoin,Search,https://www.leboncoin.fr/recherche?text=XT600%203TB%20pour%20pi%C3%A8ces,Whole donor bike for parts,,XT600 3TB,,,High,Best source to secure full matched electrical set,Open,Highest-value lead type

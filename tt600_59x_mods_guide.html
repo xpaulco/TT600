@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT600 59X — Complete Mods & Roadtrip Prep Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;padding:16px;background:#fafaf8;max-width:820px;margin:0 auto;line-height:1.6}
+h1{font-size:18px;font-weight:600;margin-bottom:4px}
+.sub{font-size:12px;color:#777;margin-bottom:18px}
+
+/* top-level chapter nav */
+.chapters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;border-bottom:1px solid #e8e6e0;padding-bottom:14px}
+.chapter{padding:6px 16px;border-radius:20px;border:1px solid #ddd;font-size:12px;cursor:pointer;background:#f5f5f3;color:#555;user-select:none;font-weight:500;transition:all .15s}
+.chapter.active{background:#1a1a1a;border-color:#1a1a1a;color:#fff}
+.chapter-panel{display:none}
+.chapter-panel.active{display:block}
+
+/* section tabs inside each chapter */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tab{padding:5px 14px;border-radius:20px;border:1px solid #ddd;font-size:12px;cursor:pointer;background:#f5f5f3;color:#555;user-select:none;transition:all .15s}
+.tab.active{background:#3C3489;border-color:#3C3489;color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+
+/* mod cards */
+.mod{border:1px solid #e8e6e0;border-radius:8px;padding:11px 14px;margin-bottom:8px;background:#fff}
+.mod-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:5px;flex-wrap:wrap}
+.mod-title{font-weight:500;font-size:13px;color:#111;flex:1;min-width:0}
+.tags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0}
+.tag{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600;white-space:nowrap}
+.tag-rel{background:#FCEBEB;color:#791F1F}
+.tag-prf{background:#E1F5EE;color:#085041}
+.tag-59x{background:#FAECE7;color:#712B13}
+.tag-ez{background:#EEEDFE;color:#3C3489}
+.tag-fr{background:#FAEEDA;color:#633806}
+.tag-src{background:#F1EFE8;color:#5F5E5A}
+.tag-pre{background:#FAECE7;color:#712B13}
+.tag-carry{background:#E1F5EE;color:#085041}
+.tag-onbike{background:#EEEDFE;color:#3C3489}
+.tag-diag{background:#FAEEDA;color:#633806}
+.mod-body{font-size:12px;color:#555;line-height:1.6}
+.mod-body strong{color:#111}
+.how{margin-top:8px;background:#f7f6f3;border-radius:6px;padding:8px 10px;font-size:12px}
+.how-title{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#888;margin-bottom:4px}
+.price{display:inline-block;margin-top:5px;font-size:11px;font-weight:600;color:#085041;background:#E1F5EE;padding:2px 8px;border-radius:4px}
+.warn{font-size:11px;color:#712B13;margin-top:5px;background:#FAECE7;padding:4px 8px;border-radius:4px;display:block}
+.effort{display:flex;gap:3px;margin-top:6px;align-items:center}
+.effort-label{font-size:10px;color:#aaa;margin-right:4px}
+.dot{width:8px;height:8px;border-radius:50%}
+.dot.on{background:#3C3489}
+.dot.off{background:#ddd}
+.section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin:14px 0 6px;padding-bottom:4px;border-bottom:1px solid #eee}
+.intro-box{border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;line-height:1.6}
+.intro-blue{background:#EEEDFE;color:#3C3489}
+.intro-amber{background:#FAEEDA;color:#633806}
+h3{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee}
+h3:first-child{margin-top:0}
+</style>
+</head>
+<body>
+
+<h1>TT600 59X — Complete Mods & Roadtrip Prep Guide</h1>
+<p class="sub">1987–88 · All modifications, advanced upgrades, and long-distance redundancy prep</p>
+
+<div class="chapters">
+  <div class="chapter active" onclick="showChapter('c1',this)">🔧 Standard mods</div>
+  <div class="chapter" onclick="showChapter('c2',this)">🚀 Advanced mods</div>
+  <div class="chapter" onclick="showChapter('c3',this)">🗺️ Roadtrip prep</div>
+  <div class="chapter" onclick="showChapter('c4',this)">🛒 Sourcing</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 1 — STANDARD MODS
+════════════════════════════════════════════ -->
+<div id="c1" class="chapter-panel active">
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('c1','t1e',this)">Engine</div>
+    <div class="tab" onclick="showTab('c1','t1co',this)">Cooling</div>
+    <div class="tab" onclick="showTab('c1','t1ca',this)">Carb & fuel</div>
+    <div class="tab" onclick="showTab('c1','t1s',this)">Suspension</div>
+    <div class="tab" onclick="showTab('c1','t1b',this)">Brakes</div>
+    <div class="tab" onclick="showTab('c1','t1el',this)">Electrics</div>
+    <div class="tab" onclick="showTab('c1','t1m',this)">Misc</div>
+  </div>
+
+  <div id="t1e" class="panel active">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Crankcase breather → catch can</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-59x">59X applies</span></div></div>
+      <div class="mod-body">Routes crankcase blow-by to a 100ml catch can instead of the airbox. Keeps the filter dry, carb clean, and removes oily deposits from the intake. Blank off the airbox breather inlet. Empty the can at every oil change.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">5th gear — never lug below 4,000–4,500 rpm</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Free</span></div></div>
+      <div class="mod-body">The pre-3TB gearbox has a known 5th gear lubrication weakness at low rpm. Keep 5th above 4,500 rpm and the gear pair is reliably lubricated. Forum members report 50,000+ km trouble-free with this discipline alone.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">KEDO oil temperature dipstick</div><div class="tags"><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">Replaces the oil filler cap with a bimetallic temperature gauge. Critical for an air-cooled single in summer or slow traffic. KEDO part 91037, fits XT500/550/600/660. Verify thread on the 59X oil tank before ordering — the front-triangle oil tank location is non-standard.<span class="price">~€44 from KEDO.de</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Synthetic 10W-40 motorcycle oil</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Eliminates the hot neutral-finding difficulty reported on mineral oil. Wet-clutch compatible required. Elf Moto 4 ECO 10W-40 or Motul 5100 10W-40 widely available in France. Change at 3,000km on a fresh rebuild, then 4–5,000km thereafter.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Chain sprocket guard / engine bash plate</div><div class="tags"><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">A 3mm steel plate in front of the countershaft sprocket prevents a snapped chain from punching through the engine cases. A dropped chain at speed destroys an unprotected casing instantly. 30-minute fabrication from flat stock. Also protects sump and oil filter on rough terrain.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1co" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Oil cooler — KEDO kit or generic XT600 unit</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-prf">Performance</span><span class="tag tag-59x">59X applies</span></div></div>
+      <div class="mod-body">The most cited niche reliability mod on the XT/TT family. The 59X has no factory oil cooler. KEDO billet aluminium kit taps into the secondary oil circuit with no case drilling. Alternatively, a used XT600 cooler (~€25) with fabricated braided lines. Reduces oil temperature, preserves viscosity, directly reduces crankshaft bearing and 5th gear wear.<span class="price">KEDO kit ~€150–180 (check stock) / DIY ~€50–80</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Fin covers for tappet caps and filter cover</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Aluminium fin covers clip over the tappet adjuster caps and oil filter cover to increase the cooling surface area. Particularly useful in slow or stop-start riding where airflow over the engine is reduced. Available from KEDO and various aftermarket suppliers.<span class="price">~€15–30</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1ca" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Needle clip raised one position (richer mid-range)</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-prf">Performance</span><span class="tag tag-59x">59X applies</span></div></div>
+      <div class="mod-body">The YDIS carb is factory-set lean to pass emissions. Moving the needle clip one position toward the pointy end richens the mid-range and addresses the flat spot at 1/4–1/2 throttle. On the YDIS needle verify if clip grooves exist (use shims if not — 2 nylon shims from a jet kit).<span class="price">Free / €5–10 for shim kit</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Inline fuel filter</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">A transparent inline fuel filter between petcock and carb catches debris and lets you monitor fuel cleanliness. Remove the tiny stock float needle filter at the same time — it restricts flow and the inline filter replaces it.<span class="price">~€3–5</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">FCR flatslide carburettor swap</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Keihin FCR 40mm flatslide eliminates YDIS complexity and dramatically improves throttle response. Starting point (FCR41, vented airbox, FMF exhaust): 155 main jet, 45 pilot, NCVT needle. Requires full jetting to suit your setup. Not for a road-registered bike seeking simplicity.<span class="price">€200–400 used</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">1VJ Ténéré airbox conversion (open intake)</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">The 1VJ airbox with both original intakes sealed and the rear cap open improves top-end breathing noticeably. Requires richer main jetting to compensate. Less impactful on the 59X which already has a high-flow race airbox from factory.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1s" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Progressive fork springs (Hyperpro / Progressive Suspension)</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">Stock 59X springs dive heavily under braking on the road. Hyperpro makes progressive springs for the XT600 family (verify 43mm fitment). Pair with 15W fork oil. Progressive springs have more volume than stock — set oil level by volume (440ml/leg), not by old oil measurement.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">15W fork oil + 1–2 psi air pressure</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Switching from stock 10W to 15W noticeably reduces brake dive. Adding 1–2 psi via the fork top cap increases effective spring rate for heavier riders or loaded riding. Fully reversible, costs nothing beyond the oil.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">YSS or Wilbers rear shock replacement</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">If the stock Monocross shock body is beyond rebuild, YSS and Wilbers make direct replacement units for the 43F/1VJ/3AJ family. Öhlins historically made one too (rare). Avoid Hyperpro spring-only on the old shock body — multiple forum reports of breakage.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Phosphor bronze suspension linkage bushes</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-59x">59X applies</span></div></div>
+      <div class="mod-body">Replace the Monocross linkage needle roller bearings and plastic bushes with phosphor bronze bushes in stainless carriers. Self-lubricating, corrosion resistant, longer-lasting than OEM — especially valuable for off-road use where water and mud enter the linkage. Requires a machinist.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">YZ250 front end swap (43mm cartridge forks)</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Pressing in a YZ250 front end gives vastly superior cartridge damping. Requires steering stem press, machining to fit YZ triple clamps to the XT600 headstock, and new wheel bearings. Best for primarily off-road use — for road use, progressive springs + 15W oil are more practical.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1b" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Stainless steel braided brake line (front)</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Eliminates hose expansion under pressure — lever feel becomes immediate and consistent. The 35-year-old rubber hose is also a safety concern regardless of feel. Goodridge, HEL, or Venhill — custom lengths to order. Fits stock banjo fittings on the TT/XT600 caliper.<span class="price">~€30–45</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Rubber protector on brake/gear levers</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">A strip of thick rubber sheet, holed and cable-tied to the inside edge of both levers. In a tip-over the rubber cushions the lever against the engine case instead of bending it inward and cracking the casing. Free from an offcut.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1el" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">NGK CR8EIX iridium spark plug + NGK SD05F waterproof cap</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">The iridium electrode fires more reliably at lower voltages, improves cold-start, and lasts significantly longer. Particularly valuable after a 12V conversion. The NGK SD05F "jetski" plug cap has a more aggressive moisture seal for off-road/wet-weather use.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">USB power socket at the headstock</div><div class="tags"><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">With the 12V conversion done, a switched waterproof USB module at the headstock feeds from the ignition-switched fuse slot. Powers GPS/phone. Oxford, Tecmate, or generic IP65 unit. The 59X headstock area is roomy with no fairing to obstruct.<span class="price">~€10–20</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t1m" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Double inner tube method (off-road tyres)</div><div class="tags"><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">Cut the old tube, remove the valve, slide it over the new tube before fitting inside the tyre. Doubles wall thickness at the bead — the most common site for pinch flats. Zero cost, 15 minutes extra on tyre fitting. Best used with a heavy-duty inner tube (Michelin Airstop) as the inner layer.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Wider footpeg platforms (DIY welded flat bar)</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Weld flat bar around the existing pegs, notch with a grinder for grip. Adds ~30mm width and significantly more grip surface. ~€10–20 in materials. Alternatively, aftermarket wide rubber-covered pegs for the XT600 family bolt to stock mounts.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">SW-Motech centre stand</div><div class="tags"><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">The 59X has no centre stand from factory. SW-Motech and German aftermarket suppliers have made bolt-on units for the XT600/TT600 family. Invaluable for roadside maintenance. Verify compatibility with the 59X frame specifically before ordering.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Seat foam replacement (wider, medium density)</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Cut the original foam, fit wider medium-density foam (not softer — softer bottoms out), optionally wrap with a sheepskin layer, refit the original cover. A local tapissier in France can do this for €40–60 including recovering. Significantly more comfortable on longer rides.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 2 — ADVANCED MODS
+════════════════════════════════════════════ -->
+<div id="c2" class="chapter-panel">
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('c2','t2ig',this)">Ignition</div>
+    <div class="tab" onclick="showTab('c2','t2en',this)">Engine (advanced)</div>
+    <div class="tab" onclick="showTab('c2','t2ex',this)">Exhaust</div>
+  </div>
+
+  <div id="t2ig" class="panel active">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Transmic AC-CDI v13 — programmable replacement CDI</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-prf">Performance</span><span class="tag tag-fr">Made in France</span></div></div>
+      <div class="mod-body">French-made programmable replacement CDI unit covering the XT400–600/TT600 family including the 59X (model 2JT0). Configured over WiFi — select your model code in three clicks, timing curve is pre-loaded. Features: 10–10,000 RPM range, built-in rev limiter, kickback protection, VR conditioner for noisy signal environments. Runs on 6V, 12V, or no battery once programmed. Replaces an ageing unit that is no longer available new from Yamaha.<br><br>
+      <strong>Important:</strong> The FAQ confirms that 59X, 43F, and 2KF all use different advance curves — the unit covers all of them. Contact Thierry at contact@transmic.fr to confirm exact model code compatibility for the 59X 2JT0 before ordering.
+      <span class="warn">⚠ Do not feed more than 24V. Fit an inline fuse on the CDI +12V supply.</span>
+      <span class="price">~€80–100 from transmic.fr (France, fast shipping)</span>
+      <div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Flywheel key rotation — manual timing advance</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Rotating the flywheel key slightly advances the ignition base timing by 1–2° beyond the CDI's programmed curve. The Transmic FAQ's flat-track user (Dan) uses this on a high-compression 10:1 build. Requires removing the flywheel, filing the key slot by a precise amount, and verifying with a timing light. A mild 1° advance is safe on stock compression. More than that risks detonation unless paired with higher-octane fuel or a head skim.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t2en" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Wiseco forged piston — 9:1 standard bore (96mm)</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Direct upgrade over the standard cast piston. Forged aluminium is tougher, lighter, and runs tighter clearances. Fits both the XT steel-sleeve cylinder and the 59X Nikasil bore (with compatible ring set). Same 9:1 compression — no other changes needed. Particularly valuable on the 59X where the Nikasil bore limits re-boring options.<span class="price">€189 from KEDO.de</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">KEDO Big Bore kit — 633cc, 98mm, 10:1 forged piston</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-59x">Requires steel sleeve cylinder</span></div></div>
+      <div class="mod-body">Takes the engine to 633cc by boring to 98mm with a high-compression 10:1 forged piston. <strong>Critical for the 59X:</strong> requires a reborable steel-sleeve cylinder — the Nikasil bore cannot be enlarged. Only viable if you've already swapped in an XT600 steel-sleeve cylinder. Combine with: 145 main jet, raised needle, better-flowing header, Transmic CDI. Forum members estimate 5–10 hp gain from the full package. JE Pistons alternative: 97mm / 621cc at 11.5:1 — more aggressive, needs premium fuel and head skim.<span class="price">KEDO 633cc ~€220 / JE 97mm ~€180 (XRsOnly, ships to EU)</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">KEDO flow-optimised exhaust valve</div><div class="tags"><span class="tag tag-prf">Performance</span><span class="tag tag-rel">Reliability</span></div></div>
+      <div class="mod-body">Lighter, better-flowing exhaust valve for the TT600 83–86 and XT600 83–89 (OEM ref: 34K-12121-00). Meaningful on a rebuild where the head is already off. Pairs naturally with a valve job and seat recut.<span class="price">~USD $31 from KEDO Australia (ships internationally)</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Head port and polish</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Port and polish of intake and exhaust runners — smooth casting flash, blend valve seats into ports, match intake manifold bore to carb throat. Do not mirror-polish the intake (slightly rough surface improves fuel atomisation). Exhaust ports can be polished. Best done by a specialist atelier moteur with experience on 4-valve single-cylinder heads.<span class="price">€80–200 at a French atelier depending on scope</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+  <div id="t2ex" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">KEDO Devil Pipe header + SuperTrapp adjustable silencer</div><div class="tags"><span class="tag tag-prf">Performance</span></div></div>
+      <div class="mod-body">Most frequently cited exhaust upgrade in the tenere.co.uk forum. The SuperTrapp adjustable disc silencer lets you tune back pressure — more discs = more top-end flow, fewer = more mid-range. Without re-jetting after fitting a free-flowing exhaust you run lean and risk exhaust valve damage. Combine with a 145 main jet (up from stock ~132–135) and raised needle clip. <strong>Note for France:</strong> the SuperTrapp is loud in an open configuration — run fewer discs or a baffle insert for contrôle technique.<div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Exhaust header thermal wrap</div><div class="tags"><span class="tag tag-rel">Reliability</span><span class="tag tag-ez">Easy win</span></div></div>
+      <div class="mod-body">Wrapping the header in high-temperature fibreglass/ceramic tape keeps exhaust gas hotter and improves scavenging. Significantly reduces under-tank heat on this air-cooled single — relevant in slow French summer traffic. Soak the tape in water before wrapping — it conforms better and hardens as it dries. Available as Lava-Tite or similar at Feu Vert/Norauto.<span class="price">€15–25</span><div class="effort"><span class="effort-label">Effort:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 3 — ROADTRIP PREP (MOTOMORITZ)
+════════════════════════════════════════════ -->
+<div id="c3" class="chapter-panel">
+
+  <div class="intro-box intro-blue">
+    <strong>The Motomoritz philosophy:</strong> on a remote long-distance trip on a classic single-cylinder bike, a broken cable or electrical fault stops you dead — not for hours, but potentially for days. The solution is not just carrying spares, but <em>pre-routing</em> key spares on the bike so that in the event of failure, the repair is a 5-minute job rather than 2-hour roadside surgery.
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('c3','t3ca',this)">Cables</div>
+    <div class="tab" onclick="showTab('c3','t3el',this)">Electrical</div>
+    <div class="tab" onclick="showTab('c3','t3en',this)">Engine spares</div>
+    <div class="tab" onclick="showTab('c3','t3to',this)">Toolkit</div>
+    <div class="tab" onclick="showTab('c3','t3ch',this)">Chassis</div>
+  </div>
+
+  <div id="t3ca" class="panel active">
+    <div class="section-label">Pre-routed on the bike</div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare clutch cable — pre-routed parallel to the live one</div><div class="tags"><span class="tag tag-pre">Pre-routed</span></div></div>
+      <div class="mod-body">The core Motomoritz trick. A second clutch cable routed along the exact same path as the working cable, with both ends plugged. In the event the live cable snaps, unplug the spare, swap the barrel ends at lever and adjuster, and ride on in under 10 minutes — no threading a new cable through the frame from scratch.
+      <div class="how">
+        <div class="how-title">How to pre-route</div>
+        1. Order a second OEM clutch cable (same part as the live one).<br>
+        2. Route through exactly the same guides and frame clips as the live cable.<br>
+        3. Leave both ends free but plugged — do NOT connect at either end.<br>
+        4. Zip-tie alongside the live cable every 15–20cm.<br>
+        5. Mark with red tape at both ends to identify the spare.
+      </div>
+      <div class="effort"><span class="effort-label">Time to install:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare throttle cable — pre-routed</div><div class="tags"><span class="tag tag-pre">Pre-routed</span></div></div>
+      <div class="mod-body">Same principle. A broken throttle cable is an immediate stop with no workaround. Pre-route alongside the live cable from the perch, along the bars, down to the carb slide. Cap both ends. Check routing with the tank on — the tank can pinch cables if the path is poorly chosen.<div class="effort"><span class="effort-label">Time to install:</span><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="section-label">Carry in tool bag</div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Universal cable repair kit (Slinky Glide)</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Lets you fabricate a field repair for any cable using the existing outer and a replacement inner wire. Requires a barrel nipple solder kit. Useful if pre-routed spare cables have already been used. ~€10–15, weighs almost nothing.<div class="effort"><span class="effort-label">Difficulty to use:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Speedo cable + choke cable</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Speedo cable not critical for riding but required for road legality in France. Choke cable breaks stuck-open = rich-running hot engine that won't restart. Both coil flat and weigh almost nothing in a tool bag. Source from XT600 43F/2KF listings.</div>
+    </div>
+  </div>
+
+  <div id="t3el" class="panel">
+    <div class="section-label">Pre-wired on the bike</div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Shadow loom — pre-routed ignition-critical wires</div><div class="tags"><span class="tag tag-pre">Pre-routed</span></div></div>
+      <div class="mod-body">A simplified second loom covering only the critical ignition circuits, routed in a separate conduit alongside the main loom with Superseal connectors capped at each end. Since you're building a custom loom from scratch, this costs almost nothing extra in materials.
+      <div class="how">
+        <div class="how-title">Minimum shadow circuit for the 59X (5 wires)</div>
+        — Stator trigger → CDI (W/R wire)<br>
+        — CDI +12V supply (R/W wire)<br>
+        — CDI → Coil primary negative (B/Y wire)<br>
+        — Kill switch ground (B/W wire)<br>
+        — Common earth return (B wire)<br><br>
+        In a crisis: unplug main loom connectors, plug in shadow loom, check for spark.
+      </div>
+      <div class="effort"><span class="effort-label">Time to install:</span><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="section-label">Carry in tool bag — pre-matched connectors</div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare CDI unit — connectors pre-fitted</div><div class="tags"><span class="tag tag-carry">Spare carried</span><span class="tag tag-onbike">Pre-matched</span></div></div>
+      <div class="mod-body">The CDI is the most failure-prone and hardest-to-source component on the 59X. Carry a tested spare (OEM 3TB or second Transmic) with the correct connectors already fitted so it plugs straight in — no splicing in the field. Wrap in bubble wrap inside a waterproof bag.<div class="effort"><span class="effort-label">Difficulty to swap:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare rectifier/regulator — connectors pre-fitted</div><div class="tags"><span class="tag tag-carry">Spare carried</span><span class="tag tag-onbike">Pre-matched</span></div></div>
+      <div class="mod-body">Fails silently — either stops charging (battery dies slowly) or fails high (battery boils). Carry a spare 3TB unit or Shindengen SH532 with connectors already fitted. €20–30 from a breaker.<div class="effort"><span class="effort-label">Difficulty to swap:</span><div class="dot on"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare fuses — full set of all ratings</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Carry 3× each of every rating in your fuse block (5A, 10A, 20A). Store in a waterproof micro-container inside the fuse block cover. A blown fuse is a 30-second fix with spares; without them it's a crisis.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare spark plug + correct cap, pre-gapped</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">NGK CR8EIX gapped to 0.7–0.8mm in its original tube. Include the correct 16mm thin-wall plug socket — without the right socket you can't remove the plug when you need to.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Electrical diagnostic kit</div><div class="tags"><span class="tag tag-diag">Diagnostic</span></div></div>
+      <div class="mod-body">Compact multimeter (Uni-T UT61B or similar, ~€20, ~150g). Lets you diagnose any electrical fault: charging voltage, coil resistance, fuse continuity, earth integrity. Without it, electrical diagnosis is guesswork. Also carry: 30cm test lead with croc clips, contact cleaner, small Tesa tape roll, 4× Superseal connectors of each size used in your loom.</div>
+    </div>
+  </div>
+
+  <div id="t3en" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Full carburettor rebuild kit</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Needle, main jet, pilot jet, float valve, all O-rings, diaphragm. If the carb floods or blocks in the middle of nowhere, you can rebuild it roadside in an hour. Full kit weighs under 50g. Source from XT600 listing — same carb family.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Petcock rebuild kit + spare inline fuel filter</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">A failed petcock diaphragm dumps fuel into the oil or floods the carb. A spare diaphragm kit is €5 and tiny. Also carry a spare inline fuel filter — 30 seconds to swap if the current one clogs with tank debris far from civilisation.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Cam chain tensioner (complete)</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">A worn tensioner giving out in the field = rattling engine you dare not rev. The complete unit (blade + bolt + spring) weighs almost nothing and fits in any tool bag. Source from XT600 43F/2KF listing.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">1 litre of engine oil — carried on the bike</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">The 59X dry sump holds ~2 litres. Carry 1 litre in a flat flask secured to the frame. In remote areas the correct motorcycle oil grade may simply not be available. Off-road riding also accelerates oil consumption through blow-by.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Chain master link + 10 spare chain links</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">A broken master link leaves you pushing. Carry a clip-type master link for 520 chain and a 10-link spare section. Requires a chain breaker in your toolkit — check yours is actually there before leaving.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">JB Weld + Devcon epoxy (emergency case repair)</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">A snapped chain or rocky drop can crack an engine case. JB Weld can seal a crack long enough to reach a workshop — not a real repair, but it buys 200–300km. 2 sachets, ~30g. Motomoritz-level prep, but it has saved riders in remote areas.</div>
+    </div>
+  </div>
+
+  <div id="t3to" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Minimum tool roll for the 59X</div><div class="tags"><span class="tag tag-onbike">On bike</span></div></div>
+      <div class="mod-body">
+        <strong>Spanners:</strong> 8, 10, 12, 14, 17mm combination. The 59X uses 10mm for most engine covers, 14mm for axles, 17mm for the front axle nut.<br><br>
+        <strong>Hex keys:</strong> 4, 5, 6mm (Allen).<br><br>
+        <strong>JIS screwdrivers:</strong> #2 and #3 — not Phillips. The 59X has JIS screws throughout.<br><br>
+        <strong>Socket set:</strong> 16mm plug socket, 30mm for flywheel nut.<br><br>
+        <strong>Pliers:</strong> combination + needle nose.<br><br>
+        <strong>Chain breaker + rivet tool.</strong><br><br>
+        <strong>Tyre levers (3×) + bead buddy + tyre pressure gauge.</strong> The 59X runs tube tyres.<br><br>
+        <strong>Wire: 1m each of 16AWG red and black</strong> for emergency loom repairs.<br><br>
+        <strong>Zip ties ×20 · Duct tape ×1 roll · Gorilla tape ×1 roll</strong>
+      </div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Tube tyre repair kit</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Tube patches + vulcanising solution, CO2 inflator + spare cartridges (or a mini 12V compressor), tyre levers, tyre spoon. Plug kits (for tubeless) don't work here — you need actual patches or a spare tube. Carry one spare tube per wheel: 21" front, 18" rear. Pre-check valve integrity on spare tubes before the trip.</div>
+    </div>
+  </div>
+
+  <div id="t3ch" class="panel">
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Handguards — Bark Busters or similar</div><div class="tags"><span class="tag tag-onbike">On bike</span></div></div>
+      <div class="mod-body">A dropped bike in slow off-road riding snaps brake levers without handguards. Full handguards protect both lever and hand. Standard 22mm bar fitment on the 59X. Also protects the mirror mount and bar-end on a tip-over. Essential for any off-road use.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Spare brake lever + spare clutch lever</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">Even with handguards, levers snap in a serious fall. The 59X lever pivots are shared with XT600. Carry one spare of each. Flat, ~50g each, barely noticeable in a pannier.</div>
+    </div>
+    <div class="mod">
+      <div class="mod-head"><div class="mod-title">Auxiliary fuel — 1–2L flat flask</div><div class="tags"><span class="tag tag-carry">Spare carried</span></div></div>
+      <div class="mod-body">The 59X plastic tank holds 13L — decent range (~250–350km depending on pace) but in remote areas service stations can be 200km apart. A 1L flat fuel flask (MSR or Touratech) strapped to the frame or inside a pannier buys 30–40km emergency range. More importantly it removes fuel anxiety on long sections.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER 4 — SOURCING
+════════════════════════════════════════════ -->
+<div id="c4" class="chapter-panel">
+
+  <div class="intro-box intro-amber">
+    Key suppliers for TT600 59X parts in Europe, ordered by relevance and availability.
+  </div>
+
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">KEDO.de — definitive XT/TT600 specialist (Germany)</div><div class="tags"><span class="tag tag-src">Sourcing</span></div></div>
+    <div class="mod-body">The single best European source for hard-to-find XT/TT600 parts. Stocks: oil cooler kits, Wiseco and JE forged pistons, big bore kits, flow-optimised valves, gasket sets, engine seals, exhausts, and chassis parts — all cross-referenced to the TT600/XT600 family. Ships to France in 3–5 days. Check their out-of-stock notification list for the oil cooler kit. KEDO Australia (kedopartsaustralia.com) stocks some items not on the German site.</div>
+  </div>
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">Transmic.fr — French CDI maker (France)</div><div class="tags"><span class="tag tag-src">Sourcing</span><span class="tag tag-fr">France</span></div></div>
+    <div class="mod-body">Based in France, ships immediately. The AC-CDI v13 for XT400–600/TT600 covers the 59X 2JT0 — select model code in the WiFi interface. Contact: contact@transmic.fr (Thierry responds quickly). Note: site closes for August holidays, back 7 September. Confirm exact model code compatibility before ordering.</div>
+  </div>
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">Tenere.co.uk forum — active English community, classifieds</div><div class="tags"><span class="tag tag-src">Sourcing</span></div></div>
+    <div class="mod-body">Most active English-language XT/TT600 community. Classifieds section regularly has used XT600 donor bikes, spare engines, and hard-to-find bodywork. Search before buying any planned mod — someone has almost certainly tried it and documented the outcome.</div>
+  </div>
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">XRsOnly.com — JE Pistons and US performance parts</div><div class="tags"><span class="tag tag-src">Sourcing</span></div></div>
+    <div class="mod-body">Stocks JE forged pistons for the TT600/XT600 in 97mm (621cc, 11.5:1 compression). Ships internationally. For higher-compression options that KEDO doesn't stock. Pair with a head skim at a French atelier moteur.</div>
+  </div>
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">Horizons Unlimited HUBB — adventure rider knowledge base</div><div class="tags"><span class="tag tag-src">Sourcing</span></div></div>
+    <div class="mod-body">The horizonsunlimited.com/hubb Yamaha Tech section has detailed threads on XT600 long-distance preparation, parts interchangeability, and real-world failure reports from riders who have done exactly the kind of trip you're planning. Search the XT600 and TT600 tags extensively before finalising your prep list.</div>
+  </div>
+  <div class="mod">
+    <div class="mod-head"><div class="mod-title">RS Components / Farnell / Mouser — connector sourcing (France)</div><div class="tags"><span class="tag tag-src">Sourcing</span></div></div>
+    <div class="mod-body">For Superseal 1.5 and Deutsch DT connector sets, extraction tools, and TXL automotive wire. All ship to France with 1–2 day delivery. RS Components is often the easiest for small quantities with no minimum order.</div>
+  </div>
+
+</div>
+
+<script>
+function showChapter(id, el) {
+  document.querySelectorAll('.chapter-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+
+function showTab(chapter, id, el) {
+  // only affect panels within the active chapter
+  const chapterEl = document.getElementById(chapter);
+  chapterEl.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  chapterEl.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

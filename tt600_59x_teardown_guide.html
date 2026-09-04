@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TT600 59X — Teardown Best Practices</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;font-size:14px;color:#1a1a1a;padding:16px;background:#fafaf8;max-width:780px;margin:0 auto;line-height:1.6}
+h1{font-size:17px;font-weight:600;margin-bottom:4px}
+.sub{font-size:12px;color:#777;margin-bottom:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tab{padding:6px 14px;border-radius:20px;border:1px solid #ddd;font-size:12px;cursor:pointer;background:#f5f5f3;color:#555;user-select:none;transition:all .15s}
+.tab.active{background:#3C3489;border-color:#3C3489;color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+h3{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin:18px 0 8px;padding-bottom:4px;border-bottom:1px solid #eee}
+h3:first-child{margin-top:0}
+.tip-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0eeea}
+.tip-row:last-child{border-bottom:none}
+.tip-icon{flex-shrink:0;width:24px;text-align:center;font-size:15px;line-height:1.5}
+.tip-body{flex:1}
+.tip-body strong{display:block;font-size:13px;font-weight:500;margin-bottom:2px;color:#111}
+.tip-body span{color:#666;font-size:12px}
+.card{border:1px solid #e8e6e0;border-radius:8px;padding:10px 14px;margin-bottom:8px;background:#fff}
+.card-title{font-weight:500;font-size:13px;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card p{font-size:12px;color:#555;line-height:1.6}
+.tag{font-size:10px;padding:2px 8px;border-radius:20px;white-space:nowrap;font-weight:600}
+.tag-warn{background:#FCEBEB;color:#791F1F}
+.tag-tip{background:#E1F5EE;color:#085041}
+.tag-59x{background:#FAECE7;color:#712B13}
+.tag-over{background:#FAEEDA;color:#633806}
+</style>
+</head>
+<body>
+
+<h1>Yamaha TT600 59X — Teardown & Rebuild Best Practices</h1>
+<p class="sub">1987–88 model · Full teardown · DIY + specialist jobs</p>
+
+<div class="tabs">
+  <div class="tab active" onclick="show('doc',this)">📸 Documentation</div>
+  <div class="tab" onclick="show('dis',this)">🔧 Disassembly</div>
+  <div class="tab" onclick="show('org',this)">📦 Organisation</div>
+  <div class="tab" onclick="show('clean',this)">🧼 Cleaning</div>
+  <div class="tab" onclick="show('reas',this)">⚙️ Reassembly</div>
+  <div class="tab" onclick="show('over',this)">⚠️ Overlooked</div>
+</div>
+
+<!-- DOCUMENTATION -->
+<div id="doc" class="panel active">
+  <h3>Before you touch a single bolt</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">📹</div>
+    <div class="tip-body">
+      <strong>Film a full walkthrough video before anything comes off</strong>
+      <span>Walk around the bike with your phone recording. Get close-ups of cable routing, bracket positions, wiring connector locations, hose runs. You will forget where the throttle cable exits the headstock in 6 weeks. Video doesn't.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">📸</div>
+    <div class="tip-body">
+      <strong>Photo every sub-assembly before and during disassembly</strong>
+      <span>Especially: carb cable routing, wiring harness routing along the frame, brake hose clamp positions, speedo cable path. On the 59X the oil tank hose routing in the frame triangle is non-obvious — photograph both ends before disconnecting anything.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">📋</div>
+    <div class="tip-body">
+      <strong>Get the factory service manual before you start — not after</strong>
+      <span>The Yamaha XT600/TT600 factory manual (1984–1989 Clymer edition also works) has every torque spec, clearance, and assembly sequence. Print the engine section double-sided and keep it in a binder at the bench. Never rely on memory for torques.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔢</div>
+    <div class="tip-body">
+      <strong>Record all measurements before disassembly</strong>
+      <span>Valve clearances, fork oil level, chain slack. Even on a rough bike, knowing where it sat tells you what was worn and by how much.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🗂️</div>
+    <div class="tip-body">
+      <strong>Start a parts catalogue on day one</strong>
+      <span>Three columns: part name / condition found / action (replace / reuse / repair). Update as you go. By the end of teardown you have your complete parts order ready — no hunting back through photos trying to remember if the cam chain tensioner looked worn.</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISASSEMBLY -->
+<div id="dis" class="panel">
+  <h3>General rules</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">🌡️</div>
+    <div class="tip-body">
+      <strong>Soak seized fasteners 24–48h before attempting removal</strong>
+      <span>Kroil, Plusgas, or WD-40 Specialist Penetrant — not regular WD-40. Apply, tap the fastener lightly with a hammer to open the threads, apply again. Leave overnight. Forcing a seized bolt cold is how studs break.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔥</div>
+    <div class="tip-body">
+      <strong>Exhaust studs: heat is your friend, force is your enemy</strong>
+      <span>The 59X header studs into the aluminium head are almost always seized after 35+ years. Apply heat with a propane torch to the alloy around the stud (not the stud itself — you want the alloy to expand away). Then apply beeswax or paraffin at the base — it wicks into the threads as it cools. Two-nut trick to remove: jam two nuts against each other on the stud and turn the lower one. If a stud breaks, stop — use a left-hand drill bit before attempting extraction, never an EasyOut, as they snap inside and make the situation far worse.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">↩️</div>
+    <div class="tip-body">
+      <strong>Always crack fasteners before full removal</strong>
+      <span>Break each bolt free (quarter turn) before fully removing anything. If it's fighting you, stop and apply more penetrant. Forcing a quarter-seized bolt the whole way out strips threads.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🧲</div>
+    <div class="tip-body">
+      <strong>Stuff clean rags into the crankcase before removing the piston</strong>
+      <span>The moment a circlip, wrist pin, or any small component drops into an open crankcase you have a very bad day. Block every opening before working on the piston.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔩</div>
+    <div class="tip-body">
+      <strong>Never allow a dry bearing to spin with compressed air</strong>
+      <span>When cleaning bearings with air, hold the outer race still. A dry bearing spun at air-gun speed destroys itself in seconds — even one you plan to reuse.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">⛓️</div>
+    <div class="tip-body">
+      <strong>Zip-tie gear shafts before lifting out of the cases</strong>
+      <span>One zip-tie on each end of each gear shaft the moment it comes out. All gears, shims and washers stay in order. Lose the order and you spend hours with the manual reconstructing a stack that should have taken five minutes.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔑</div>
+    <div class="tip-body">
+      <strong>Use JIS screwdrivers, not Phillips, on Japanese fasteners</strong>
+      <span>JIS screws look like Phillips but aren't. A Phillips bit cams out and rounds the head. JIS bits (Vessel brand, available in France via Amazon or specialist tool suppliers) drop in perfectly. The 59X has many JIS screws on covers and side panels.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ORGANISATION -->
+<div id="org" class="panel">
+  <h3>Keeping track of everything</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">🥚</div>
+    <div class="tip-body">
+      <strong>Egg cartons and muffin tins for small fasteners</strong>
+      <span>As you remove each sub-assembly, drop its bolts into one compartment. Label each with masking tape: "cam cover bolts", "clutch cover", "left crankcase". Fast, free, and foolproof.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🏷️</div>
+    <div class="tip-body">
+      <strong>Zip-lock bags with a paper label inside — not written on the outside</strong>
+      <span>Marker on the outside of a bag wipes off with solvent. Write on a paper strip and drop it inside with the parts. Label specifically: "front caliper banjo bolt + 2x copper washers", not just "brake bolt".</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">📌</div>
+    <div class="tip-body">
+      <strong>Return bolts to their holes immediately after removal</strong>
+      <span>When a housing comes off, put the bolts straight back in their holes finger-tight. Engine cases often use bolts of different lengths in different positions — mixing them up on reassembly can crack the cases. This trick makes torquing in sequence trivial.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">📍</div>
+    <div class="tip-body">
+      <strong>Tape and label every electrical connector as you unplug it</strong>
+      <span>Masking tape on both halves, written with matching numbers. "E1" on the male, "E1" on the female. On the 59X the CDI at the headstock has multiple connectors that look similar — one wrong connection and it won't spark.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🗓️</div>
+    <div class="tip-body">
+      <strong>Keep a teardown log with dates</strong>
+      <span>Note what you did each session and the current state. A resto spanning months is easy to lose track of. "Left fork leg out, awaiting seal kit — springs stored in red bag on shelf" saves re-disassembling to check in week 8.</span>
+    </div>
+  </div>
+</div>
+
+<!-- CLEANING -->
+<div id="clean" class="panel">
+  <h3>Cleaning parts correctly</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">🧽</div>
+    <div class="tip-body">
+      <strong>Gasket surfaces: Scotch-Brite + WD-40, never a scraper</strong>
+      <span>Metal scrapers gouge aluminium mating faces. Use a grey Scotch-Brite pad wet with WD-40 in one direction only. Takes longer but leaves a perfectly flat, unscratched surface. A gouged case face will never seal properly.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🍋</div>
+    <div class="tip-body">
+      <strong>Citric acid for rust on steel parts</strong>
+      <span>Mix citric acid powder (available at any pharmacy or boulangerie supply in France) with warm water — about 100g per litre. Submerge rusted steel parts overnight. Removes rust without attacking the metal beneath. Rinse, dry, and oil immediately after to prevent flash rust.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🚫</div>
+    <div class="tip-body">
+      <strong>Never use caustic degreasers on aluminium cases</strong>
+      <span>Alkaline degreasers attack aluminium and leave a white powdery residue in galleries. Use a petroleum-based parts cleaner (nettoyant frein works well on engine parts) or ultrasonic cleaning if available.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔒</div>
+    <div class="tip-body">
+      <strong>Cover all open ports during cleaning</strong>
+      <span>Oil galleries, cam chain tunnel, bearing bores — mask with tape or rag before any cleaning or blasting. One grain of grit in an oil gallery destroys new bearings on first startup.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">💨</div>
+    <div class="tip-body">
+      <strong>Vapour blast or ultrasonic is worth the cost for engine cases</strong>
+      <span>Many ateliers in France offer vapeur blasting (bead blast) — it leaves a factory-fresh finish on alloy without distorting it. Book this before reassembly, not after. Mask bearing bores and precise surfaces before the part goes in.</span>
+    </div>
+  </div>
+</div>
+
+<!-- REASSEMBLY -->
+<div id="reas" class="panel">
+  <h3>Putting it back together</h3>
+
+  <div class="tip-row">
+    <div class="tip-icon">📏</div>
+    <div class="tip-body">
+      <strong>Torque every single bolt — no exceptions</strong>
+      <span>Never estimate by feel on a rebuild. Head bolts: 40 Nm in cross pattern, warm re-torque after first heat cycle. Case bolts: 10 Nm. Cam cover: 10 Nm. If using anti-seize on threads, reduce the torque spec by ~20% as the lubrication increases effective clamping force.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔄</div>
+    <div class="tip-body">
+      <strong>Head bolts in a cross pattern, in three stages</strong>
+      <span>Snug by hand → half torque → full torque, each time working in a diagonal cross. Never in a circle. This ensures even gasket compression and prevents head warping on the aluminium casting.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🛢️</div>
+    <div class="tip-body">
+      <strong>Oil everything that moves before the engine closes</strong>
+      <span>Every bearing journal, bush, cam lobe, and sliding surface — coat with clean engine oil before assembly. The first seconds of startup on a dry rebuild is when most damage happens. The 59X dry sump means filling the oil tank before even attempting to crank.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔵</div>
+    <div class="tip-body">
+      <strong>Loctite colour codes — use them correctly</strong>
+      <span>Blue (243): standard thread lock, removable — case bolts, cam cover, general fasteners. Red (271): permanent — only where specified in the manual (flywheel nut etc.). Never use red on something you might remove. Never use Loctite on exhaust studs — use copper anti-seize (Cuivre-Lubrifiant) instead.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🎯</div>
+    <div class="tip-body">
+      <strong>Mark cam timing before removing the sprocket</strong>
+      <span>Use a paint marker or correction fluid on the cam sprocket and chain before splitting the top end. The timing marks on the 59X are the same as the XT600 — TDC mark on the flywheel, sprocket marks aligned at the head mating face. Verify by rotating two full turns by hand before closing the cam cover.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">💧</div>
+    <div class="tip-body">
+      <strong>Yamabond on crankcase mating faces — thin and continuous</strong>
+      <span>The crankcase halves seal with sealant, not a paper gasket. Apply a thin, unbroken bead with no gaps. Too much is as bad as too little — excess squeezes into oil galleries. Hylomar Blue (available at most French motor factors) is a direct equivalent to Yamabond.</span>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <div class="tip-icon">🔋</div>
+    <div class="tip-body">
+      <strong>Prime the oil system before first start</strong>
+      <span>Fill the oil tank, remove the spark plug, and kick the engine repeatedly until oil shows circulating in the tank sight glass or return line. Only then refit the plug and attempt to start. Ten seconds of dry running destroys new bearings.</span>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLOOKED -->
+<div id="over" class="panel">
+  <h3>What gets missed on the 59X specifically</h3>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-59x">59X specific</span> The YDIS carburettor is not a standard CV carb</div>
+    <p>The Yamaha Dual Intake System carb combines a mechanically-lifted slide AND a CV diaphragm in one body. Reassembly has more steps than a normal carb, and the rebuild kit includes one extra spring that is NOT used — it's a spare. Many people strip and rebuild a second time thinking they missed it. You didn't.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-59x">59X specific</span> Oil tank hose routing in the frame triangle</div>
+    <p>The dry sump oil tank in the front frame triangle has hoses running to the oil pump in tight and awkward positions. Getting them backwards on reassembly means no oil pressure or oil dumped in the wrong place. Photograph every hose before disconnection — both ends, before and after any clamps are moved.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-over">Often overlooked</span> Knock pins at the cylinder base</div>
+    <p>Two small alignment knock pins sit between the cylinder base and the crankcase. They are tiny, easy to knock loose, and if forgotten the cylinder won't sit square and the base gasket won't seal. Note their position, remove carefully, store in a labelled bag. Check they're in place before lowering the cylinder.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-over">Often overlooked</span> Piston ring end-gap orientation</div>
+    <p>Ring gaps must be staggered approximately 120° apart around the piston, never aligned. Aligned gaps cause compression blowby and oil burning even with brand new rings. Mark orientation with a felt pen before fitting rings to the piston.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-warn">⚠️ Dangerous if missed</span> Piston circlips must fully seat</div>
+    <p>The wrist pin is retained by circlips. If one isn't fully in its groove, it exits at high RPM, the con-rod destroys the piston, the piston destroys the barrel. Always fit new circlips, always check they're fully seated with a pick before closing the engine. You should feel and hear them click into the groove.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-over">Often overlooked</span> Fork oil level vs. fork oil weight</div>
+    <p>People focus on weight (10W) but the oil level — measured from the top of the tube with spring removed and fork fully compressed — determines air spring stiffness and feel. Wrong level means handling that seems fine on the stand and terrible on the road. Spec is 440ml per leg on the 59X. Measure by volume, not by what came out.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-59x">59X specific</span> Speedo drive gearbox in the front hub</div>
+    <p>The plastic speedo drive unit sits in the front hub. Frequently cracked or seized, and causes a slight notchy feeling in the front wheel — often misdiagnosed as a wheel bearing issue. Inspect it separately during the wheel rebuild. Replacement is listed under XT600 43F/2KF and is the same part.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-warn">⚠️ Dangerous if missed</span> Verify cam timing after head reassembly</div>
+    <p>After fitting the head and before closing the cam cover, rotate the engine by hand through two complete revolutions and re-check that timing marks align. It is entirely possible to be one tooth out and not notice immediately — the engine will run rough or not at all, and in a worst case (wrong direction one tooth) there is valve-to-piston contact risk.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-over">Often overlooked</span> Re-torque head bolts after first heat cycle</div>
+    <p>New head gaskets compress with heat. After the first 15-minute warm-up and full cool-down, remove the cam cover and re-torque all head bolts to spec. Skip this and the gasket will weep within a few hundred kilometres.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="tag tag-59x">59X specific</span> The 6V system has no battery — the capacitor is load-bearing</div>
+    <p>Unlike modern bikes, the 59X runs purely off the magneto through a capacitor. If the capacitor fails, there is no voltage buffering — CDI and connected components can be damaged instantly by spikes. If keeping 6V, fit a known-good capacitor unit. If converting to 12V, do the full conversion in one go — half-conversions mixing 6V and 12V components cause mysterious, hard-to-diagnose electrical failures.</p>
+  </div>
+</div>
+
+<script>
+function show(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

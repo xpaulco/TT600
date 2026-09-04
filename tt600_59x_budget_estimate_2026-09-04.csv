@@ -1,0 +1,31 @@
+Category,Priority,Part,Qty,Unit Min,Unit Max,Currency,Min Total,Max Total,Price Confidence,Status,Source URL,Notes
+Service,High,Oil filter service kit,1,8.43,8.43,EUR,=D2*E2,=D2*F2,Fixed,Ready to buy,https://www.kedo.com/kedo-oil-filter-kit-7-pieces-complete.html,KEDO 91628 in stock
+Service,High,Air filter,1,18.50,18.50,EUR,=D3*E3,=D3*F3,Fixed,Ready to buy,https://www.kedo.com/air-filter-oem-reference-34k-14451-01.html,KEDO 33112 in stock
+Service,High,Spark plug DPR8EA-9,1,4.20,4.20,EUR,=D4*E4,=D4*F4,Fixed,Ready to buy,https://www.kedo.com/ngk-spark-plug-dpr8ea-9-interference-suppressed.html,KEDO 40008 in stock
+Service,High,Carburettor repair kit,1,21.50,21.50,EUR,=D5*E5,=D5*F5,Fixed,Ready to buy,https://www.kedo.com/carburettor-repair-kit-tt600r-re-needs-in-addition-gasket-22305.html,KEDO 94012 in stock
+Service,High,Intake manifold set L+R with O-rings,1,39.90,39.90,EUR,=D6*E6,=D6*F6,Fixed,Ready to buy,https://www.kedo.com/intake-manifold-set-left-right-incl-o-rings-unrestricted-version-2.html,Price captured from KEDO related-items block
+Service,Medium,Crankcase cover Allen screw set,1,8.95,8.95,EUR,=D7*E7,=D7*F7,Fixed,Ready to buy,https://www.kedo.com/allen-screw-set-for-crankcase-cover-8-8-zinc-coated-10236.html,KEDO 10236 in stock
+Service,Medium,Magnetic oil drain plug M14x1.5,1,12.50,12.50,EUR,=D8*E8,=D8*F8,Fixed,Ready to buy,https://www.kedo.com/oil-drain-plug-magnetic-m14x1-5-a-f19mm-gasket-see-94026.html,KEDO 40535 in stock
+Service,Medium,Copper washer 14x20x1.5,1,0.29,0.29,EUR,=D9*E9,=D9*F9,Fixed,Ready to buy,https://www.kedo.com/cu-washer-14x20x1-5mm.html,Drain plug washer
+Service,Medium,Tank silent-bloc,1,7.70,7.70,EUR,=D10*E10,=D10*F10,Fixed,Ready to buy,https://www.pieces-yam.com/yamaha-moto/affectation_pieces_detachees/1W1241820100,OEM ref 1W1241820100
+Optional,Low,Oil sump gasket,1,3.50,3.50,EUR,=D11*E11,=D11*F11,Fixed,Optional add-on,https://www.kedo.com/gasket-for-oil-sump-oem-reference-583-13414-00.html,KEDO 21030
+12V core,Critical,Aftermarket 3TB CDI,1,299.99,299.99,USD,=D12*E12,=D12*F12,Fixed,Alternative path,https://www.regulatorrectifier.com/products/1990-2002-yamaha-xt600e-3tb-performance-ignitor-unit-assy-cdi-unit,Use only with full 3TB conversion strategy
+12V core,Critical,XT600 3TB stator used,1,60,140,EUR,=D13*E13,=D13*F13,Estimate,Planning range,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+stator,Used-market planning range only; replace with real listing price when found
+12V core,Critical,XT600 3TB flywheel used,1,40,100,EUR,=D14*E14,=D14*F14,Estimate,Planning range,https://www.ebay.fr/sch/i.html?_nkw=XT600+3TB+flywheel,Must match stator generation
+12V core,Critical,XT600 3TB CDI used,1,80,180,EUR,=D15*E15,=D15*F15,Estimate,Planning range,https://www.ebay.fr/sch/i.html?_nkw=3TB-82305-00,Used-market planning range; verify markings and connector count
+12V core,Critical,XT600 3TB regulator rectifier,1,40,120,EUR,=D16*E16,=D16*F16,Estimate,Planning range,https://www.ebay.fr/sch/i.html?_nkw=3TJ-81960-01,Used or aftermarket planning range
+12V core,High,XT600 12V ignition coil,1,20,60,EUR,=D17*E17,=D17*F17,Estimate,Planning range,https://www.leboncoin.fr/recherche?text=XT600%203TB%20bobine%2012V,Target 3 to 5 ohm primary resistance
+12V loom,High,AGM battery YTX5L-BS class,1,25,55,EUR,=D18*E18,=D18*F18,Estimate,Planning range,,Need final physical sizing and mount plan
+12V loom,High,Blade fuse block 4 to 6 way,1,10,25,EUR,=D19*E19,=D19*F19,Estimate,Planning range,,ATO or ATC type
+12V loom,High,Weatherproof inline fuse holder,1,5,12,EUR,=D20*E20,=D20*F20,Estimate,Planning range,,Install close to battery positive
+12V loom,High,Fuse assortment 5A 10A 20A,1,5,10,EUR,=D21*E21,=D21*F21,Estimate,Planning range,,Initial fuse map already defined
+12V loom,High,TXL or GXL wire set,1,35,80,EUR,=D22*E22,=D22*F22,Estimate,Planning range,,Buy 5m each major color/gauge
+12V loom,High,Superseal and/or Deutsch connector kit,1,25,70,EUR,=D23*E23,=D23*F23,Estimate,Planning range,,Prefer engine-side robust connectors
+12V loom,Medium,Adhesive heat shrink kit,1,8,20,EUR,=D24*E24,=D24*F24,Estimate,Planning range,,Dual-wall type
+12V loom,Medium,Tesa 51036 loom tape,1,8,15,EUR,=D25*E25,=D25*F25,Estimate,Planning range,,For final loom wrapping
+12V loom,Medium,Split conduit 10 and 13 mm,1,10,25,EUR,=D26*E26,=D26*F26,Estimate,Planning range,,Protect frame-routed sections
+12V loom,High,12V bulb conversion set,1,15,40,EUR,=D27*E27,=D27*F27,Estimate,Planning range,,Headlight tail/brake and speedo bulbs together
+Summary,,Known EUR subtotal,,, ,EUR,=SUM(H2:H11),=SUM(I2:I11),Computed,Live fixed prices only,,Excludes estimated conversion lines and shipping
+Summary,,Known USD subtotal,,, ,USD,=SUM(H12:H12),=SUM(I12:I12),Computed,Live fixed prices only,,Aftermarket CDI path only
+Summary,,Estimated EUR subtotal including planning ranges,,, ,EUR,=SUM(H2:H11)+SUM(H13:H27),=SUM(I2:I11)+SUM(I13:I27),Computed,Planning estimate,,Excludes the optional USD aftermarket CDI line unless you convert currencies manually
+Summary,,Planning-range lines remaining,15,,,count,=COUNTIF(J2:J27,"Estimate"),=COUNTIF(J2:J27,"Estimate"),Computed,Review and replace with live listings,,Replace estimates with real prices as you source parts
