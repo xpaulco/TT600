@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TT600 59X One-Page Dashboard</title>
-  <meta name="description" content="Dashboard for TT600 59X parts, prices, links, order and install tracking, and restoration control checklists.">
+  <title>TT600 59X — Tableau de bord</title>
+  <meta name="description" content="Tableau de bord TT600 59X avec pièces, prix, liens, suivi de commande et checklist de contrôle.">
   <style>
     :root {
       --bg: #f3efe7;
@@ -520,103 +520,102 @@
     <section class="top">
       <div class="top-grid">
         <div>
-          <h1>TT600 59X One-Page Dashboard</h1>
-          <p class="mini">All parts, prices, links, and control checklists in one screen.</p>
+          <h1>TT600 59X — Tableau de bord</h1>
+          <p class="mini">Toutes les pièces, prix, liens et checklist de contrôle sur un seul écran.</p>
         </div>
         <div class="filters">
-          <input id="search" type="search" placeholder="Search part, ref, vendor, notes...">
-          <select id="statusFilter" title="Filter by order or install status" aria-label="Filter by order or install status">
-            <option value="all">All statuses</option>
-            <option value="todo">Not ordered</option>
-            <option value="ordered">Ordered</option>
-            <option value="installed">Installed</option>
+          <input id="search" type="search" placeholder="Rechercher pièce, réf, fournisseur, notes…">
+          <select id="statusFilter" title="Filtrer par statut de commande ou d'installation" aria-label="Filtrer par statut de commande ou d'installation">
+            <option value="all">Tous statuts</option>
+            <option value="todo">Non commandées</option>
+            <option value="ordered">Commandées</option>
+            <option value="installed">Installées</option>
           </select>
-          <select id="priorityFilter" title="Filter by priority" aria-label="Filter by priority">
-            <option value="all">All priorities</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
+          <select id="priorityFilter" title="Filtrer par priorité" aria-label="Filtrer par priorité">
+            <option value="all">Toutes priorités</option>
+            <option value="High">Élevée</option>
+            <option value="Medium">Moyenne</option>
+            <option value="Low">Faible</option>
           </select>
         </div>
         <div class="stats">
-          <div class="stat"><span>Total Parts</span><b id="statTotal">0</b></div>
-          <div class="stat"><span>Visible</span><b id="statVisible">0</b></div>
-          <div class="stat"><span>Ordered</span><b id="statOrdered">0</b></div>
-          <div class="stat"><span>Installed</span><b id="statInstalled">0</b></div>
+          <div class="stat"><span>Total pièces</span><b id="statTotal">0</b></div>
+          <div class="stat"><span>Visibles</span><b id="statVisible">0</b></div>
+          <div class="stat"><span>Commandées</span><b id="statOrdered">0</b></div>
+          <div class="stat"><span>Installées</span><b id="statInstalled">0</b></div>
         </div>
       </div>
     </section>
 
     <section class="card knowledge">
-      <h2>Knowledge Base</h2>
-      <p>Core project rules restored from the markdown pack so you can decide and execute without opening separate docs.</p>
+      <h2>Base de connaissances</h2>
+      <p>Les règles clés du projet sont rassemblées ici pour décider et agir sans ouvrir plusieurs documents.</p>
       <div class="knowledge-grid">
         <details>
-          <summary>Compatibility Rules (59X vs XT Donors)</summary>
+          <summary>Règles de compatibilité (59X vs donors XT)</summary>
           <ul>
-            <li>Safe XT-family searches: speedo drive, levers, cables, carb rebuild items, rear shock family (43F, 1VJ, 3AJ).</li>
-            <li>59X-sensitive items: CDI curve, battery packaging constraints, cylinder strategy (stock 6V capacitor topic excluded for this 12V build).</li>
-            <li>Big-bore warning: original 59X Nikasil cylinder cannot be over-bored. Big bore needs XT steel-sleeve conversion first.</li>
-            <li>12V conversion rule: stator + flywheel + CDI + regulator/rectifier must be treated as one matched 3TB system.</li>
+            <li>Recherches sûres sur la famille XT : entraînement de compteur, leviers, câbles, pièces de réparation de carburateur, famille de l'amortisseur arrière (43F, 1VJ, 3AJ).</li>
+            <li>Éléments sensibles sur 59X : courbe CDI, contraintes de packaging batterie, stratégie de cylindre (le sujet du condensateur 6V d'origine est exclu pour cette conversion 12V).</li>
+            <li>Attention au gros alésage : le cylindre Nikasil d'origine 59X ne supporte pas un suralésage. Il faut d'abord une conversion XT avec chemise acier.</li>
+            <li>Règle 12V : stator + volant + CDI + régulateur/rectificateur doivent être traités comme un même système 3TB.</li>
           </ul>
         </details>
 
         <details>
-          <summary>Best Buy Order and Budget Logic</summary>
+          <summary>Ordre d'achat et logique budget</summary>
           <ul>
-            <li>Order 1: KEDO service basket first to establish a mechanical baseline and avoid fragmented shipping.</li>
-            <li>Order 2: OEM-only one-off items such as tank silent-bloc when needed.</li>
-            <li>Order 3: full loom materials in one order (wire, fuses, connectors, shrink, bulbs, battery).</li>
-            <li>Order 4: donor electrics last, but only as coherent 3TB set or proven matched pieces.</li>
-            <li>Avoid buying CDI first in isolation just because a listing appears.</li>
+            <li>Commande 1 : panier de service KEDO en premier pour poser une base mécanique et éviter des livraisons fragmentées.</li>
+            <li>Commande 2 : pièces OEM uniques comme le silent-bloc de réservoir quand c'est nécessaire.</li>
+            <li>Commande 3 : matériaux de faisceau en une seule commande (fil, fusibles, connecteurs, thermorétractable, ampoules, batterie).</li>
+            <li>Commande 4 : composants électriques de donor en dernier, seulement en jeu 3TB cohérent ou pièces appariées vérifiées.</li>
+            <li>Éviter d'acheter le CDI isolé juste parce qu'une annonce apparaît.</li>
           </ul>
         </details>
 
         <details>
-          <summary>CDI Decision: Used Matched Donor vs New Aftermarket</summary>
+          <summary>Choix CDI : donor 3TB utilisé vs aftermarket neuf</summary>
           <table class="inline-table">
             <thead>
               <tr>
-                <th>Criterion</th>
-                <th>Used 3TB Donor CDI</th>
-                <th>Aftermarket CDI</th>
+                <th>Critère</th>
+                <th>CDI donor 3TB d'occasion</th>
+                <th>CDI aftermarket</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Cost</td>
-                <td>Lower typical price, higher condition uncertainty</td>
-                <td>Higher price, cleaner purchase path</td>
+                <td>Coût</td>
+                <td>Prix souvent plus bas, incertitude de condition plus grande</td>
+                <td>Prix plus élevé, chemin d'achat plus propre</td>
               </tr>
               <tr>
-                <td>System match</td>
-                <td>Best when from same donor bike</td>
-                <td>Acceptable only inside full 3TB architecture</td>
+                <td>Compatibilité système</td>
+                <td>Meilleur si même moto donneur</td>
+                <td>Acceptable seulement dans l'architecture 3TB complète</td>
               </tr>
               <tr>
-                <td>Risk</td>
-                <td>Low if coherent donor set, high if isolated part</td>
-                <td>Lower provenance risk, may need install adaptation</td>
+                <td>Risque</td>
+                <td>Faible si jeu de donneur cohérent, élevé si pièce isolée</td>
+                <td>Moins de risque de provenance, peut demander un ajustement d'installation</td>
               </tr>
             </tbody>
           </table>
           <ul>
-            <li>Primary recommendation: hunt complete donor set first.</li>
-            <li>Fallback: use aftermarket CDI only when donor CDI provenance is weak.</li>
+            <li>Recommandation principale : chercher un jeu complet de donneur.</li>
+            <li>En secours : utiliser un CDI aftermarket seulement si la provenance du CDI donneur est faible.</li>
           </ul>
         </details>
 
         <details>
-          <summary>12V Architecture and Commissioning Rules</summary>
+          <summary>Architecture 12V et règles de mise en service</summary>
           <ul>
-            <li>Fuse map baseline: 20A main, 5A ignition, 10A headlight, 5A tail/brake, 5A instruments.</li>
-            <li>Routing rule: keep CDI trigger wire at least 50 mm from HT lead path.</li>
-            <li>Grounding rule: single clean earth point for all return paths.</li>
-            <li>Test rule: confirm spark path before full charging-side integration.</li>
-            <li>Charging acceptance: target about 13.8V to 14.5V at around 3000 rpm.</li>
+            <li>Base de fusibles : 20A principal, 5A allumage, 10A phare, 5A feu arrière/frein, 5A instruments.</li>
+            <li>Règle de routage : garder le fil de déclenchement CDI à au moins 50 mm du chemin de la HT.</li>
+            <li>Règle de masse : un seul point de masse propre pour tous les retours.</li>
+            <li>Règle de test : confirmer le chemin d'étincelle avant l'intégration du côté charge.</li>
+            <li>Acceptation de charge : viser environ 13,8V à 14,5V autour de 3000 tr/min.</li>
           </ul>
         </details>
-
       </div>
     </section>
 
@@ -625,27 +624,27 @@
 
       <aside class="side">
         <section class="card side-sec budget-panel">
-          <h2>Budget Snapshot</h2>
+          <h2>Aperçu budget</h2>
           <div class="totals">
             <div class="total">
-              <span>Visible Low Estimate</span>
+              <span>Estimation basse visible</span>
               <b id="budgetLow">EUR 0.00</b>
             </div>
             <div class="total">
-              <span>Visible High Estimate</span>
+              <span>Estimation haute visible</span>
               <b id="budgetHigh">EUR 0.00</b>
             </div>
             <div class="total">
-              <span>Non-EUR Rows Hidden</span>
+              <span>Lignes non EUR masquées</span>
               <b id="nonEurRows">0</b>
             </div>
             <div class="total">
-              <span>Ordered Coverage</span>
+              <span>Couverture commandée</span>
               <b id="orderedRate">0%</b>
               <div class="progress"><div class="bar" id="barOrdered"></div></div>
             </div>
             <div class="total">
-              <span>Installed Coverage</span>
+              <span>Couverture installée</span>
               <b id="installedRate">0%</b>
               <div class="progress"><div class="bar" id="barInstalled"></div></div>
             </div>
@@ -653,34 +652,34 @@
         </section>
 
         <section class="card side-sec checklist-panel">
-          <h2>Control Checklist</h2>
+          <h2>Checklist de contrôle</h2>
           <div id="checklists"></div>
         </section>
       </aside>
     </section>
 
     <section class="card other-pages">
-      <h2>Other Pages</h2>
-      <p>Quick links to backup and reference pages in this workspace.</p>
+      <h2>Autres pages</h2>
+      <p>Liens rapides vers les pages de secours et de référence dans ce dossier.</p>
       <div class="links">
-        <a href="tt600_59x_mods_guide.html">Mods guide</a>
-        <a href="tt600_59x_teardown_guide.html">Teardown guide</a>
-        <a href="tt600_59x_wiring_loom_guide.html">Wiring loom guide</a>
-        <a href="index_landing_backup.html">Landing backup</a>
+        <a href="tt600_59x_mods_guide.html">Guide mods</a>
+        <a href="tt600_59x_teardown_guide.html">Guide démontage</a>
+        <a href="tt600_59x_wiring_loom_guide.html">Guide faisceau</a>
+        <a href="index_landing_backup.html">Backup landing</a>
         <a href="tt600_59x_documents.html">Documents</a>
-        <a href="tt600_59x_parts_index.html">Parts index</a>
-        <a href="tt600_59x_parts_engine.html">Parts engine</a>
-        <a href="tt600_59x_parts_carb_intake.html">Parts carb and intake</a>
-        <a href="tt600_59x_parts_electrical.html">Parts electrical</a>
-        <a href="tt600_59x_parts_suspension.html">Parts suspension</a>
-        <a href="tt600_59x_parts_controls_chassis.html">Parts controls and chassis</a>
-        <a href="tt600_59x_parts_body_plastics.html">Parts body and plastics</a>
-        <a href="sites web/Yamaha TT600.html">Yamaha TT600 capture</a>
-        <a href="sites web/Yamaha TT600-1.html">Yamaha TT600 capture 2</a>
+        <a href="tt600_59x_parts_index.html">Index pièces</a>
+        <a href="tt600_59x_parts_engine.html">Pièces moteur</a>
+        <a href="tt600_59x_parts_carb_intake.html">Carbu et admission</a>
+        <a href="tt600_59x_parts_electrical.html">Électricité</a>
+        <a href="tt600_59x_parts_suspension.html">Suspension</a>
+        <a href="tt600_59x_parts_controls_chassis.html">Commandes et châssis</a>
+        <a href="tt600_59x_parts_body_plastics.html">Carrosserie et plastiques</a>
+        <a href="sites web/Yamaha TT600.html">Capture Yamaha TT600</a>
+        <a href="sites web/Yamaha TT600-1.html">Capture Yamaha TT600 2</a>
       </div>
     </section>
 
-    <p class="footer-note">Status checkboxes are saved in this browser with localStorage. Budget totals are EUR-only. CSV source files: tt600_59x_parts_tracker.csv, tt600_59x_shopping_map_2026-09-04.csv, and tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv.</p>
+    <p class="footer-note">Les cases de statut sont enregistrées dans ce navigateur via localStorage. Les totaux budgétaires sont en EUR. Fichiers CSV sources : tt600_59x_parts_tracker.csv, tt600_59x_shopping_map_2026-09-04.csv, et tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv.</p>
   </div>
 
   <script>
@@ -688,112 +687,112 @@
 
     const phaseData = [
       {
-        title: "Phase 1 - Baseline Mechanical Truth",
+        title: "Phase 1 - Base mécanique de référence",
         items: [
-          "Order and receive the KEDO service basket.",
-          "Inspect intake manifolds for cracks and hardening.",
-          "Rebuild the carburettor with fresh service parts.",
-          "Replace air filter and spark plug.",
-          "Change engine oil and filter.",
-          "Replace drain washer and decide whether to fit the magnetic drain plug.",
-          "Check fork condition, fork seals, and fork oil state.",
-          "Check brake pads, brake fluid, and caliper piston movement."
+          "Commander et recevoir le panier de service KEDO.",
+          "Contrôler les collecteurs d'admission pour fissures et durcissement.",
+          "Rebuilder le carburateur avec pièces de service neuves.",
+          "Remplacer le filtre à air et la bougie.",
+          "Faire la vidange moteur et changer le filtre.",
+          "Remplacer la rondelle de vidange et décider si on pose le bouchon magnétique.",
+          "Contrôler l'état des fourches, joints de fourche et huile de fourche.",
+          "Contrôler plaquettes, liquide de frein et mouvement du piston d'étrier."
         ]
       },
       {
-        title: "Phase 2 - Small OEM and Rubber Details",
+        title: "Phase 2 - Petites pièces OEM et caoutchoucs",
         items: [
-          "Order the Yamaha tank silent-bloc if yours is worn or missing.",
-          "Inspect all tank and body mounting rubbers before reassembly."
+          "Commander le silent-bloc de réservoir Yamaha si celui-ci est usé ou absent.",
+          "Inspecter tous les éléments caoutchouc de montage du réservoir et du carénage avant remontage."
         ]
       },
       {
-        title: "Phase 3 - Choose and Prepare the 12V Architecture",
+        title: "Phase 3 - Choisir et préparer l'architecture 12V",
         items: [
-          "Confirm the project stays on the full XT600 3TB matched-system path.",
-          "Read the CDI decision sheet before buying any ignition box.",
-          "Decide battery location: right side panel bracket or rear subframe area.",
-          "Decide regulator/rectifier location with airflow near the right side of the airbox.",
-          "Decide fuse block location: side panel area or under headstock."
+          "Confirmer que le projet reste sur le chemin complet 3TB XT600.",
+          "Lire la fiche de décision CDI avant d'acheter une boîte d'allumage.",
+          "Choisir l'emplacement batterie : support de panneau latéral droit ou zone de sous-châssis arrière.",
+          "Choisir l'emplacement du régulateur/rectificateur avec ventilation près du côté droit du boîtier d'air.",
+          "Choisir l'emplacement du bloc fusibles : zone panneau latéral ou sous la fourche."
         ]
       },
       {
-        title: "Phase 4 - Buy Loom Materials",
+        title: "Phase 4 - Acheter les matériaux du faisceau",
         items: [
-          "Buy AGM battery in the YTX5L-BS class.",
-          "Buy 4 to 6 way ATO/ATC fuse block.",
-          "Buy weatherproof inline fuse holder.",
-          "Buy 5A, 10A, and 20A fuse assortment.",
-          "Buy TXL or GXL wire in the gauges required by the loom guide.",
-          "Buy Superseal and/or Deutsch connector kits.",
-          "Buy adhesive-lined heat shrink.",
-          "Buy Tesa 51036 loom tape.",
-          "Buy split conduit.",
-          "Buy all 12V replacement bulbs together."
+          "Acheter une batterie AGM de type YTX5L-BS.",
+          "Acheter un bloc fusibles ATO/ATC 4 à 6 voies.",
+          "Acheter un porte-fusible étanche en ligne.",
+          "Acheter un assortiment de fusibles 5A, 10A et 20A.",
+          "Acheter fil TXL ou GXL au calibre requis par le guide faisceau.",
+          "Acheter kits connecteurs Superseal et/ou Deutsch.",
+          "Acheter thermorétractable à âme adhésive.",
+          "Acheter ruban de faisceau Tesa 51036.",
+          "Acheter gaine fendue.",
+          "Acheter toutes les ampoules 12V en même temps."
         ]
       },
       {
-        title: "Phase 5 - Source Donor Electrics",
+        title: "Phase 5 - Trouver les éléments électriques du donneur",
         items: [
-          "Hunt a complete XT600 3TB donor electrical set first.",
-          "If no full set exists, source stator and flywheel as a matched pair.",
-          "Confirm CDI reference and connector style before purchase.",
-          "Confirm regulator/rectifier reference 3TJ-81960-01 or an accepted equivalent.",
-          "Confirm ignition coil is 12V and within the expected primary resistance range.",
-          "Prefer sellers who can prove the parts came from one running bike."
+          "Chercher d'abord un jeu électrique complet XT600 3TB.",
+          "Si aucun jeu complet n'existe, se procurer un stator et un volant comme paire appariée.",
+          "Confirmer la référence CDI et le style de connecteur avant achat.",
+          "Confirmer la référence régulateur/rectificateur 3TJ-81960-01 ou équivalent accepté.",
+          "Confirmer que la bobine d'allumage est 12V et dans la plage de résistance primaire attendue.",
+          "Préférer les vendeurs capables de prouver que les pièces viennent d'une même moto en marche."
         ]
       },
       {
-        title: "Phase 6 - Bench Verification Before Loom Finalization",
+        title: "Phase 6 - Vérification au banc avant finalisation du faisceau",
         items: [
-          "Lay out battery, CDI, regulator/rectifier, and fuse block on the bare frame first.",
-          "Keep CDI trigger wire path separated from the HT lead by at least 50 mm.",
-          "Build the minimum ignition test circuit first: stator trigger to CDI to coil to plug.",
-          "Confirm spark before building the full loom.",
-          "Build the charging side only after the spark path is confirmed.",
-          "Use a single earth point for every return path."
+          "Étaler batterie, CDI, régulateur/rectificateur et bloc fusibles sur le cadre nu au préalable.",
+          "Garder le fil de déclenchement CDI séparé du chemin HT d'au moins 50 mm.",
+          "Construire d'abord le circuit d'allumage minimal : stator → CDI → bobine → bougie.",
+          "Confirmer l'étincelle avant de construire le faisceau complet.",
+          "Construire le côté charge seulement après confirmation de l'étincelle.",
+          "Utiliser un seul point de masse pour chaque retour."
         ]
       },
       {
-        title: "Phase 7 - Full Loom Build",
+        title: "Phase 7 - Montage complet du faisceau",
         items: [
-          "Wire main battery feed with 20A protection close to battery positive.",
-          "Wire ignition/CDI/coil circuit on 5A fuse.",
-          "Wire headlight on 10A fuse.",
-          "Wire tail/brake light on 5A fuse.",
-          "Wire instruments on separate 5A fuse.",
-          "Add spare accessory circuit only after core circuits are clean.",
-          "Protect all joints and entries with adhesive-lined heat shrink.",
-          "Wrap the loom only after testing, not before."
+          "Relier l'alimentation principale batterie avec protection 20A près du positif.",
+          "Relier le circuit allumage/CDI/bobine sur fusible 5A.",
+          "Relier le phare sur fusible 10A.",
+          "Relier feu arrière/bfrein sur fusible 5A.",
+          "Relier les instruments sur fusible 5A séparé.",
+          "Ajouter un circuit accessoire de secours seulement après nettoyage des circuits principaux.",
+          "Protéger toutes les jonctions et entrées avec thermorétractable à âme adhésive.",
+          "Enrouler le faisceau seulement après tests, pas avant."
         ]
       },
       {
-        title: "Phase 8 - Commissioning Checks",
+        title: "Phase 8 - Vérifications de mise en service",
         items: [
-          "Measure charging voltage at about 3000 rpm.",
-          "Confirm target charging range is 13.8V to 14.5V DC.",
-          "Confirm all earth paths are under 0.2 ohm to battery negative.",
-          "Confirm kill switch stops the engine by grounding the CDI correctly.",
-          "Confirm all bulbs are 12V and survive first power-up.",
-          "Confirm regulator/rectifier does not overheat in its mounted position."
+          "Mesurer la tension de charge vers 3000 tr/min.",
+          "Confirmer que la plage cible de charge est 13,8V à 14,5V DC.",
+          "Confirmer que toutes les masses sont en dessous de 0,2 ohm par rapport à la masse batterie.",
+          "Confirmer que l'interrupteur d'arrêt coupe bien le moteur en mettant la masse du CDI.",
+          "Confirmer que toutes les ampoules sont 12V et résistent au premier démarrage.",
+          "Confirmer que le régulateur/rectificateur ne surchauffe pas dans sa position de montage."
         ]
       },
       {
-        title: "Phase 9 - Close-Out",
+        title: "Phase 9 - Clôture",
         items: [
-          "Replace estimate prices in the budget sheet with real prices paid.",
-          "Update donor leads with actual sellers and outcomes.",
-          "Update the shopping map with final chosen listings.",
-          "Draw or keep the final as-built wiring layout with the bike documents."
+          "Remplacer les montants estimés dans la feuille budget par les prix réels payés.",
+          "Mettre à jour les pistes de donneur avec vendeurs et résultats concrets.",
+          "Mettre à jour le plan d'achat avec les annonces finales retenues.",
+          "Garder et mettre à jour le schéma de câblage final dans les documents de moto."
         ]
       },
       {
-        title: "Stop Rules",
+        title: "Règles d'arrêt",
         items: [
-          "Stop if you are about to buy isolated 3TB parts with unclear provenance.",
-          "Stop if a seller cannot show donor model, connector style, or part markings.",
-          "Stop if charging exceeds 15V during testing.",
-          "Stop if any 6V bulb remains in the bike at first 12V power-up."
+          "Stop si vous êtes sur le point d'acheter des pièces 3TB isolées sans preuve de compatibilité.",
+          "Stop si un vendeur ne peut montrer ni modèle donneur, ni style de connecteur, ni marquage de pièce.",
+          "Stop si la charge dépasse 15V pendant le test.",
+          "Stop si une ampoule 6V reste encore dans la moto au premier démarrage 12V."
         ]
       }
     ];
@@ -803,6 +802,31 @@
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, " ")
         .trim();
+    }
+
+    function displayPriority(value) {
+      const p = String(value || "").trim();
+      if (p === "High") return "Élevée";
+      if (p === "Medium") return "Moyenne";
+      if (p === "Low") return "Faible";
+      return p || "-";
+    }
+
+    function displaySystemName(value) {
+      const map = {
+        Engine: "Moteur",
+        Electrical: "Électricité",
+        Intake: "Admission",
+        "Front suspension": "Suspension avant",
+        Suspension: "Suspension",
+        Brakes: "Freinage",
+        Transmission: "Transmission",
+        Controls: "Commandes",
+        Chassis: "Châssis",
+        Bodywork: "Carrosserie",
+        Unsorted: "Non trié"
+      };
+      return map[String(value || "")] || String(value || "") || "-";
     }
 
     function money(value, currency) {
@@ -1625,7 +1649,7 @@
 
         if (!links.length && row["Preferred Search Terms"]) {
           links.push({
-            label: "Search",
+            label: "Rechercher",
             url: fallbackSearchUrl(row["Preferred Search Terms"])
           });
         }
@@ -1747,8 +1771,8 @@
       const installed = loadState(item.id + "-installed", false);
 
       const marketPills = [
-        item.hasNew ? '<span class="pill market-new">New</span>' : '',
-        item.hasUsed ? '<span class="pill market-used">Used</span>' : ''
+        item.hasNew ? '<span class="pill market-new">Neuf</span>' : '',
+        item.hasUsed ? '<span class="pill market-used">Occasion</span>' : ''
       ].join('');
 
       const confClass = item.priceMode === "fixed"
@@ -1758,10 +1782,10 @@
           : item.priceMode === "mixed"
             ? "conf conf-mixed"
             : "conf";
-      const confidenceText = `Merged ${item.mergeCount || 1} | ${item.priceMode || "unknown"}`;
+      const confidenceText = `Fusionné ${item.mergeCount || 1} | ${item.priceMode || "inconnu"}`;
 
       const linksHtml = item.links.length
-        ? `<div class="links">${item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label}</a>`).join("")}</div>`
+        ? `<div class="links">${item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label || "Lien"}</a>`).join("")}</div>`
         : "-";
 
       tr.innerHTML = `
@@ -1774,7 +1798,7 @@
         <td>${item.source || "-"}</td>
         <td>${marketPills || "-"}</td>
         <td>${moneyRange(item.low, item.high, item.currency)}</td>
-        <td>${item.priority !== "-" ? `<span class="pill prio-${item.priority}">${item.priority}</span>` : "-"}</td>
+        <td>${item.priority !== "-" ? `<span class="pill prio-${item.priority}">${displayPriority(item.priority)}</span>` : "-"}</td>
         <td><span class="${confClass}">${confidenceText}</span></td>
         <td>${linksHtml}</td>
         <td class="checkcell"><input type="checkbox" data-role="ordered" ${ordered ? "checked" : ""}></td>
@@ -1823,7 +1847,7 @@
       const collapseKey = name => `${STORAGE_PREFIX}system-collapsed-${norm(name).replace(/\s+/g, "-")}`;
       const applyCollapseState = (section, button, collapsed) => {
         section.classList.toggle("is-collapsed", collapsed);
-        button.textContent = collapsed ? "Expand" : "Collapse";
+        button.textContent = collapsed ? "Développer" : "Réduire";
         button.setAttribute("aria-expanded", collapsed ? "false" : "true");
       };
 
@@ -1842,11 +1866,11 @@
         head.className = "system-head";
         head.innerHTML = `
           <div class="system-head-left">
-            <h2>${systemName}</h2>
+            <h2>${displaySystemName(systemName)}</h2>
           </div>
           <div class="system-head-right">
-            <span class="system-count">${rows.length} parts</span>
-            <button type="button" class="system-toggle" aria-expanded="true">Collapse</button>
+            <span class="system-count">${rows.length} pièces</span>
+            <button type="button" class="system-toggle" aria-expanded="true">Réduire</button>
           </div>
         `;
 
@@ -1857,17 +1881,17 @@
         table.innerHTML = `
           <thead>
             <tr>
-              <th>Part</th>
-              <th>OEM / Ref</th>
-              <th>Need Type</th>
-              <th>Supplier</th>
-              <th>Market</th>
-              <th>Price Range</th>
-              <th>Priority</th>
-              <th>Confidence</th>
-              <th>Links</th>
-              <th>Ordered</th>
-              <th>Installed</th>
+              <th>Pièce</th>
+              <th>OEM / Réf</th>
+              <th>Type besoin</th>
+              <th>Fournisseur</th>
+              <th>Marché</th>
+              <th>Fourchette prix</th>
+              <th>Priorité</th>
+              <th>Confiance</th>
+              <th>Liens</th>
+              <th>Commandé</th>
+              <th>Installé</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -1893,7 +1917,7 @@
       }
 
       if (!grouped.length) {
-        systemsEl.innerHTML = '<section class="card empty">No data loaded from CSV files.</section>';
+        systemsEl.innerHTML = '<section class="card empty">Aucune donnée chargée depuis les fichiers CSV.</section>';
       }
     }
 
@@ -1955,7 +1979,7 @@
         const visible = [...sec.querySelectorAll("tbody tr")].filter(tr => tr.style.display !== "none").length;
         sec.style.display = visible ? "" : "none";
         const badge = sec.querySelector(".system-count");
-        if (badge) badge.textContent = `${visible} visible`;
+        if (badge) badge.textContent = `${visible} visibles`;
       });
 
       refreshStats();

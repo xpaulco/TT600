@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT600 59X Restoration Hub</title>
+  <meta name="description" content="Static GitHub-friendly hub for a Yamaha TT600 59X restoration, parts sourcing, 12V conversion planning, and donor tracking.">
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-deep: #e9decc;
+      --ink: #1d1a16;
+      --muted: #63584b;
+      --panel: rgba(255, 251, 244, 0.82);
+      --line: rgba(64, 46, 23, 0.14);
+      --accent: #8f3d24;
+      --accent-soft: #d8835d;
+      --forest: #304739;
+      --gold: #c68d2c;
+      --shadow: 0 20px 50px rgba(49, 31, 15, 0.12);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(198, 141, 44, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(143, 61, 36, 0.16), transparent 22%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 45%, var(--bg-deep) 100%);
+      font-family: "Avenir Next", "Segoe UI Variable Text", "Trebuchet MS", sans-serif;
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(90deg, transparent 0 49%, rgba(0, 0, 0, 0.12) 49.5%, transparent 50%),
+        linear-gradient(transparent 0 49%, rgba(0, 0, 0, 0.1) 49.5%, transparent 50%);
+      background-size: 80px 80px;
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 92%);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 92%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      background: rgba(244, 239, 230, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .topnav a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.42);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .topnav a:hover,
+    .topnav a:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(143, 61, 36, 0.35);
+      background: rgba(255, 255, 255, 0.76);
+      outline: none;
+    }
+
+    .hero {
+      padding: 56px 0 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .section-card,
+    .list-card,
+    .doc-card,
+    .decision-card,
+    .timeline-step,
+    .metric,
+    .notice {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -28% 35%;
+      height: 180px;
+      background: radial-gradient(circle, rgba(198, 141, 44, 0.34), transparent 66%);
+      pointer-events: none;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.9rem);
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+      margin-top: 10px;
+    }
+
+    .hero-copy p {
+      max-width: 58ch;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .button.primary {
+      color: #fff8f3;
+      background: linear-gradient(135deg, var(--accent), #b65431);
+      box-shadow: 0 12px 24px rgba(143, 61, 36, 0.28);
+    }
+
+    .button.secondary {
+      color: var(--forest);
+      background: rgba(48, 71, 57, 0.08);
+      border: 1px solid rgba(48, 71, 57, 0.18);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .button-cluster {
+      margin-top: 18px;
+    }
+
+    .hero-panel {
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      background:
+        linear-gradient(145deg, rgba(48, 71, 57, 0.95), rgba(29, 26, 22, 0.96)),
+        rgba(0, 0, 0, 0.2);
+      color: #f7f1e9;
+    }
+
+    .hero-panel h2 {
+      font-size: 1.3rem;
+    }
+
+    .hero-panel p,
+    .hero-panel li {
+      color: rgba(247, 241, 233, 0.82);
+    }
+
+    .hero-panel ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 6px 0 42px;
+    }
+
+    .metric {
+      padding: 20px;
+      min-height: 144px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .metric strong {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 18px 0 46px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .grid-3,
+    .grid-2,
+    .docs-grid,
+    .decision-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .docs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .section-card,
+    .list-card,
+    .doc-card,
+    .decision-card,
+    .timeline-step,
+    .notice {
+      padding: 22px;
+    }
+
+    .section-card h3,
+    .list-card h3,
+    .doc-card h3,
+    .decision-card h3,
+    .timeline-step h3,
+    .notice h3 {
+      font-size: 1.28rem;
+      margin-bottom: 12px;
+    }
+
+    .price-line {
+      font-size: 2rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(48, 71, 57, 0.08);
+      border: 1px solid rgba(48, 71, 57, 0.15);
+      font-size: 0.86rem;
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    .warning {
+      background: rgba(143, 61, 36, 0.08);
+      border-color: rgba(143, 61, 36, 0.2);
+      color: var(--accent);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--gold), #e4b35a);
+      color: #38240d;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: inset 0 0 0 4px rgba(255, 248, 239, 0.38);
+    }
+
+    .timeline-step p,
+    .timeline-step ul,
+    .section-card p,
+    .list-card p,
+    .decision-card p,
+    .doc-card p,
+    .notice p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline-step ul,
+    .decision-card ul,
+    .list-card ul,
+    .hero-panel ul {
+      margin-top: 12px;
+    }
+
+    .decision-card.good {
+      border-color: rgba(48, 71, 57, 0.24);
+      background: linear-gradient(180deg, rgba(247, 252, 248, 0.92), rgba(233, 243, 236, 0.82));
+    }
+
+    .decision-card.fallback {
+      border-color: rgba(143, 61, 36, 0.24);
+      background: linear-gradient(180deg, rgba(255, 249, 244, 0.92), rgba(246, 231, 221, 0.82));
+    }
+
+    .doc-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 196px;
+    }
+
+    .doc-card .type {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .doc-card .open {
+      margin-top: auto;
+      color: var(--forest);
+      font-weight: 700;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      background: linear-gradient(140deg, rgba(255, 251, 244, 0.94), rgba(238, 227, 211, 0.88));
+    }
+
+    .notice strong {
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 18px 0 56px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .fade-up:nth-child(2) { animation-delay: 0.08s; }
+    .fade-up:nth-child(3) { animation-delay: 0.16s; }
+    .fade-up:nth-child(4) { animation-delay: 0.24s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .notice,
+      .grid-3,
+      .docs-grid,
+      .decision-grid,
+      .grid-2,
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner,
+      .section-header,
+      .hero-actions {
+        align-items: flex-start;
+      }
+
+      .metrics,
+      .grid-3,
+      .grid-2,
+      .docs-grid,
+      .decision-grid,
+      .notice {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-step {
+        grid-template-columns: 1fr;
+      }
+
+      .step-num {
+        width: 48px;
+        height: 48px;
+      }
+
+      h1 {
+        max-width: 11ch;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .section-card,
+      .list-card,
+      .doc-card,
+      .decision-card,
+      .timeline-step,
+      .metric,
+      .notice {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="eyebrow">Restoration Hub</span>
+        <strong>Yamaha TT600 59X</strong>
+      </div>
+      <nav class="topnav" aria-label="Primary">
+        <a href="tt600_59x_one_pager_dashboard.html">One-Page Dashboard</a>
+        <a href="#buy">Buy Now</a>
+        <a href="#conversion">12V Plan</a>
+        <a href="#decision">CDI Choice</a>
+        <a href="#files">Project Files</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy fade-up">
+        <span class="eyebrow">GitHub-ready project page</span>
+        <h1>TT600 59X restoration, sourcing, and 12V conversion in one place.</h1>
+        <p>
+          This page is the public-facing hub for the project: what to buy first, what to delay,
+          how the XT600 3TB donor strategy works, and which documents control each stage.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="tt600_59x_one_pager_dashboard.html">Open One-Page Dashboard</a>
+          <a class="button primary" href="tt600_59x_parts_index.html">Open Parts Catalog</a>
+          <a class="button secondary" href="tt600_59x_documents.html#dashboard">Open Master Dashboard</a>
+        </div>
+      </div>
+      <aside class="hero-panel fade-up">
+        <h2>Current project stance</h2>
+        <ul>
+          <li>Service and intake parts should be bought now.</li>
+          <li>The 12V conversion should stay on a full XT600 3TB matched-system path.</li>
+          <li>The real engineering risk is fragmented electrics, not lack of parts alone.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">12V conversion approved</span>
+          <span class="chip">3TB donor strategy</span>
+          <span class="chip warning">Avoid piecemeal CDI buys</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics" aria-label="Key project metrics">
+      <article class="metric fade-up">
+        <div class="label">Known Buy-Now Basket</div>
+        <strong>€121.97</strong>
+        <span>Verified fixed-price items without shipping</span>
+      </article>
+      <article class="metric fade-up">
+        <div class="label">KEDO First Order</div>
+        <strong>€114.97</strong>
+        <span>€118.47 with the optional sump gasket</span>
+      </article>
+      <article class="metric fade-up">
+        <div class="label">Loom Materials</div>
+        <strong>€146-352</strong>
+        <span>Planning range for battery, wire, fuse gear, connectors, and bulbs</span>
+      </article>
+      <article class="metric fade-up">
+        <div class="label">Used 3TB Donor Core</div>
+        <strong>€240-600</strong>
+        <span>Estimated stator, flywheel, CDI, regulator, and coil path</span>
+      </article>
+    </section>
+
+    <section id="buy" class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">What To Buy First</span>
+          <h2>Start with one clean mechanical basket.</h2>
+          <p>Do the boring, defensible purchases first. That gives you a trustworthy base before the electrical conversion starts consuming time and money.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="section-card">
+          <h3>KEDO service basket</h3>
+          <div class="price-line">€114.97</div>
+          <p class="muted">Low-risk order with oil filter kit, air filter, spark plug, carb kit, intake manifolds, screw set, drain plug, and washer.</p>
+          <div class="chip-row">
+            <span class="chip">Best first order</span>
+            <span class="chip">Reduces shipping waste</span>
+          </div>
+          <div class="hero-actions button-cluster">
+            <a class="button secondary" href="tt600_59x_documents.html#shopping-map">Shopping map</a>
+          </div>
+        </article>
+        <article class="section-card">
+          <h3>OEM one-off rubber parts</h3>
+          <div class="price-line">€7.70</div>
+          <p class="muted">The tank silent-bloc is a small but legitimate OEM buy. Keep Yamaha-only orders tight and avoid padding them with generic consumables.</p>
+          <div class="chip-row">
+            <span class="chip">Pieces-Yam</span>
+            <span class="chip">Single-item order</span>
+          </div>
+        </article>
+        <article class="section-card">
+          <h3>What not to do</h3>
+          <p class="muted">Do not buy isolated 3TB parts just because they appear cheap. A mismatched CDI or flywheel can erase any savings instantly.</p>
+          <div class="chip-row">
+            <span class="chip warning">No random CDI buys</span>
+            <span class="chip warning">No partial 12V setup</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="conversion" class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">12V Architecture</span>
+          <h2>The conversion is a system problem, not a shopping list problem.</h2>
+          <p>The page below is the execution logic: mount layout first, minimum ignition test second, full loom third, full power-up last.</p>
+        </div>
+        <a class="button secondary" href="tt600_59x_documents.html#conversion-basket">Open 12V basket</a>
+      </div>
+      <div class="timeline">
+        <article class="timeline-step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Lock the hardware positions</h3>
+            <p>Decide battery position, fuse block position, and regulator airflow before loom construction. The 59X oil tank forces the battery packaging problem early.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Buy loom materials in one batch</h3>
+            <p>Battery, fuse block, inline fuse, wire, connectors, loom tape, heat shrink, split conduit, and 12V bulbs should be treated as a single electrical-supplies order.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Secure a matched 3TB donor set</h3>
+            <p>Stator, flywheel, CDI, and regulator/rectifier should ideally come from one XT600 3TB donor bike or one coherent seller bundle.</p>
+          </div>
+        </article>
+        <article class="timeline-step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Test spark before finishing the loom</h3>
+            <p>Minimum ignition circuit first. Full wrapping comes only after spark, charging voltage, earth continuity, and kill-switch behavior are confirmed.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="decision" class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">CDI Decision</span>
+          <h2>Used matched donor first. Aftermarket fallback second.</h2>
+          <p>The choice is not really “which CDI is cheaper.” The real choice is “coherent donor system versus fragmented electrics.”</p>
+        </div>
+        <a class="button secondary" href="tt600_59x_documents.html#cdi-decision">Open full comparison</a>
+      </div>
+      <div class="decision-grid">
+        <article class="decision-card good">
+          <h3>Preferred path: used 3TB CDI inside a matched donor set</h3>
+          <ul>
+            <li>Best fit with the 3TB stator and flywheel strategy.</li>
+            <li>Usually lower cost if the seller can prove provenance.</li>
+            <li>Best when multiple parts come from the same running bike.</li>
+          </ul>
+        </article>
+        <article class="decision-card fallback">
+          <h3>Fallback path: aftermarket 3TB CDI</h3>
+          <ul>
+            <li>Higher cost, but more predictable than random used CDI listings.</li>
+            <li>Still only sensible in a full 3TB conversion.</li>
+            <li>Useful when donor CDI provenance is weak but the rest of the set is good.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Operational Tools</span>
+          <h2>Use the project files like instruments, not bookmarks.</h2>
+          <p>Each file answers a different question. Keep the dashboard for orientation, the CSVs for action, and the wiring guide for anything that can damage components.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <article class="list-card">
+          <h3>For planning and buying</h3>
+          <ul>
+              <li><a href="tt600_59x_parts_index.html">Parts catalog</a></li>
+              <li><a href="tt600_59x_documents.html#buy-order">Best buy order</a></li>
+            <li><a href="tt600_59x_vendor_grouped_purchase_list_2026-09-04.csv">Vendor-grouped purchase CSV</a></li>
+            <li><a href="tt600_59x_budget_estimate_2026-09-04.csv">Budget estimate CSV</a></li>
+          </ul>
+        </article>
+        <article class="list-card">
+          <h3>For donor hunting and execution</h3>
+          <ul>
+            <li><a href="tt600_59x_3tb_donor_leads.csv">3TB donor leads</a></li>
+              <li><a href="tt600_59x_documents.html#seller-templates">Seller message templates</a></li>
+              <li><a href="tt600_59x_documents.html#execution-checklist">Execution checklist</a></li>
+            <li><a href="tt600_59x_wiring_loom_guide.html">Wiring loom guide</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="files" class="section">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Project Files</span>
+          <h2>Everything important is linked below.</h2>
+          <p>This section is the GitHub-friendly file menu for the whole restoration pack.</p>
+        </div>
+      </div>
+      <div class="docs-grid">
+        <article class="doc-card">
+          <div class="type">Unified View</div>
+          <h3>One-Page Parts Dashboard</h3>
+          <p>Single-screen working view with all parts, prices, links, and ordered or installed checkboxes plus control checklists.</p>
+          <a class="open" href="tt600_59x_one_pager_dashboard.html">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Reference</div>
+          <h3>Compatibility Matrix</h3>
+          <p>Which TT600 59X parts are likely shared with XT600 families, and which parts need 59X-specific caution.</p>
+          <a class="open" href="tt600_59x_documents.html#compatibility">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Planning</div>
+          <h3>Master Dashboard</h3>
+          <p>Text version of the project index and workflow rules.</p>
+          <a class="open" href="tt600_59x_documents.html#dashboard">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Catalog</div>
+          <h3>Grouped Parts Pages</h3>
+          <p>Canonical category pages with seller links and install checkboxes, designed to remove duplicate part references.</p>
+          <a class="open" href="tt600_59x_parts_index.html">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Buying</div>
+          <h3>Shopping Map CSV</h3>
+          <p>Sort parts by vendor, price status, and purchase urgency in spreadsheet form.</p>
+          <a class="open" href="tt600_59x_shopping_map_2026-09-04.csv">Open file</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Budget</div>
+          <h3>Budget Estimate CSV</h3>
+          <p>Fixed prices where verified, estimate bands where the market is still moving.</p>
+          <a class="open" href="tt600_59x_budget_estimate_2026-09-04.csv">Open file</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Electrical</div>
+          <h3>12V Conversion Basket</h3>
+          <p>Required donor parts, fuse map, loom materials, and test thresholds.</p>
+          <a class="open" href="tt600_59x_documents.html#conversion-basket">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Execution</div>
+          <h3>Execution Checklist</h3>
+          <p>Single-page step order for restoration, loom prep, donor validation, and commissioning.</p>
+          <a class="open" href="tt600_59x_documents.html#execution-checklist">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Sourcing</div>
+          <h3>3TB Donor Leads</h3>
+          <p>Search links and lead rows for eBay, Leboncoin, and fallback CDI sourcing.</p>
+          <a class="open" href="tt600_59x_3tb_donor_leads.csv">Open file</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Communication</div>
+          <h3>Seller Templates</h3>
+          <p>French and English messages to qualify donor parts without wasting time.</p>
+          <a class="open" href="tt600_59x_documents.html#seller-templates">Open page</a>
+        </article>
+        <article class="doc-card">
+          <div class="type">Legacy / Notes</div>
+          <h3>Original HTML Guides</h3>
+          <p>Technical notes already present in the workspace for mods, teardown, and loom design.</p>
+          <a class="open" href="tt600_59x_mods_guide.html">Open mods guide</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <div>
+          <span class="eyebrow">Working Rule</span>
+          <h3>Compatibility first for electrics, speed second for service parts.</h3>
+          <p>
+            If a part changes charging, ignition, trigger pickup, or 12V architecture,
+            stop and confirm donor-system coherence before buying. If the part is normal
+            service hardware or intake rubber, buy it from the cleanest supplier basket and move on.
+          </p>
+        </div>
+        <div>
+          <h3>Best current move</h3>
+          <p><strong>1.</strong> Place the KEDO service order.</p>
+          <p><strong>2.</strong> Buy loom materials as one electrical batch.</p>
+          <p><strong>3.</strong> Hunt a matched XT600 3TB donor set using the lead tracker and seller templates.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>Built as a self-contained static page for GitHub Pages. All links are relative to this project folder.</p>
+  </footer>
+</body>
+</html>
